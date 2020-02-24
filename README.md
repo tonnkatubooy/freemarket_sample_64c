@@ -1,24 +1,64 @@
-# README
-ok
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## feemarket DB設計
 
-Things you may want to cover:
+## itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_name|string|null: false|
+|comment|references|null: false, foreign_key: true |
+|picture|references|null: fales, foreign_key: true|
+|category|references|null: false, foreign_key: true |
+|discription|text|  |
+|price|interger|null: false|
+### Association
+- belongs_to :user
+- has_many :comment
+- has_many :picture
+- has_many :category
 
-* Ruby version
 
-* System dependencies
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text|  |
+### Association
+- belongs_to :user
+- belongs_to :item
 
-* Configuration
 
-* Database creation
+## picturesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|  |
+### Association
+- belongs_to :item
 
-* Database initialization
 
-* How to run the test suite
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category_name|string|  |
+### Association
+- has_many :item
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post_number|string|  |
+|prefecture|integer|  |
+|city|string|  |
+|house_number|string|  |
+|building|string|  |
+### Association
+- belongs_to :user
 
-* ...
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|nickname|string|null: false|
+|email|string|null: false|
+### Association
+- has_many :comment
+- has_many :item
