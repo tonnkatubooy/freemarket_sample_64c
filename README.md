@@ -5,65 +5,86 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-## itemsテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_name|string|null: false|
-|comment|references|null: false, foreign_key: true |
-|picture|references|null: fales, foreign_key: true|
-|category|references|null: false, foreign_key: true |
-|discription|text|  |
-|price|interger|null: false|
+|first_name     |string|null: false|
+|last_name      |string|null: false|
+|first_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|nickname       |string|null: false|
+|email          |string|null: false|
+|birthday       |date  |  |
 ### Association
-- belongs_to :user
 - has_many :comment
-- has_many :picture
-- has_many :category
-
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|body|text|  |
-### Association
-- belongs_to :user
-- belongs_to :item
-
-
-## picturesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|string|  |
-### Association
-- belongs_to :item
-
-
-## categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category_name|string|  |
-### Association
 - has_many :item
-
 
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_number|string|  |
-|prefecture|integer|  |
-|city|string|  |
-|house_number|string|  |
-|building|string|  |
+|destination_first_name|string   |null: false|
+|destination_last_name |string   |null: false|
+|post_number           |string   |null: false|
+|prefecture            |integer  |null: false|
+|city                  |string   |null: false|
+|house_number          |string   |  |
+|building              |string   |  |
+|phone_number          |string   |  |
+|user                  |refarences|foreign_key: true|
 ### Association
 - belongs_to :user
 
-
-## usersテーブル
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|nickname|string|null: false|
-|email|string|null: false|
+|item_name      |string    |null: false|
+|price          |interger  |null: false|
+|discription    |text      |  |
+|user           |references|foreign_key: true|
+|category       |refarences|foreign_key: true|
+|brand          |refarences|foreign_key: true|
+|size           |string    |  |
+|status         |string    |  |
+|delivery_charge|string    |  |
+|area           |string    |  |
+|shipping_date  |string    |  |
 ### Association
-- has_many :comment
-- has_many :item
+- belongs_to :user
+- belongs_to :brands
+- belongs_to :category
+- has_many :comments
+- has_many :pictures
+
+## picturesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string    |  |
+|item |refarences|foreign_key: true|
+### Association
+- belongs_to :item
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|main      |string|  |
+|main_genre|string|  |
+|genre_list|string|  |
+### Association
+- has_many :items
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|brand_name|string|  |
+### Association
+- has_many :items
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text      |  |
+|user|refarences|foreign_key|
+|item|refarences|foreign_key|
+### Association
+- belongs_to :user
+- belongs_to :item
