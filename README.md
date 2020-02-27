@@ -1,35 +1,32 @@
 
-## feemarket DB設計
+## freemarket DB設計
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 ## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
+|Column|Type|Options|Index|
+|------|----|-------|-----|
 |first_name     |string|null: false|
 |last_name      |string|null: false|
 |first_name_kana|string|null: false|
-|first_name_kana|string|null: false|
+|last_name_kana |string|null: false|
 |nickname       |string|null: false|
-|email          |string|null: false|
-|birthday       |date  |  |
+|email          |string|null: false, unique:ture|○|
+|birthday       |date  |null: false|
+|phone_number          |string    |  |
 ### Association
 - has_many :comment
 - has_many :item
 
-## addressesテーブル
+## addrresテーブル
 |Column|Type|Options|
 |------|----|-------|
-|destination_first_name|string   |null: false|
-|destination_last_name |string   |null: false|
-|post_number           |string   |null: false|
-|prefecture            |integer  |null: false|
-|city                  |string   |null: false|
-|house_number          |string   |  |
-|building              |string   |  |
-|phone_number          |string   |  |
+|destination_first_name|string    |null: false|
+|destination_last_name |string    |null: false|
+|post_number           |string    |null: false|
+|prefecture            |integer   |null: false|
+|city                  |string    |null: false|
+|house_number          |string    |null: false|
+|building              |string    |  |
 |user                  |refarences|foreign_key: true|
 ### Association
 - belongs_to :user
@@ -39,18 +36,18 @@ application up and running.
 |------|----|-------|
 |item_name      |string    |null: false|
 |price          |interger  |null: false|
-|discription    |text      |  |
-|user           |references|foreign_key: true|
-|category       |refarences|foreign_key: true|
+|discription    |text      |null: false|
+|user           |references|null: false, foreign_key: true|
+|category       |refarences|null: false, foreign_key: true|
 |brand          |refarences|foreign_key: true|
-|size           |string    |  |
-|status         |string    |  |
-|delivery_charge|string    |  |
-|area           |string    |  |
-|shipping_date  |string    |  |
+|size           |string    |null: false|
+|status         |string    |null: false|
+|delivery_charge|string    |null: false|
+|area           |string    |null: false|
+|shipping_date  |string    |null: false|
 ### Association
 - belongs_to :user
-- belongs_to :brands
+- belongs_to :brand
 - belongs_to :category
 - has_many :comments
 - has_many :pictures
