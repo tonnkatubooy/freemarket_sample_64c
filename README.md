@@ -5,17 +5,21 @@
 ## usersテーブル
 |Column|Type|Options|Index|
 |------|----|-------|-----|
-|first_name     |string|null: false|
-|last_name      |string|null: false|
-|first_name_kana|string|null: false|
-|last_name_kana |string|null: false|
-|nickname       |string|null: false|
-|email          |string|null: false, unique:ture|○|
-|birthday       |date  |null: false|
-|phone_number          |string    |  |
+|first_name     |string    |null: false|
+|last_name      |string    |null: false|
+|first_name_kana|string    |null: false|
+|last_name_kana |string    |null: false|
+|nickname       |string    |null: false|
+|email          |string    |null: false, unique:ture|○|
+|birthday       |date      |null: false|
+|phone_number   |string    |  |
+|introduction   |text      |  |
+|addrres        |references|null: false|
 ### Association
-- has_many :comment
-- has_many :item
+- belongs_to :addrres
+- has_many :comments
+- has_many :items
+- has_one :card
 
 ## addrresテーブル
 |Column|Type|Options|
@@ -31,10 +35,18 @@
 ### Association
 - belongs_to :user
 
-## itemsテーブル
+## cardテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_name      |string    |null: false|
+|card_id|string    |  |
+|user   |references|null: false, foreign_key:true|
+### Association
+- belongs_to :user
+
+## itemsテーブル
+|Column|Type|Options|Index|
+|------|----|-------|-----|
+|item_name      |string    |null: false|○|
 |price          |interger  |null: false|
 |discription    |text      |null: false|
 |user           |references|null: false, foreign_key: true|
@@ -45,6 +57,7 @@
 |delivery_charge|string    |null: false|
 |area           |string    |null: false|
 |shipping_date  |string    |null: false|
+|shipping_method|string    |null: false|
 ### Association
 - belongs_to :user
 - belongs_to :brand
