@@ -88,7 +88,7 @@
 ## delivery_charge
 |Column|Type|Options|
 |------|----|-------|
-|delivvery_charge|string|  |
+|delivery_charge|string|  |
 ### Association
 - has_many :items
 
