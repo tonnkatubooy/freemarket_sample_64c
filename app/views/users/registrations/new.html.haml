@@ -37,8 +37,13 @@
     = f.text_field :last_name
   .field
     = f.label :生年月日
-    %br/
     = f.date_select :birthday, use_month_numbers: true
+    %br/
+  .field
+    = f.label :名字
+    %br/
+    = f.text_field :phone_number
+    = f.label :名前
   .actions
     = f.submit "Sign up"
 = render "users/shared/links"
