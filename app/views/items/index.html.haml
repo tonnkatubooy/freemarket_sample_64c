@@ -1,93 +1,71 @@
-!!!
-%html
-  %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
-    %title FURIMA
-    %meta{content: "authenticity_token", name: "csrf-param"}/
-    %meta{content: "uLJm9KCvUs9gNnguGh/OCezLnk4RXQSGVnNDbdjxhcDxJ1NBmXk8xIRVi3/7dVPjtMwJojLpFlVu1o60n+FkMA==",name: "csrf-token"}/
-    %link{"data-turbolinks-track": "reload",href: "#", media: "all",rel: "stylesheet"}/
-    %script{"data-turbolinks-track": "reload", src: "#"}
-  %body
-    %header.Header
-      .Header__inner
-        .Header__inner-top
-          %h1.icon
-            %a{href: "/"}
-              %img{src: "#"}/
-          .search-Box
-            %form{"accept-charset": "UTF-8", action: "#", method: "get"}
-              %input{name: "utf8", type: "hidden", value: "✓"}/
-              %input#searchInput.search-Box--input{name: "key", placeholder: "キーワードから探す"}/
-            %form.button_to{action: "/?type=submit", method: "post"}
-              %button.search_button
-                .search-Box__icon
-                  %img{src: "#"}/
-              %input{name: "authenticity_token", type: "hidden", value: "#"}/
-          %ul.Header__inner-resultLists
-        .Header__inner-nav
-          %ul.listsLeft
-            %li.listsLeft__item.listsLeft__item--first
-              %a#catBtn{:href => "#"} カテゴリー
-              .tree.displayNone
-                %ul.categoryTree
-                  %li.categoryTree--item
-                    %a#1{:href => "#"} レディース
-                  %li.categoryTree--item
-                    %a#2{:href => "#"} メンズ
-                  %li.categoryTree--item
-                    %a#3{:href => "#"} ベビー・キッズ
-                  %li.categoryTree--item
-                    %a#4{:href => "#"} インテリア・住まい・小物
-                  %li.categoryTree--item
-                    %a#5{:href => "#"} 本・音楽・ゲーム
-                  %li.categoryTree--item
-                    %a#6{:href => "#"} おもちゃ・ホビー・グッズ
-                  %li.categoryTree--item
-                    %a#7{:href => "#"} コスメ・香水・美容
-                  %li.categoryTree--item
-                    %a#8{:href => "#"} 家電・スマホ・カメラ
-                  %li.categoryTree--item
-                    %a#9{:href => "#"} スポーツ・レジャー
-                  %li.categoryTree--item
-                    %a#10{:href => "#"} ハンドメイド
-                  %li.categoryTree--item
-                    %a#11{:href => "#"} チケット
-                  %li.categoryTree--item
-                    %a#12{:href => "#"} 自動車・オートバイ
-                  %li.categoryTree--item
-                    %a#13{:href => "#"} その他
-            %li.listsLeft__item
-              %a#brandBtn{:href => "#"} ブランド
-              %ul.brandsPulldown.displayNone
-          %ul.listsRight
-            %li.listsRight__item.listsRight__item--login
-              %a{:href => "#"} ログイン
-            %li.listsRight__item.listsRight__item--new
-              %a{:href => "#"} 新規会員登録
-    .main
-      %section.mainVisual
-        .content
-          %h2.content__subtitle
-            %br/
-            人生を変えるフリマアプリ
-          %p.content__text
-            FURIMAはだれでもかんたんに出品・購入できる
-            %br/
-            フリマアプリです
-          .content__btn
-            %a.aBtn{:href => "#"}
-              %img{:src => "#"}/
-            %a.gBtn{:href => "#"}
-              %img{:src => "#"}/
+.header
+  .header_top
+    .header_title
+      %a{href: '/jp/'} FRIMA
+      %imag{src: '/'}
+    .header_search_box
+      %form{action: "/jp/search",class:"form"}
+        %input{type:"serch",name:"keyword",placeholder:"キーワードから探す",class:"search-box"}
+          %button.search_button
+  .header_bottom
+    .header_bottom_right
+      .category_box
+        %a{href: '/jp/'} カテゴリー
+        %ul.categoryTree
+          %li.categoryTree--item
+            %a{href: '/'} レディース
+          %li.categoryTree--item
+            %a{href: '/'} メンズ
+          %li.categoryTree--item
+            %a{href: '/'} ベビー・キッズ
+          %li.categoryTree--item
+            %a{href: '/'} インテリア・住まい・小物
+          %li.categoryTree--item
+            %a{href: '/'} 本・音楽・ゲーム
+          %li.categoryTree--item
+            %a{href: '/'} おもちゃ・ホビー・グッズ
+          %li.categoryTree--item
+            %a{href: '/'} コスメ・香水・美容
+          %li.categoryTree--item
+            %a{href: '/'} 家電・スマホ・カメラ
+          %li.categoryTree--item
+            %a{href: '/'} スポーツ・レジャー
+          %li.categoryTree--item
+            %a{href: '/'} ハンドメイド
+          %li.categoryTree--item
+            %a{href: '/'} チケット
+          %li.categoryTree--item
+            %a{href: '/'} 自動車・オートバイ
+          %li.categoryTree--item
+            %a{href: '/'} その他
+      .brand_box
+        %a{href: '/jp/'} ブランド
+    .header_bottom_left
+      .user_box
+        %button{class: 'new_user_buton',type: 'submit'}ログイン
+        %button{class: 'login_button',type: 'submit'}新規会員登録
+.main
+  .content
+    %h2.content__subtitle
+      %br/
+      人生を変えるフリマアプリ
+    %p.content__text
+      FURIMAはだれでもかんたんに出品・購入できる
+      %br/
+      フリマアプリです
+      .content__btn
+        %a.aBtn{href: '/'}
+          %img{src: '/'}
+        %a.gBtn{href: '/'}
+          %img{src: '/'}
         .picture
-      %section.topIntroduction
         %h2.subtitle
           FURIMAが選ばれる3つの理由
         %ul.lists
           %li.list
             .list__pict
               %span.number 1
-              %img{:src => "#"}/
+              %img{src: '/'}
             %h3.list__text
               %span 3分
               ですぐに出品
@@ -96,7 +74,7 @@
           %li.list
             .list__pict
               %span.number 2
-              %img{:src => "#"}/
+              %img{src: '/'}
             %h3.list__text
               %span シンプル
               で使いやすい
@@ -105,14 +83,12 @@
           %li.list.list--last
             .list__pict
               %span.number 3
-              %img{:src => "#"}/
+              %img{src: '/'}
             %h3.list__text
               手数料
               %span 業界最安
             %p.list__description
-              最大3%でお得に出品&amp;購入！
-      %section.topMiddleDl
-        .topMiddleDl__inner
+              最大3%でお得に出品&購入！
           %h2.subtitle 会員数日本一位
           %p.text
             FURIMAは、フリマアプリで最も人気。
@@ -120,43 +96,38 @@
             出品・購入回数も業界最多です！
             %br/
             ほしかったあの商品に出会えるかもしれません。
-          .btn
-            %a{:href => "#"}
-              %img.aBtn{:src => "#"}/
-            %a{:href => "#"}
-              %img.gBtn{:src => "#"}/
-      %section.topKeyFeatures
+          .content_btn
+            %a{href: '/'}
+              %img.aBtn{src: '/'}
+            %a{href: '/'}
+              %img.gBtn{src: '/'}
         %h2.head FURIMAの特徴
         .items
-          %section.item
-            %figure.item__img
-              %img{:src => "#"}/
+          .item
+            .item__img
+              %img{src: '/'}
             %h3.item__subtitle 簡単に売り買いできる
             %p.item__detail
               スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
-          %section.item
-            %figure.item__img
-              %img{:src => "#"}/
+              %img{src: '/'}
             %h3.item__subtitle 売上金は即日振込みに対応
             %p.item__detail
               午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
-          %section.item
-            %figure.item__img
-              %img{:src => "#"}/
+              %img{src: '/'}
             %h3.item__subtitle 様々な支払いに対応
             %p.item__detail
               お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-      %section.pickupContainer
+        
         %h2.head ピックアップカテゴリー
         .productBox
           .productHead
-            %a{:href => "#"}
+            %a{href: '/'}
               %h3.title 新規投稿商品
           .productLists
             .productList
-              %a{:href => "/products/3"}
+              %a{href: '/products/3'}
                 %figure.productList--img
-                  %img{:src => "#"}/
+                  %img{src: '/'}
                 .productList--body
                   %h3.name product3
                   .details
@@ -167,9 +138,9 @@
                         0
                     %p (税込)
             .productList
-              %a{:href => "/products/2"}
+              %a{href: '/'}
                 %figure.productList--img
-                  %img{:src => "#"}/
+                  %img{src: '/'}
                 .productList--body
                   %h3.name product2
                   .details
@@ -180,9 +151,9 @@
                         0
                     %p (税込)
             .productList
-              %a{:href => "/products/1"}
+              %a{href: '/products/1'}
                 %figure.productList--img
-                  %img{:src => "#"}/
+                  %img{src: '/'}
                 .productList--body
                   %h3.name product1
                   .details
@@ -196,13 +167,13 @@
         %h2.head ピックアップブランド
         .productBox
           .productHead
-            %a{:href => "#"}
+            %a{href: '/'}
               %h3.title アーカイバ
           .productLists
             .productList
-              %a{:href => "/products/3"}
+              %a{href: '/products/3'}
                 %figure.productList--img
-                  %img{:src => "#"}/
+                  %img{src: '/'}
                 .productList--body
                   %h3.name product3
                   .details
@@ -213,9 +184,9 @@
                         0
                     %p (税込)
             .productList
-              %a{:href => "/products/2"}
+              %a{href: '/products/2'}
                 %figure.productList--img
-                  %img{:src => "#"}/
+                  %img{src: "/"}
                 .productList--body
                   %h3.name product2
                   .details
@@ -226,9 +197,9 @@
                         0
                     %p (税込)
             .productList
-              %a{:href => "/products/1"}
+              %a{href: '/products/1'}
                 %figure.productList--img
-                  %img{:src => "#"}/
+                  %img{src: '/'}
                 .productList--body
                   %h3.name product1
                   .details
@@ -243,42 +214,41 @@
         %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
         %p.inner__text 今すぐ無料ダウンロード！
         .inner__icon
-          %a{:href => "#"}
-            %img.linkIcon.aBtn{:src => "#"}/
-          %a{:href => "#"}
-            %img.linkIcon.gBtn{:src => "#"}/
+          %a{href: '/'}
+            %img.linkIcon.aBtn{src: '/'}
+          %a{href: '/'}
+            %img.linkIcon.gBtn{src: '/'}
+.footer
+  %ul.footer__page-footer
+    %li.footer-nav
+      %h2.footer-nav__header FURIMAについて
+      %ul
+        %li
+          %a{href: "#"} 会社概要（運営会社）
+        %li
+          %a{href: "#"} プライバシーポリシー
+        %li
+          %a{href: "#"} FURIMA利用規約
+        %li
+          %a{href: "#"} ポイントに関する特約
 
-  .footer
-    %ul.footer__page-footer
-      %li.footer-nav
-        %h2.footer-nav__header FURIMAについて
-        %ul
-          %li
-            %a{href: "#"} 会社概要（運営会社）
-          %li
-            %a{href: "#"} プライバシーポリシー
-          %li
-            %a{href: "#"} FURIMA利用規約
-          %li
-            %a{href: "#"} ポイントに関する特約
+    %li.footer-nav
+      %h2.footer-nav__header FURIMAを見る
+      %ul
+        %li
+          %a{href: "#"} カテゴリー一覧
+        %li
+          %a{href: "#"} ブランド一覧
 
-      %li.footer-nav
-        %h2.footer-nav__header FURIMAを見る
-        %ul
-          %li
-            %a{href: "#"} カテゴリー一覧
-          %li
-            %a{href: "#"} ブランド一覧
-
-      %li.footer-nav
-        %h2.footer-nav__header ヘルプ＆ガイド
-        %ul
-          %li
-            %a{href: "#"} FURIMAガイド
-          %li
-            %a{href: "#"} FURIMAロゴ利用ガイドライン
-          %li
-            %a{href: "#"} お知らせ
+    %li.footer-nav
+      %h2.footer-nav__header ヘルプ＆ガイド
+      %ul
+        %li
+          %a{href: "#"} FURIMAガイド
+        %li
+          %a{href: "#"} FURIMAロゴ利用ガイドライン
+        %li
+          %a{href: "#"} お知らせ
 
     .footer__logo
       %a{href: "#"}
