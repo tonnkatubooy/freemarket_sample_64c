@@ -94,16 +94,40 @@ input, select {
 }
 
 // ここより上がリセットscss
+@mixin must_mark{
+  background: #3CCACE;
+            color: white;
+            width: 50px;   
+            border-radius: 5px;
+            margin: 0 ;
+            margin-left: 10px;
+}
 
+@mixin submit{
+  color: white;
+      width: 250px;
+      height: 30px;
+      background-color: #3CCACE;
+      border-radius: 5px;
+      font-size: 15px;
+      &:hover{
+        opacity: 50%;
+      }
+}
 
 html{
+  
   background-color: whitesmoke;
 
   body{
     text-align: center;
-    margin:100px 50px ;
+    margin:100px 200px ;
     background-color: white;
-  
+    
+    img{
+      width: 200px;
+      height: 100px;
+    }
     
     h2{
       font-size: 20px;
@@ -115,18 +139,12 @@ html{
     form{
       margin-top: 50px;
       .field{
-        margin: 20px;
-        .nickname_must{
+        margin: 35px;
+        .content_must{
           display: flex;
           justify-content: center;
-          // margin-left: -100px;
          .must{
-            background: green;
-           color: white;
-            width: 50px;   
-           border-radius: 5px;
-            margin: 0 ;
-           margin-left: 10px;
+            @include must_mark;
          }
         }
       }
@@ -136,10 +154,7 @@ html{
       margin: 30px;
     }
 
-    .login{
-      margin-bottom: 30px;
-      font-size: 20px;
-    }
+    
     #user_nickname, #user_password, #user_email,
     #user_password_confirmation, #user_first_name_kana, 
     #user_last_name_kana, #user_first_name, #user_last_name{
@@ -151,14 +166,27 @@ html{
     #user_birthday_1i, #user_birthday_2i, #user_birthday_3i{
       height: 30px;
       width: 70px;
-
+      font-size: 15px;
+    }
+    
+    .submit-btn{
+      @include submit;
     }
 
+    .login{
+      margin-bottom: 30px;
+    }
   }
 }
 
 
+.forget_password{
+  margin: 30px;
+}
 
+.new_user{
+  margin: 30px;
+}
 
 
 

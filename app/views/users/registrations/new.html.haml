@@ -2,30 +2,42 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
-    %div{class: 'nickname_must'}
+    %div{class: 'content_must'}
       = f.label :nickname,"ニックネーム"
       %p{class:'must'}
         必須
     %br/
     = f.text_field :nickname, autofocus: true, placeholder: "例)フリマ太郎"
   .field
-    = f.label :email,"メールアドレス"
+    %div{class: 'content_must'}
+      = f.label :email,"メールアドレス"
+      %p{class:'must'}
+        必須
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
   .field
-    = f.label :password
-    - if @minimum_password_length
-      -# %em
-      -#   (#{@minimum_password_length} characters minimum)
+    %div{class: 'content_must'}
+      = f.label :password
+      %p{class:'must'}
+        必須
+    -# - if @minimum_password_length
+    -#   %em
+    -#     (#{@minimum_password_length} characters minimum)
     %br/
     = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
   .field
-    = f.label :password_confirmation
+    %div{class: 'content_must'}
+      = f.label :password_confirmation
+      %p{class:'must'}
+        必須
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワードを再入力してください"
   %p 本人確認情報
   .field
-    = f.label :名字（かな）
+    %div{class: 'content_must'}
+      = f.label :名字（かな）
+      %p{class:'must'}
+        必須
     %br/
     = f.text_field :first_name_kana,placeholder: "ふりま"
     %br/ 
@@ -33,7 +45,10 @@
     %br/
     = f.text_field :last_name_kana,placeholder: "じろう"
   .field
-    = f.label :名字
+    %div{class: 'content_must'}
+      = f.label :名字
+      %p{class:'must'}
+        必須
     %br/
     = f.text_field :first_name,placeholder: "浮利馬"
     %br/
@@ -51,6 +66,6 @@
   -#   = f.label :名前
   .actions
     %div{class: 'signup'}
-      = f.submit "サインアップ"
+      = f.submit "サインアップ", class: 'submit-btn'
 = render "users/shared/links"
 
