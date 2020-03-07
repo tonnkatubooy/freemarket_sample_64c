@@ -1,0 +1,46 @@
+.header
+  .header_top
+    .header_title
+      = image_tag "logo.png",size: "150x40"
+    .header_searchBox
+      %form{action: "/jp/search",class:"form"}
+        %input{type:"serch",name:"keyword",placeholder:"キーワードから探す",class:"search-box"}
+          %button.search_button
+          = image_tag 'icon-search 1.png'
+  .header_bottom
+    .header_bottom-left
+      .category_box
+        %a{href: '/jp/'} カテゴリー
+        %ul.categoryTree
+          %li.categoryTree--item
+            %a{href: '/'} レディース
+          %li.categoryTree--item
+            %a{href: '/'} メンズ
+          %li.categoryTree--item
+            %a{href: '/'} ベビー・キッズ
+          %li.categoryTree--item
+            %a{href: '/'} インテリア・住まい・小物
+          %li.categoryTree--item
+            %a{href: '/'} 本・音楽・ゲーム
+          %li.categoryTree--item
+            %a{href: '/'} おもちゃ・ホビー・グッズ
+          %li.categoryTree--item
+            %a{href: '/'} コスメ・香水・美容
+          %li.categoryTree--item
+            %a{href: '/'} 家電・スマホ・カメラ
+          %li.categoryTree--item
+            %a{href: '/'} スポーツ・レジャー
+          %li.categoryTree--item
+            %a{href: '/'} ハンドメイド
+          %li.categoryTree--item
+            %a{href: '/'} チケット
+          %li.categoryTree--item
+            %a{href: '/'} 自動車・オートバイ
+          %li.categoryTree--item
+            %a{href: '/'} その他
+      .brand_box
+        %a{href: '/jp/'} ブランド
+    .header_bottom-right
+      .user_box
+        %button{class: 'new_user_buton',type: 'submit'}ログイン
+        %button{class: 'login_button',type: 'submit'}新規会員登録
