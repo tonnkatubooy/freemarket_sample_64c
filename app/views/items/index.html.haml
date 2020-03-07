@@ -1,14 +1,13 @@
 .header
   .header_top
     .header_title
-      %a{href: '/jp/'} FRIMA
-      %imag{src: '/'}
-    .header_search_box
+      = image_tag "logo.png",size: "150x40"
+    .header_searchBox
       %form{action: "/jp/search",class:"form"}
         %input{type:"serch",name:"keyword",placeholder:"キーワードから探す",class:"search-box"}
           %button.search_button
   .header_bottom
-    .header_bottom_right
+    .header_bottom-right
       .category_box
         %a{href: '/jp/'} カテゴリー
         %ul.categoryTree
@@ -40,12 +39,13 @@
             %a{href: '/'} その他
       .brand_box
         %a{href: '/jp/'} ブランド
-    .header_bottom_left
+    .header_bottom-left
       .user_box
         %button{class: 'new_user_buton',type: 'submit'}ログイン
         %button{class: 'login_button',type: 'submit'}新規会員登録
 .main
   .content
+    = image_tag "bg-mainVisual-pict_pc.jpg", size: "1000x500"
     %h2.content__subtitle
       %br/
       人生を変えるフリマアプリ
@@ -65,7 +65,7 @@
           %li.list
             .list__pict
               %span.number 1
-              %img{src: '/'}
+              %img{src: 'assets/pict-reason-01.jpg',width: '200px', height: '200px'}
             %h3.list__text
               %span 3分
               ですぐに出品
@@ -74,7 +74,7 @@
           %li.list
             .list__pict
               %span.number 2
-              %img{src: '/'}
+              %img{src: 'assets/pict-reason-02.jpg', width: '200px', height: '200px'}
             %h3.list__text
               %span シンプル
               で使いやすい
@@ -83,7 +83,7 @@
           %li.list.list--last
             .list__pict
               %span.number 3
-              %img{src: '/'}
+              %img{src: 'assets/pict-reason-03.jpg', width: '200px', height: '200px'}
             %h3.list__text
               手数料
               %span 業界最安
@@ -126,9 +126,8 @@
           .productLists
             .productList
               %a{href: '/products/3'}
-                %figure.productList--img
-                  %img{src: '/'}
-                .productList--body
+                %img{src: '/'}
+                .productList--img
                   %h3.name product3
                   .details
                     %ul
@@ -139,9 +138,8 @@
                     %p (税込)
             .productList
               %a{href: '/'}
-                %figure.productList--img
-                  %img{src: '/'}
-                .productList--body
+                %img{src: '/'}
+                .productList--img
                   %h3.name product2
                   .details
                     %ul
@@ -152,9 +150,8 @@
                     %p (税込)
             .productList
               %a{href: '/products/1'}
-                %figure.productList--img
-                  %img{src: '/'}
-                .productList--body
+                %img{src: '/'}
+                .productList--img
                   %h3.name product1
                   .details
                     %ul
@@ -172,9 +169,8 @@
           .productLists
             .productList
               %a{href: '/products/3'}
-                %figure.productList--img
-                  %img{src: '/'}
-                .productList--body
+                %img{src: '/'}
+                .productList--img
                   %h3.name product3
                   .details
                     %ul
@@ -185,9 +181,8 @@
                     %p (税込)
             .productList
               %a{href: '/products/2'}
-                %figure.productList--img
-                  %img{src: "/"}
-                .productList--body
+                %img{src: "/"}
+                .productList--img
                   %h3.name product2
                   .details
                     %ul
@@ -198,9 +193,8 @@
                     %p (税込)
             .productList
               %a{href: '/products/1'}
-                %figure.productList--img
-                  %img{src: '/'}
-                .productList--body
+                %img{src: '/'}
+                .productList--img
                   %h3.name product1
                   .details
                     %ul
@@ -257,4 +251,4 @@
     %a{href: "#"}
       .Exhibition-Btn
         %span.Exhibition-Btn__text 出品する
-        %img.Exhibition-Btn__icon{src: "assets/icon_camera.png"}/
+        %img.Exhibition-Btn__icon{src: "assets/icon_camera.png"}
