@@ -8,7 +8,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-  %img(src="http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
+    = image_tag "logo.png"
     - flash.each do |name, msg|
       = content_tag :div, msg, id: "flash_#{name}" if msg.is_a?(String)
     = yield

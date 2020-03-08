@@ -24,7 +24,7 @@
     -#   %em
     -#     (#{@minimum_password_length} characters minimum)
     %br/
-    = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
+    = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上"
   .field
     %div{class: 'content_must'}
       = f.label :password_confirmation
@@ -39,31 +39,27 @@
       %p{class:'must'}
         必須
     %br/
-    = f.text_field :first_name_kana,placeholder: "ふりま"
+    = f.text_field :last_name_kana,placeholder: "ふりま"
     %br/ 
     = f.label :名前（かな）
     %br/
-    = f.text_field :last_name_kana,placeholder: "じろう"
+    = f.text_field :first_name_kana,placeholder: "じろう"
   .field
     %div{class: 'content_must'}
       = f.label :名字
       %p{class:'must'}
         必須
     %br/
-    = f.text_field :first_name,placeholder: "浮利馬"
+    = f.text_field :last_name,placeholder: "浮利馬"
     %br/
     = f.label :名前
     %br/
-    = f.text_field :last_name,placeholder: "二郎"
+    = f.text_field :first_name,placeholder: "二郎"
   .field
     = f.label :生年月日
-    = f.date_select :birthday, use_month_numbers: true
+    = f.date_select :birthday, use_month_numbers: true,
+      start_year: 1920, end_year: (Time.now.year)
     %br/
-  -# .field
-  -#   = f.label :名字
-  -#   %br/
-  -#   = f.text_field :phone_number
-  -#   = f.label :名前
   .actions
     %div{class: 'signup'}
       = f.submit "サインアップ", class: 'submit-btn'
