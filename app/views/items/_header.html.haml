@@ -6,7 +6,9 @@
       %form{action: "/jp/search",class:"form"}
         %input{type:"serch",name:"keyword",placeholder:"キーワードから探す",class:"search-box"}
           %button.search_button
-          = image_tag 'icon-search 1.png'
+            .search_button_icon
+              %a{href:"#"} 
+              = image_tag 'icon-search 1.png'
   .header_bottom
     .header_bottom-left
       .category_box
@@ -42,5 +44,5 @@
         %a{href: '/jp/'} ブランド
     .header_bottom-right
       .user_box
-        %button{class: 'new_user_buton',type: 'submit'}ログイン
-        %button{class: 'login_button',type: 'submit'}新規会員登録
+        %a{href:"#",class: 'new_user_buton',type: 'submit'}ログイン
+        %a{href:"#",class: 'login_button',type: 'submit'}新規会員登録

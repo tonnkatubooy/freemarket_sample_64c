@@ -2,10 +2,29 @@
   .content{
     width: 100%;
     height: 600px;
+    align-items: center;
+    background-image: url(/assets/bg-mainVisual-pict_pc.jpg);
     background-size: cover;
     position: relative;
-    align-items: center;
-   }
+    &__subtitle{
+      width: 100%;
+      position: absolute;
+      margin: 0 auto;
+      text-align: center;
+      .content__heading {
+        color: #fff;
+        font-size: 60px;
+      }
+      .content__text{
+        color: #fff;
+        font-size: 20px;
+        margin-top: 20px;
+      }
+      .concent__btn{
+        display: flex;
+      }
+     } 
+    }
 
   .Explanation{
     padding: 60px 20px;
@@ -14,6 +33,15 @@
      text-align: center;
      font-size: 30px;
      font-weight: bold;
+     &::after{
+      content: '';
+      width: 70px;
+      height: 5px;
+      background-color: #3CCACE;
+      margin-bottom: 0;
+      display: block;
+      margin: 0 auto;
+     }
     }
     .lists{
       display: flex;
@@ -43,6 +71,26 @@
       }
     }
   }
+
+  .middle__content{
+    height: 400px;
+    align-items: center;
+    &__inner{
+      width: 100%;
+    }
+    .subtitle{
+      font-size: 30px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .text{
+      font-size: 20px;
+      color: #fff;
+    }
+   &__btn{
+     display: flex;
+   }
+  }
   .concept{
     margin-top: 50px;
     padding: 60px  80px;
@@ -50,6 +98,15 @@
       text-align: center;
       font-size: 30px;
       font-weight: bold;
+      &::after{
+        content: '';
+        width: 70px;
+        height: 5px;
+        background-color: #3CCACE;
+        margin-bottom: 0;
+        display: block;
+        margin: 0 auto;
+       }
     }
     .items{
       display: flex;
@@ -113,11 +170,28 @@
         margin: 30px 0;
         .productList{
           width: 200px;
-  
-        }
+       }
       }
      }
    }
+  .appBanner{
+    position: relative;
+    padding: 100px 40px;
+    .inner{
+      color: #fff;
+      &__title{
+        font-size: 25px;
+        font-weight: bold;
+      }
+      &__text {
+        font-size: 35px;
+      }
+      &__icon{
+        margin-top: 10px;
+        display: flex;
+      }
+    }
+  }
 
 
 

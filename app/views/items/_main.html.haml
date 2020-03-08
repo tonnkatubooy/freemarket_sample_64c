@@ -1,18 +1,18 @@
 .main  
   .content
-    = image_tag "bg-mainVisual-pict_pc.jpg", size: "1000x500"
-    %h2.content__subtitle
-    %br/
-    人生を変えるフリマアプリ
-    %p.content__text
-    FURIMAはだれでもかんたんに出品・購入できる
-    %br/
-    フリマアプリです
-    .content__btn
-      %a.aBtn{href: '/'}
-    %img{src: '/'}
-      %a.gBtn{href: '/'}
-    %img{src: '/'}
+    .content__subtitle
+      %h2.content__heading
+        %br/
+        人生を変えるフリマアプリ
+      %p.content__text
+        FURIMAはだれでもかんたんに出品・購入できる
+        %br/
+        フリマアプリです
+      .content__btn
+        %a.aBtn{href: '/'}
+        = image_tag "Download_on_the_App_Store_Badge_US-UK_blk_092917.eps"
+        %a.gBtn{href: '/'}
+        = image_tag "google-play-badge.png"
 
 
   .Explanation
@@ -46,19 +46,19 @@
         %h3.list__text
           手数料
           %span 業界最安
-
-
         %p.list__description
           最大3%でお得に出品&購入！
-      %h2.subtitle 会員数日本一位
-      %p.text
-        FURIMAは、フリマアプリで最も人気。
-      %br/
-      出品・購入回数も業界最多です！
-      %br/
-      ほしかったあの商品に出会えるかもしれません。
 
-    .content_btn
+  .middle__content
+    .middle__content__inner    
+    %h2.subtitle 会員数日本一位
+    %p.text
+      FURIMAは、フリマアプリで最も人気。
+    %br/
+    出品・購入回数も業界最多です！
+    %br/
+    ほしかったあの商品に出会えるかもしれません。
+    .middle__content_btn 
     %a{href: '/'}
     %img.aBtn{src: '/'}
     %a{href: '/'}
@@ -179,7 +179,7 @@
             0
             %p (税込)
 
-  %aside.appBanner
+  .appBanner
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
       %p.inner__text 今すぐ無料ダウンロード！
