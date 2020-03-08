@@ -27,6 +27,22 @@ $selection-color:#3CCACE;
       }
       .concent__btn{
         display: flex;
+        .AppBtn{
+          width: 180px;
+          img{
+            width: 100%;
+            height: 50px;
+            object-fit: cover;
+          }
+        }
+        .GooBtn{
+          width: 180px;
+          img{
+            width: 100%;
+            height: 50px;
+            object-fit: cover;
+          }
+        }
       }
      } 
     }
@@ -203,9 +219,24 @@ $selection-color:#3CCACE;
       &__icon{
         margin-top: 10px;
         display: flex;
-        img{
-          height: 80px;
-          width: 200px;
+        width: 100%;
+        .AppBtn{
+          width: 180px;
+          display: inline-block;
+          img{
+            width: 100%;
+            height: 50px;
+            object-fit: cover;
+          }
+        }
+        .GooBtn{
+          display: inline-block;
+          width: 180px;
+          img{
+            width: 100%;
+            height: 50px;
+            object-fit: cover;
+          }
         }
       }
     }
