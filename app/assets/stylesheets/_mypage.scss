@@ -17,7 +17,7 @@
     
 
     .side{
-    //サイドメニューの設定
+    //サイドバーの設定
     float: left;
     width: 280px;
     height: 1252px;
@@ -25,7 +25,7 @@
     padding-left: 200px;
     
       .mypage-nav{
-     
+        //サイドメニューの設定
 
         &__head{
           padding-top: 20px;
@@ -33,11 +33,13 @@
         }
         
         &__list li{
+          //メニューの枠組み
           border-top: solid 1px #eee;
 
         }
      
         &__list-item{
+          //メニューアイテム
           box-sizing: border-box;
           position: relative;
           display: block;
@@ -87,6 +89,7 @@
       font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
       padding-right: 200px;
       .mypage-user-icon{
+      //ユーザー写真
         
         background-color: pink;
         height: 200px;
@@ -113,8 +116,8 @@
         
         .mypage{
             &--tabs{
-              //やることリスト
-              //お知らせ
+              //・やることリスト
+              //・お知らせ
               font-weight: bold;
               background-color: #fff;
               float: right;
@@ -143,7 +146,7 @@
         .tab-content{
           .mypage-item-list{
             .mypage-go-list{
-              //一覧を見る
+              //・一覧を見る
               background-color: blue;
               width: 700px;
               height: 100px;
@@ -152,7 +155,7 @@
               justify-content: center;
             }
             .mypage-item-not-found{
-              //やすことがない際に表示される
+              //やることがない際に表示される
               background-color: red;
               text-align: center;
             }
@@ -171,13 +174,13 @@
         .mypage{
           
           &--tab-head{
-            //購入した商品
+            //・購入した商品
             font-weight: bold;
             background-color: #fff;
           }
             &--tabs{
-              //取引中
-              //過去の取引
+              //・取引中
+              //・過去の取引
               font-weight: bold;
               background-color: #fff;
               float: left;
@@ -205,9 +208,14 @@
         }
         .tab-content{
           .mypage-item-list{
+            // & li{
+            //   width: 700px;
+            //   height: 50px;
+            //   border: solid 1px;
+            // }
 
               .mypage-go-list{
-                //一覧を見る
+                //・一覧を見る
                 background-color: blue;
                 width: 700px;
                 height: 100px;
