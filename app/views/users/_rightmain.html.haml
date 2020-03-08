@@ -1,0 +1,29 @@
+.content
+  .mypage-user-icon
+  .mypage-table-container-notification-todo
+    %li.mypage--tabs
+      お知らせ
+    %li.mypage--tabs
+      やることリスト
+    .tab-content
+      .mypage-item-list
+        .mypage-go-list
+          = link_to('一覧を見る', {})
+      .mypage-item-list
+        .mypage-item-not-found
+          現在やるべきことはありません
+  
+  .mypage-tab-container
+    .mypage--tab-head
+      購入した商品
+    %li.mypage--tabs
+      取引中
+    %li.mypage--tabs
+      過去の取引
+    .tab-content
+      .mypage-item-list
+        .mypage-go-list
+          = link_to('一覧を見る', {})
+      .mypage-item-list
+        .mypage-item-not-found
+          現在やるべきことはありません
