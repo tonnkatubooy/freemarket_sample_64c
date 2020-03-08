@@ -33,28 +33,34 @@
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワードを再入力してください"
   %p 本人確認情報
-  .field
-    %div{class: 'content_must'}
-      = f.label :名字（かな）
-      %p{class:'must'}
-        必須
-    %br/
-    = f.text_field :last_name_kana,placeholder: "ふりま"
-    %br/ 
-    = f.label :名前（かな）
-    %br/
-    = f.text_field :first_name_kana,placeholder: "じろう"
-  .field
-    %div{class: 'content_must'}
-      = f.label :名字
-      %p{class:'must'}
-        必須
-    %br/
-    = f.text_field :last_name,placeholder: "浮利馬"
-    %br/
-    = f.label :名前
-    %br/
-    = f.text_field :first_name,placeholder: "二郎"
+  .field{class: 'form_name_kana'}
+    %div{class: 'form_last_name_kana'}
+      %div{class: 'content_must'}
+        = f.label :名前かな（全角）
+        %p{class:'must'}
+          必須
+      %br/
+      %div{class: 'forms_kana'}
+        = f.text_field :last_name_kana,placeholder: "姓:例)ふりま"
+        %br/
+        %div{class: 'form_first_name_kana'}  
+          -# = f.label :名かな（全角）
+          %br/
+          = f.text_field :first_name_kana,placeholder: "名:例)じろう"
+  .field{class: 'form_name'}
+    %div{class: 'form_last_name'}
+      %div{class: 'content_must'}
+        = f.label :名前（全角）
+        %p{class:'must'}
+          必須
+      %br/
+      %div{class: 'forms_name'}
+        = f.text_field :last_name,placeholder: "姓:例)浮利馬"
+        %br/
+        %div{class: 'form_first_name'}  
+          -# = f.label :名（全角）
+          %br/
+          = f.text_field :first_name,placeholder: "名:例)二郎"
   .field
     = f.label :生年月日
     = f.date_select :birthday, use_month_numbers: true,

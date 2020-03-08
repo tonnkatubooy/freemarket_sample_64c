@@ -146,8 +146,27 @@ html{
             @include must_mark;
          }
         }
+        .forms_kana, .forms_name{
+          display: flex;
+        }
+      }
+      .form_name_kana, .form_name{
+        display: flex;
+        justify-content: center;
+        #user_last_name_kana, #user_last_name{
+          width: 140px;
+          margin-right: 19px;
+        }
+        #user_first_name_kana, #user_first_name{
+          margin-top: -15px;
+          width: 140px;
+          margin-left: 19px;
+        }
+
+        
       }
     }
+
     
     .signup{
       margin: 30px;
@@ -158,13 +177,13 @@ html{
     #user_password_confirmation, #user_first_name_kana, 
     #user_last_name_kana, #user_first_name, #user_last_name{
     height: 30px;
-    width: 250px;
+    width: 330px;
     border-radius: 5px;
     }
 
     #user_birthday_1i, #user_birthday_2i, #user_birthday_3i{
       height: 30px;
-      width: 70px;
+      width: 80px;
       font-size: 15px;
     }
     
