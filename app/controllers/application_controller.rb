@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :first_name_kana, :last_name_kana, :first_name, :last_name, :birthday, :phone_number])
     # devise_parameter_sanitizer.permit(:account_update, key: [:nickname, :first_name, :last_name, :first_name_kana, :last_name_kana, :birthday, :phone_number, :introduction])
   end
+  before_action :basic_auth
+
+  private
+
+  def basic_auth
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
+    end
 end
