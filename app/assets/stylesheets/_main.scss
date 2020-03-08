@@ -1,3 +1,8 @@
+/*変数定義*/
+$selection-color:#3CCACE;
+
+
+
 .main{
   .content{
     width: 100%;
@@ -37,7 +42,7 @@
       content: '';
       width: 70px;
       height: 5px;
-      background-color: #3CCACE;
+      background-color: $selection-color;
       margin-bottom: 0;
       display: block;
       margin: 0 auto;
@@ -63,32 +68,40 @@
             top: 0;
             left: 0;
             font-size: 30px;
-            background-color: #3CCACE;
+            background-color: $selection-color;
             color: white;
             width: 50px;
            }  
          }  
-      }
-    }
-  }
+       }
+     }
+   }
 
   .middle__content{
     height: 400px;
     align-items: center;
+    background-image: url(/assets/bg-topMiddleDl-pict-5042a3aa7eef6dd93330080028e3a781daf47c390c00a4fb5d7e7b06caae68c9.jpg);
+    background-position: center;
     &__inner{
       width: 100%;
+      .text{
+        font-size: 20px;
+        color: #fff;
+      }
     }
     .subtitle{
       font-size: 30px;
       font-weight: bold;
       color: #fff;
+      margin-bottom: 20px;
+      padding-top: 10px;
     }
-    .text{
-      font-size: 20px;
-      color: #fff;
-    }
-   &__btn{
+   &_btn{
      display: flex;
+     img{
+      height: 80px;
+      width: 200px;
+    }
    }
   }
   .concept{
@@ -102,7 +115,7 @@
         content: '';
         width: 70px;
         height: 5px;
-        background-color: #3CCACE;
+        background-color:$selection-color; 
         margin-bottom: 0;
         display: block;
         margin: 0 auto;
@@ -133,8 +146,7 @@
     .productHead{
       text-align: center;
       font-size: 30px;
-      color: #3CCACE;
-      font-weight: bold;
+      color:$selection-color;      font-weight: bold;
      }
     .productLists{
       display: flex;
@@ -148,7 +160,7 @@
    }
   }
 
-  .pickupContainer{
+  .recommendBrand{
     padding: 80px;
     background-color: #f8f8f8;
     .head{
@@ -161,8 +173,7 @@
       .productHead{
         text-align: center;
         font-size: 30px;
-        color: #3CCACE;
-        font-weight: bold;
+        color: $selection-color;        font-weight: bold;
        }
       .productLists{
         display: flex;
@@ -174,9 +185,12 @@
       }
      }
    }
-  .appBanner{
+  .sideBar{
     position: relative;
     padding: 100px 40px;
+    background-image: url(/assets/bg-appBanner-pict-ce684a4c4d5fa2da43c30a3839923591af75a642a3a906ad975065771ef3d72f.jpg);
+    background-size: cover;
+    background-position: center;
     .inner{
       color: #fff;
       &__title{
@@ -189,6 +203,10 @@
       &__icon{
         margin-top: 10px;
         display: flex;
+        img{
+          height: 80px;
+          width: 200px;
+        }
       }
     }
   }

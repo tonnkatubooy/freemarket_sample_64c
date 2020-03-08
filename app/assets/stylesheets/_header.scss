@@ -1,6 +1,9 @@
+/*変数定義*/
+$black-color:#333;
+
 .header{
   padding: 0 60px; 
-   &_top{
+   &__top{
      width: 100%;
      max-width: 1100px;
      height: 50px;
@@ -10,10 +13,10 @@
      text-align: center;
      position: relative;
     }
-    &_title{
+    &__title{
       margin-right: 30px;
     }
-    &_searchBox{
+    &__searchBox{
       width: 100%;
       margin: 0 auto;
       form{
@@ -24,10 +27,10 @@
       .search-box{
         width: 100%;
        }
-      .search_button{
+      .search__button{
        width: 35px;
        background-color: #3CCACE;
-       &_icon{
+       &__icon{
         padding: 8;
        }
       }
@@ -37,12 +40,13 @@
      }
     }
    }
-   &_bottom{
+   
+   &__bottom{
      display: flex; 
     &-left{
      display: flex;
-     }
-    .category_box{
+     }                  
+    .categoryBox{
      display: flex;
      flex-direction: column;
      a{
@@ -53,7 +57,7 @@
     .brand_box{
       a{
        text-decoration: none;
-       color: #333;
+       color: $black-color;
       }
     }
     &-right{
@@ -61,6 +65,7 @@
       margin-left: auto;
       .user_box a{
        text-decoration: none;
+       color: $black-color;
       }
     }
    } 

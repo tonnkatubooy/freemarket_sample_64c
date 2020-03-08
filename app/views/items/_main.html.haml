@@ -9,10 +9,10 @@
         %br/
         フリマアプリです
       .content__btn
-        %a.aBtn{href: '/'}
-        = image_tag "Download_on_the_App_Store_Badge_US-UK_blk_092917.eps"
-        %a.gBtn{href: '/'}
-        = image_tag "google-play-badge.png"
+        %a.AppBtn{href: '/'}
+          = image_tag ""
+        %a.GooBtn{href: '/'}
+          = image_tag "google-play-badge.png"
 
 
   .Explanation
@@ -51,18 +51,18 @@
 
   .middle__content
     .middle__content__inner    
-    %h2.subtitle 会員数日本一位
-    %p.text
-      FURIMAは、フリマアプリで最も人気。
-    %br/
-    出品・購入回数も業界最多です！
-    %br/
-    ほしかったあの商品に出会えるかもしれません。
+      %h2.subtitle 会員数日本一位
+      %p.text
+        FURIMAは、フリマアプリで最も人気。
+        %br/
+        出品・購入回数も業界最多です！
+        %br/
+        ほしかったあの商品に出会えるかもしれません。
     .middle__content_btn 
-    %a{href: '/'}
-    %img.aBtn{src: '/'}
-    %a{href: '/'}
-    %img.gBtn{src: '/'}
+      = link_to ""
+      = image_tag ""
+      = link_to ""
+      = image_tag "google-play-badge.png"
 
 
   .concept 
@@ -92,12 +92,12 @@
     %h2.head ピックアップカテゴリー
     .productBox
       .productHead
-        %a{href: '/'}
+        = link_to ""
         %h3.title 新規投稿商品
       .productLists
         .productList
           %a{href: '/products/3'}
-          %img{src: '/'}
+          %img{src: 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png'}
           .productList--img
           %h3.name product3
           .details
@@ -109,8 +109,8 @@
               %p (税込)
 
         .productList
-          %a{href: '/'}
-          %img{src: '/'}
+          = link_to ""
+          %img{src: 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png'}
           .productList--img
           %h3.name product2
           .details
@@ -122,7 +122,7 @@
               %p (税込)
         .productList
           %a{href: '/products/1'}
-          %img{src: '/'}
+          %img{src: 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'}
             .productList--img
               %h3.name product1
             .details
@@ -134,52 +134,52 @@
                   %p (税込)
 
 
-  .pickupContainer
+  .recommendBrand
     %h2.head ピックアップブランド
     .productBox
       .productHead
-        %a{href: '/'}
+        = link_to ""
         %h3.title アーカイバ
       .productLists
         .productList
           %a{href: '/products/3'}
-          %img{src: '/'}
+          %img{src: 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png'}
           .productList--img
-        %h3.name product3
-        .details
-          %ul
-            %li 30000円
-            %li
-            %i.fa.fa-star.likeIcon
-            0
-            %p (税込)
+          %h3.name product3
+          .details
+            %ul
+              %li 30000円
+              %li
+              %i.fa.fa-star.likeIcon
+              0
+              %p (税込)
 
         .productList
           %a{href: '/products/2'}
-            %img{src: "/"}
+            %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"}
             .productList--img
-        %h3.name product2
-        .details
-          %ul
-            %li 20000円
-            %li
-            %i.fa.fa-star.likeIcon
-            0
-            %p (税込)
+          %h3.name product2
+          .details
+            %ul
+              %li 20000円
+              %li
+              %i.fa.fa-star.likeIcon
+              0
+              %p (税込)
         .productList
           %a{href: '/products/1'}
-            %img{src: '/'}
+            %img{src: 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'}
             .productList--img
-        %h3.name product1
-        .details
-          %ul
-            %li 10000円
-            %li
-            %i.fa.fa-star.likeIcon
-            0
-            %p (税込)
+          %h3.name product1
+          .details
+            %ul
+              %li 10000円
+              %li
+                %i.fa.fa-star.likeIcon
+                0
+                %p (税込)
 
-  .appBanner
+  .sideBar
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
       %p.inner__text 今すぐ無料ダウンロード！
@@ -187,4 +187,4 @@
         %a{href: '/'}
           %img.linkIcon.aBtn{src: '/'}
         %a{href: '/'}
-          %img.linkIcon.gBtn{src: '/'}
+        = image_tag "google-play-badge.png"
