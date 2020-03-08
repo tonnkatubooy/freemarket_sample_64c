@@ -9,7 +9,6 @@ listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
 pid "#{app_path}/shared/tmp/pids/unicorn.pid"
 stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
 stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
-
 timeout 60
 
 #以下は応用的な設定なので説明は割愛
