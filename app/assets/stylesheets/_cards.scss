@@ -1,14 +1,41 @@
-.card-list-box{
+.card-box{
   width: 700px;
   height: 350px;
   background: #fff;
   float: right;
-  margin: 35px 85px 0 0;
+  margin: 35px 130px 0 0;
   &__header{
     font-size: 24px;
     font-family: monospace;
     text-align: center;
     border-bottom:solid 2px #3CCACE;
     padding: 10px;
+  }
+  &__list{
+    width: 60%;
+    margin: 60px auto 15px;
+  }
+  &__btn{
+    width: 60%;
+    margin: 0 auto 15px;
+    background-color:#3CCACE;
+    text-align: center;
+    padding: 15px 0;
+    a{
+      color: white;
+      text-decoration: none;
+    }
+  }
+  &__underline{
+    width: 80%;
+    margin: 30px auto 15px;
+    border-bottom: solid 1px #3CCACE;
+  }
+  &__payment{
+    font-size: 14px;
+    color:#3CCACE;
+    width: 80%;
+    margin: 0 auto 15px;
+    text-align: right;
   }
 }
