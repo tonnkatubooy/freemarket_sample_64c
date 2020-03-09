@@ -1,6 +1,14 @@
 .card-list-box{
   width: 700px;
   height: 350px;
-  background-color: gray;
+  background: #fff;
   float: right;
+  margin: 35px 85px 0 0;
+  &__header{
+    font-size: 24px;
+    font-family: monospace;
+    text-align: center;
+    border-bottom:solid 2px #3CCACE;
+    padding: 10px;
+  }
 }
