@@ -1,5 +1,18 @@
 /*変数定義*/
 $selection-color:#3CCACE;
+$general-size:30px;
+@mixin bottomline(){
+  &::after{
+    content: '';
+    width: 70px;
+    height: 5px;
+    margin-bottom: 0;
+    display: block;
+    margin: 0 auto;
+    background-color:$selection-color;
+   }
+  }
+
 
 
 
@@ -50,17 +63,9 @@ $selection-color:#3CCACE;
     margin-top: 50px;
     .subtitle{
      text-align: center;
-     font-size: 30px;
+     font-size: $general-size;
      font-weight: bold;
-     &::after{
-      content: '';
-      width: 70px;
-      height: 5px;
-      background-color: $selection-color;
-      margin-bottom: 0;
-      display: block;
-      margin: 0 auto;
-     }
+     @include bottomline();
     }
     .lists{
       display: flex;
@@ -81,7 +86,7 @@ $selection-color:#3CCACE;
             position: absolute; 
             top: 0;
             left: 0;
-            font-size: 30px;
+            font-size: $general-size;
             background-color: $selection-color;
             color: white;
             width: 50px;
@@ -104,7 +109,7 @@ $selection-color:#3CCACE;
       }
     }
     .subtitle{
-      font-size: 30px;
+      font-size: $general-size;
       font-weight: bold;
       color: #fff;
       margin-bottom: 20px;
@@ -119,18 +124,11 @@ $selection-color:#3CCACE;
     padding: 60px  80px;
     .head{
       text-align: center;
-      font-size: 30px;
-      font-weight: bold;
-      &::after{
-        content: '';
-        width: 70px;
-        height: 5px;
-        background-color:$selection-color; 
-        margin-bottom: 0;
-        display: block;
-        margin: 0 auto;
-       }
-    }
+      font-size: $general-size;
+      font-weight: bold;    
+      @include bottomline();
+      }
+     }
     .items{
       display: flex;
       width: 1000px;
@@ -138,7 +136,7 @@ $selection-color:#3CCACE;
       margin-top: 20px;
       .item{
         width: calc(1/3 *100%);
-        margin-right: 30px;
+        margin-right: $general-size;
         .item__subtitle{
           font-weight: bold;
           font-size: 20px;
@@ -152,20 +150,20 @@ $selection-color:#3CCACE;
     background-color: #f8f8f8;
    .head{
     text-align: center;
-    font-size: 30px;
+    font-size: $general-size;
     font-weight: bold;
    }
    .productBox{
     .productHead{
       text-align: center;
-      font-size: 30px;
+      font-size: $general-size;
       color:$selection-color;     
       font-weight: bold;
      }
     .productLists{
       display: flex;
       justify-content: space-around;
-      margin: 30px 0;
+      margin: $general-size 0;
       width: 800px;
       margin: 0 auto;
       .productList{
@@ -181,21 +179,21 @@ $selection-color:#3CCACE;
     background-color: #f8f8f8;
     .head{
       text-align: center;
-      font-size: 30px;
+      font-size: $general-size;
       font-weight: bold;
      }
      .productBox{
        margin-bottom: 80px;
       .productHead{
         text-align: center;
-        font-size: 30px;
+        font-size: $general-size;
         color: $selection-color;  
         font-weight: bold;
        }
       .productLists{
         display: flex;
         justify-content: space-around;
-        margin: 30px 0;
+        margin: $general-size 0;
         width: 800px;
         margin: 0 auto;
         .productList{
@@ -225,10 +223,4 @@ $selection-color:#3CCACE;
         width: 100%;
       }
     }
-  }
-
-
-
-
-
-}
+  } 
