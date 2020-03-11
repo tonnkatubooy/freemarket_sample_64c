@@ -1,1 +1,26 @@
-%div.card-form クレジットカード登録
+%div.card-form クレジットカード登録.card-form
+  %div.card-form__header クレジットカード登録
+  = form_with model: @credit do |f|
+    %div.card-form__number
+      %div.card-form__number__top
+        = f.label "カード番号"
+        %span.required 必須
+        %br
+      %div.card-form__number__center
+        = f.text_field :name, placeholder: "半角数字のみ", class: "input-field"
+      %ul.card-form__number__bottom
+        %li 
+          = image_tag "visa.svg", height: "20", width: "49"
+        %li 
+          = image_tag "master-card.svg", height: "20", width: "34"
+        %li 
+          = image_tag "jcb.svg", height: "20", width: "32"
+        %li 
+          = image_tag "american_express.svg", height: "20", width: "21"
+        %li 
+          = image_tag "saison-card.svg", height: "20", width: "30"
+        %li 
+          = image_tag "discover.svg", height: "20", width: "32"
+        %li 
+          = image_tag "dinersclub.svg", height: "20", width: "32"
+   

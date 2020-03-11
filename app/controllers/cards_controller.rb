@@ -4,6 +4,7 @@ class CardsController < ApplicationController
   end
 
   def new
+    @credit = User.new
   end
   
 end
