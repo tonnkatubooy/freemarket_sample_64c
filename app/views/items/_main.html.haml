@@ -9,10 +9,10 @@
         %br/
         フリマアプリです
       .content__btn
-        %a.AppBtn{href: ''}
-          = image_tag "App_Store_Badge.svg",size:"180x50"
-        %a.GooBtn{href: '/'}
-          = image_tag "google-play-badge.svg",size:"180x50"
+        = link_to "", class: "AppBtn"
+        = image_tag "App_Store_Badge.svg",size: "180x50"
+        = link_to "", class: "GooBtn"
+        = image_tag "google-play-badge.svg",size: "180x50"
   .Explanation
     %h2.subtitle
       FURIMAが選ばれる3つの理由
@@ -20,7 +20,7 @@
       %li.list
         .list__pict
           %span.number 1
-          %img{src: 'assets/pict-reason-01.jpg',width: '300px', height: '300px'}
+          = image_tag "pict-reason-01.jpg",size:"300x300"
         %h3.list__text
           %span 3分
           ですぐに出品
@@ -29,7 +29,7 @@
       %li.list
         .list__pict
           %span.number 2
-          %img{src: 'assets/pict-reason-02.jpg', width: '300px', height: '300px'}
+          = image_tag 'assets/pict-reason-02.jpg', width: '300px', height: '300px'
         %h3.list__text
           %span シンプル
           で使いやすい
@@ -38,7 +38,7 @@
       %li.list.list--last
         .list__pict
           %span.number 3
-          %img{src: 'assets/pict-reason-03.jpg', width: '300px', height: '300px'}
+          = image_tag 'assets/pict-reason-03.jpg', width: '300px', height: '300px'
         %h3.list__text
           手数料
           %span 業界最安
@@ -87,9 +87,9 @@
         %h3.title 新規投稿商品
       .productLists
         .productList
-          %a{href: '/products/3'}
-          %img{src: 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png'}
-          .productList--img
+          = link_to "/products/3"
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
+        .productList--img
           %h3.name product3
           .details
             %ul
@@ -101,8 +101,8 @@
 
         .productList
           = link_to ""
-          %img{src: 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png'}
-          .productList--img
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
+        .productList--img
           %h3.name product2
           .details
             %ul
@@ -112,52 +112,9 @@
               0
               %p (税込)
         .productList
-          %a{href: '/products/1'}
-          %img{src: 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'}
-            .productList--img
-              %h3.name product1
-            .details
-              %ul
-                %li 10000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                  0
-                  %p (税込)
-  .recommendBrand
-    %h2.head ピックアップブランド
-    .productBox
-      .productHead
-        = link_to ""
-        %h3.title アーカイバ
-      .productLists
-        .productList
-          %a{href: '/products/3'}
-          %img{src: 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png'}
-          .productList--img
-          %h3.name product3
-          .details
-            %ul
-              %li 30000円
-              %li
-              %i.fa.fa-star.likeIcon
-              0
-              %p (税込)
-        .productList
-          %a{href: '/products/2'}
-            %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"}
-            .productList--img
-          %h3.name product2
-          .details
-            %ul
-              %li 20000円
-              %li
-              %i.fa.fa-star.likeIcon
-              0
-              %p (税込)
-        .productList
-          %a{href: '/products/1'}
-            %img{src: 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'}
-            .productList--img
+          = link_to "/products/1"
+            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
+        .productList--img
           %h3.name product1
           .details
             %ul
@@ -166,12 +123,55 @@
                 %i.fa.fa-star.likeIcon
                 0
                 %p (税込)
+  .recommendBrand
+    %h2.head ピックアップブランド
+    .productBox
+      .productHead
+        = link_to ""
+        %h3.title アーカイバ
+      .productLists
+        .productList
+          = link_to "/products/3"
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
+      .productList--img
+        %h3.name product3
+        .details
+          %ul
+            %li 30000円
+            %li
+            %i.fa.fa-star.likeIcon
+            0
+            %p (税込)
+        .productList
+          = link_to "/products/2"
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
+          .productList--img
+            %h3.name product2
+            .details
+              %ul
+                %li 20000円
+                %li
+                %i.fa.fa-star.likeIcon
+                0
+                %p (税込)
+        .productList
+          = link_to "/products/1"
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
+          .productList--img
+          %h3.name product1
+          .details
+            %ul
+              %li 10000円
+              %li
+              %i.fa.fa-star.likeIcon
+                0
+                %p (税込)
   .footBar
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
       %p.inner__text 今すぐ無料ダウンロード！
       .inner__icon
-        %a.AppBtn{href: ''}
-          = image_tag "App_Store_Badge.svg", size:"180x50"
-        %a.GooBtn{href: '/'}
-          = image_tag "google-play-badge.svg", size:"180x50"
+        = link_to "", class: "AppBtn"
+        = image_tag "App_Store_Badge.svg", size: "180x50"
+        = link_to "", class: "GooBtn"
+        = image_tag "google-play-badge.svg", size: "180x50"
