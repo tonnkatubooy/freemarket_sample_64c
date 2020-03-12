@@ -9,10 +9,10 @@
         %br/
         フリマアプリです
       .content__btn
-        = link_to "", class: "AppBtn"
-        = image_tag "App_Store_Badge.svg",size: "180x50"
-        = link_to "", class: "GooBtn"
-        = image_tag "google-play-badge.svg",size: "180x50"
+        = link_to "", class: "AppBtn" do
+          = image_tag "App_Store_Badge.svg",size: "180x50"
+        = link_to "", class: "GooBtn" do
+          = image_tag "google-play-badge.svg",size: "180x50"
   .Explanation
     %h2.subtitle
       FURIMAが選ばれる3つの理由
@@ -29,7 +29,7 @@
       %li.list
         .list__pict
           %span.number 2
-          = image_tag 'assets/pict-reason-02.jpg', width: '300px', height: '300px'
+          = image_tag 'pict-reason-02.jpg',size:"300x300"
         %h3.list__text
           %span シンプル
           で使いやすい
@@ -38,7 +38,7 @@
       %li.list.list--last
         .list__pict
           %span.number 3
-          = image_tag 'assets/pict-reason-03.jpg', width: '300px', height: '300px'
+          = image_tag 'pict-reason-03.jpg',size:"300x300"
         %h3.list__text
           手数料
           %span 業界最安
@@ -54,10 +54,10 @@
         %br/
         ほしかったあの商品に出会えるかもしれません。
     .middle__content_btn 
-      = link_to ""
-      = image_tag "App_Store_Badge.svg",size:"180x50"
-      = link_to ""
-      = image_tag "google-play-badge.svg",size:"180x50"
+      = link_to "" do
+        = image_tag "App_Store_Badge.svg",size:"180x50"
+      = link_to "" do
+        = image_tag "google-play-badge.svg",size:"180x50"
   .concept 
     %h2.head FURIMAの特徴
     .items
@@ -87,9 +87,9 @@
         %h3.title 新規投稿商品
       .productLists
         .productList
-          = link_to "/products/3"
-          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
-        .productList--img
+          = link_to "/products/3" do
+            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
+          .productList--img
           %h3.name product3
           .details
             %ul
@@ -100,9 +100,9 @@
               %p (税込)
 
         .productList
-          = link_to ""
-          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-        .productList--img
+          = link_to "" do
+            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
+          .productList--img
           %h3.name product2
           .details
             %ul
@@ -112,9 +112,9 @@
               0
               %p (税込)
         .productList
-          = link_to "/products/1"
+          = link_to "/products/1" do
             = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
-        .productList--img
+          .productList--img
           %h3.name product1
           .details
             %ul
@@ -131,20 +131,20 @@
         %h3.title アーカイバ
       .productLists
         .productList
-          = link_to "/products/3"
-          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
-      .productList--img
-        %h3.name product3
-        .details
-          %ul
-            %li 30000円
-            %li
-            %i.fa.fa-star.likeIcon
-            0
-            %p (税込)
+          = link_to "/products/3" do
+            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
+          .productList--img
+          %h3.name product3
+          .details
+            %ul
+              %li 30000円
+              %li
+              %i.fa.fa-star.likeIcon
+              0
+              %p (税込)
         .productList
-          = link_to "/products/2"
-          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
+          = link_to "/products/2" do
+            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
           .productList--img
             %h3.name product2
             .details
@@ -155,8 +155,8 @@
                 0
                 %p (税込)
         .productList
-          = link_to "/products/1"
-          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
+          = link_to "/products/1" do
+            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
           .productList--img
           %h3.name product1
           .details
@@ -164,14 +164,14 @@
               %li 10000円
               %li
               %i.fa.fa-star.likeIcon
-                0
-                %p (税込)
+              0
+              %p (税込)
   .footBar
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
       %p.inner__text 今すぐ無料ダウンロード！
       .inner__icon
-        = link_to "", class: "AppBtn"
-        = image_tag "App_Store_Badge.svg", size: "180x50"
-        = link_to "", class: "GooBtn"
-        = image_tag "google-play-badge.svg", size: "180x50"
+        = link_to "", class: "AppBtn" do
+          = image_tag "App_Store_Badge.svg", size: "180x50"
+        = link_to "", class: "GooBtn" do
+          = image_tag "google-play-badge.svg", size: "180x50"
