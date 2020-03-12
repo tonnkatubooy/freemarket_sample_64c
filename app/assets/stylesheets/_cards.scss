@@ -93,7 +93,7 @@ $furima-color: #3CCACE;
     justify-content: space-between;
     }
   }
-  &__security{
+  &__expiration{
     @include form-frame();
     &__top{
       margin: 30px 0 5px;
