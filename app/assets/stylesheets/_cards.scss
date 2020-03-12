@@ -69,7 +69,7 @@ $furima-color: #3CCACE;
 
 .card-form{
   width: 700px;
-  height: 500px;
+  height: 550px;
   background: #fff;
   float: right;
   margin: 35px 130px 0 0;
@@ -125,7 +125,12 @@ $furima-color: #3CCACE;
       padding-left: 23px;
     }
   }
-  
+
+  &__btn{
+    @include form-frame();
+    margin: 35px auto;
+  }
+
 
   li{
     list-style: none;
@@ -147,4 +152,13 @@ $furima-color: #3CCACE;
     font-size: 17px;
     padding-left: 20px;
   }
+
+  .submit-btn{
+    background-color: $furima-color;
+    color: white;
+    width: 106%;
+    height: 50px;
+    font-size: 15px;
+  }
+
 }
