@@ -73,6 +73,7 @@ $furima-color: #3CCACE;
   background: #fff;
   float: right;
   margin: 35px 130px 0 0;
+
   &__header{
     font-size: 24px;
     font-family: monospace;
@@ -89,14 +90,16 @@ $furima-color: #3CCACE;
     &__bottom{
     width: 80%;
     padding-left: 0;
+    margin: 5px 0;
     display: flex;
     justify-content: space-between;
     }
   }
+
   &__expiration{
     @include form-frame();
     &__top{
-      margin: 30px 0 5px;
+      margin: 20px 0 5px;
     }
     &__center{
       display: flex;
@@ -108,6 +111,21 @@ $furima-color: #3CCACE;
       }
     }
   }
+
+  &__security{
+    @include form-frame();
+    &__top{
+      margin: 20px 0 5px;
+    }
+    &__bottom{
+      color: $furima-color;
+      font-size: 14px;
+      text-align: right;
+      width: 100%;
+      padding-left: 23px;
+    }
+  }
+  
 
   li{
     list-style: none;

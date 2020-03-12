@@ -39,3 +39,15 @@
           %ladel
             = icon("fab", "chevron-down")
             %span 年
+    .card-form__security
+      .card-form__security__top
+        = f.label "セキュリティコード"
+        %span.required 必須
+        %br
+      .card-form__security__center
+        = f.text_field :name, placeholder: "カード背面４桁もしくは３桁の番号", class: "input-field"
+      .card-form__security__bottom 
+        = icon("fas", "question-circle") 
+        カード裏面の番号とは？
+    .card-form__btn
+      = f.submit "追加する"
