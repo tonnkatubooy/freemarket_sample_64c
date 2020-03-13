@@ -124,6 +124,28 @@ $furima-color: #3CCACE;
       width: 100%;
       padding-left: 23px;
     }
+    &__info{
+      height: 150px;
+      text-align: center;
+      position: relative;
+      background-color: lightblue;
+      margin: 16px 0 0 18px;
+      padding-top: 5px;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+    &__info::before{
+      position: absolute;
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      right: 15px;
+      top: -9px;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid lightblue;
+      border-left: 10px solid transparent;
+    }
   }
 
   &__btn{
@@ -151,6 +173,11 @@ $furima-color: #3CCACE;
     border: solid 1px $furima-color;
     font-size: 17px;
     padding-left: 20px;
+  }
+
+  .card-info-img{
+    height: 100px;
+    margin-top: 5px;
   }
 
   .submit-btn{

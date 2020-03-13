@@ -49,5 +49,8 @@
       .card-form__security__bottom 
         = icon("fas", "question-circle") 
         カード裏面の番号とは？
+      .card-form__security__info
+        カードの裏面をご参照ください
+        = image_tag ("seq-card.png"), class: "card-info-img"
     .card-form__btn
       = f.submit "追加する", class: "submit-btn"
