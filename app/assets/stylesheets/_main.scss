@@ -1,6 +1,4 @@
 /*変数定義*/
-$selection-color:#3CCACE;
-$general-size:30px;
 @mixin bottomline(){
   &::after{
     content: '';
@@ -12,8 +10,6 @@ $general-size:30px;
     background-color:$selection-color;
    }
   }
-
-
 
 .main{
   .content{
