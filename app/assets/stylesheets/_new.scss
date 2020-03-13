@@ -1,0 +1,111 @@
+@mixin must_mark{
+  background: #3CCACE;
+            color: white;
+            width: 50px;   
+            border-radius: 5px;
+            margin: 0 ;
+            margin-left: 10px;
+}
+
+@mixin submit{
+  color: white;
+      width: 250px;
+      height: 30px;
+      background-color: #3CCACE;
+      border-radius: 5px;
+      font-size: 15px;
+      &:hover{
+        opacity: 50%;
+      }
+}
+
+html{
+  
+  background-color: whitesmoke;
+
+  body{
+    text-align: center;
+    margin:100px 200px ;
+    background-color: white;
+    
+    img{
+     height: 80px;
+    }
+    
+    h2{
+      font-size: 20px;
+      padding-top: 40px;
+
+      
+    }
+    
+    form{
+      margin-top: 50px;
+      .field{
+        margin: 35px;
+        .content_must{
+          display: flex;
+          justify-content: center;
+         .must{
+            @include must_mark;
+         }
+        }
+        .forms_kana, .forms_name{
+          display: flex;
+        }
+      }
+      .form_name_kana, .form_name{
+        display: flex;
+        justify-content: center;
+        #user_last_name_kana, #user_last_name{
+          width: 140px;
+          margin-right: 19px;
+        }
+        #user_first_name_kana, #user_first_name{
+          margin-top: -15px;
+          width: 140px;
+          margin-left: 19px;
+        }
+
+        
+      }
+    }
+
+    
+    .signup{
+      margin: 30px;
+    }
+
+    
+    #user_nickname, #user_password, #user_email,
+    #user_password_confirmation, #user_first_name_kana, 
+    #user_last_name_kana, #user_first_name, #user_last_name{
+    height: 30px;
+    width: 330px;
+    border-radius: 5px;
+    }
+
+    #user_birthday_1i, #user_birthday_2i, #user_birthday_3i{
+      height: 30px;
+      width: 80px;
+      font-size: 15px;
+    }
+    
+    .submit-btn{
+      @include submit;
+    }
+
+    .login{
+      margin-bottom: 30px;
+    }
+  }
+}
+
+
+.forget_password{
+  margin: 30px;
+}
+
+.new_user{
+  margin: 30px;
+}
