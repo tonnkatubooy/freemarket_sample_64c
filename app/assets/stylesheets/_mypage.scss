@@ -97,23 +97,29 @@
       .user-image{
          //ユーザー写真
          height: 200px;
-         background-image:url("kirakira.jpg");
+         background-image:url("images/kirakira.jpg");
          background-repeat: no-repeat;
-
+        display: flex;
 
          .user-icon{
         &:before {
           content: '';
-           display: inline-block; 
-           width: 32px; 
-           height: 32px;
-           background-image: url('kirakira.jpg');
+           display: flex; 
+           width: 100px; 
+           height: 100px;
+           background-image: url("images/user_image.JPG");
            //width, heightと同じになる
            background-size: contain; 
            background-repeat: no-repeat;
            //文字に合わせて中央ぞろえになる
            vertical-align: middle; 
+           justify-content: center;
            border-radius: 50%;
+        }
+        .user-name{
+          text-align: center;
+          font-size: 14px;
+          font-weight: bold;
         }
       }
     
