@@ -131,7 +131,9 @@
               background-color: #fff;
               width: 50%;
               height: 74px;
-              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
             }
 
             &--todo{
@@ -140,7 +142,9 @@
               background-color: #fff;
               width: 50%;
               height: 74px;
-              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
             }
             
             &--info:hover{
@@ -166,13 +170,14 @@
             }
         }
         .tab-list{
+          background-color: #fff;
           .tab-list-info{
-            text-align: center;
+            text-align: left;
             display: none;
           }
 
           .tab-list-todo{
-            text-align: center;
+            text-align: left;
             display: none;
           }
           .tab-item-not-found{
@@ -210,7 +215,9 @@
               background-color: #fff;
               width: 50%;
               height: 74px;
-              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               
             }
 
@@ -220,7 +227,9 @@
               background-color: #fff;
               width: 50%;
               height: 74px;
-              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
             }
             
             &--transaction:hover{
@@ -246,13 +255,14 @@
             }
         }
         .tab-list{
+          background-color: #fff;
           .tab-list--transaction{
-            text-align: center;
+            text-align: left;
             display: none;
           }
 
           .tab-list--post{
-            text-align: center;
+            text-align: left;
             display: none;
           }
           .tab-item-not-found{
