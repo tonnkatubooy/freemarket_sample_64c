@@ -1,73 +1,64 @@
 .content
-  .mypage-user-icon
-  .mypage-table-container-notification-todo
-    .mypage--tabs
-      %input#tab-1{:checked => "checked", :name => "tab-radio", :type => "radio"}/
-      %label.tab-label{:for => "tab-1"} お知らせ
+  .user
+    .user-image
+      .user-icon
+  .mypage
+    .mypage-list
+      .mypage-list--info
+        お知らせ
+      .mypage-list--todo
+        やることリスト
+    .tab-list
+      .tab-list-info
+        お知らせ1
+        お知らせ2
+        お知らせ3
+        お知らせ4
+        お知らせ5
 
-      .mypage--tabs-content.tab-1-content
-        アイテム1
-      .mypage--tabs-content.tab-1-content
-        アイテム2
-      .mypage--tabs-content.tab-1-content
-        アイテム3
-      .mypage--tabs-content.tab-1-content
-        アイテム4
-      .mypage--tabs-content.tab-1-content
-        アイテム5
+      .tab-list-todo
+        やるべきこと1
+        やるべきこと2
+        やるべきこと3
+        やるべきこと4
+        やるべきこと5
+        
+      -# .tab-item-not-found
+      -#   現在やるべきことはありません
 
-    .mypage--tabs
-      %input#tab-2{:checked => "checked", :name => "tab-radio", :type => "radio"}/
-      %label.tab-label{:for => "tab-2"} やることリスト
-
-      .mypage--tabs-content.tab-2-content
-        アイテム1
-      .mypage--tabs-content.tab-2-content
-        アイテム2
-      .mypage--tabs-content.tab-2-content
-        アイテム3
-      .mypage--tabs-content.tab-2-content
-        アイテム4
-      .mypage--tabs-content.tab-2-content
-        アイテム5
     .mypage-go-list
       = link_to('一覧を見る', {})
-      -# .mypage-item-list
-      -#   .mypage-item-not-found
-      -#     現在やるべきことはありません
   
-  .mypage-tab-container
-    .mypage--tab-head
+  .goods
+    .goods-name
       購入した商品
-    .mypage--tabs
-      %input#tab-3{:checked => "checked", :name => "tab-radio", :type => "radio"}/
-      %label.tab-label{:for => "tab-3"} 取引中
-      .mypage--tabs-content.tab-3-content
-        アイテム1
-      .mypage--tabs-content.tab-3-content
-        アイテム2
-      .mypage--tabs-content.tab-3-content
-        アイテム3
-      .mypage--tabs-content.tab-3-content
-        アイテム4
-      .mypage--tabs-content.tab-3-content
-        アイテム5
-    .mypage--tabs
-      %input#tab-4{:checked => "checked", :name => "tab-radio", :type => "radio"}/
-      %label.tab-label{:for => "tab-4"} 過去の取引
-      .mypage--tabs-content.tab-4-content
-        アイテム1
-      .mypage--tabs-content.tab-4-content
-        アイテム2
-      .mypage--tabs-content.tab-4-content
-        アイテム3
-      .mypage--tabs-content.tab-4-content
-        アイテム4
-      .mypage--tabs-content.tab-4-content
-        アイテム5
+
+    .goods-purchase
+      .goods-purchase--transaction
+        取引中
+      .goods-purchase--post
+        過去の取引
+
+    .tab-list
+      .tab-list-transaction
+        取引1
+        取引2
+        取引3
+        取引4
+        取引5
       
+      .tab-list-post
+        過去購入物1
+        過去購入物2
+        過去購入物3
+        過去購入物4
+        過去購入物5
+
+    -# .tab-content
+    -#   .mypage-item-list
+    -#     .mypage-item-not-found
+    -#       現在やるべきことはありません
+
     .mypage-go-list
       = link_to('一覧を見る', {})
-      -# .mypage-item-list
-      -#   .mypage-item-not-found
-      -#     現在やるべきことはありません
+      
