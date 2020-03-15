@@ -9,14 +9,14 @@ $(function () {
     $('.tab-list-info').hide();
   });
 
-  $('.goods-transaction').click(function () {
-    $('.tab-list-transaction').show();
-    $('.tab-list-post').hide();
+  $('.goods-purchase--transaction').click(function () {
+    $('.tab-list--transaction').show();
+    $('.tab-list--post').hide();
   });
-  
-  $('goods-post').click(function () {
-    $('.tab-list-post').show();
-    $('.tab-list-transaction').hide();
+
+  $('.goods-purchase--post').click(function () {
+    $('.tab-list--post').show();
+    $('.tab-list--transaction').hide();
   });
 
 });

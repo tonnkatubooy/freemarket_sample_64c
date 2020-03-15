@@ -4,8 +4,6 @@
 
 //side：width=280px
 //content：width=700px
-
-.default-container{
   
   .container{
     //サイドメニューおよびメインコンテンツの設定
@@ -184,7 +182,7 @@
         }
         .mypage-go-list{
           //一覧を見る
-          // background-color: blue;
+          background-color: blue;
           width: 700px;
           height: 100px;
           display: flex;
@@ -201,6 +199,7 @@
         width: 100%;
         .goods-name{
           background-color: #fff;
+          font-weight: bold;
         }
         .goods-purchase{
           background-color: #fff;
@@ -247,12 +246,12 @@
             }
         }
         .tab-list{
-          .tab-list-transaction{
+          .tab-list--transaction{
             text-align: center;
             display: none;
           }
 
-          .tab-list-post{
+          .tab-list--post{
             text-align: center;
             display: none;
           }
@@ -261,9 +260,9 @@
             text-align: center;
           }
         }
-        .mypage-go-list{
+        .goods-go-list{
           //一覧を見る
-          // background-color: blue;
+          background-color: blue;
           width: 700px;
           height: 100px;
           display: flex;
@@ -276,8 +275,3 @@
 
   }
  
-
-      
-    
-  
-}
