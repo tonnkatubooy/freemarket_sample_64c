@@ -119,6 +119,9 @@
       border-radius: 40px;
       color: #3CCACE;
       border: 1px solid #ffb340;
+        &:hover{
+          opacity: 50%;
+        }
     }
     ul.optional li.optionalBtn a {
       padding: 6px 10px;
@@ -127,6 +130,9 @@
       color: #333;
       border: 1px solid #333;
       text-decoration: none;
+      &:hover{
+        opacity: 50%;
+      }
   }
 }
 .fa {
