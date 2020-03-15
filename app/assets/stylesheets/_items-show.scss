@@ -1,4 +1,4 @@
-.main{
+.itemMain{
   background: #f8f8f8f8;
   .showMain{
     padding: 40px;
@@ -77,7 +77,7 @@
         font-size: 14px;
         a {
           text-decoration: none;
-          color: #3CCACE;
+          color: $selection-color;
       }
       }
     }
@@ -117,7 +117,7 @@
       margin-right: auto;
       padding: 6px 10px;
       border-radius: 40px;
-      color: #3CCACE;
+      color: $selection-color;
       border: 1px solid #ffb340;
         &:hover{
           opacity: 50%;
@@ -127,8 +127,8 @@
       padding: 6px 10px;
       display: inline-block;
       border-radius: 4px;
-      color: #333;
-      border: 1px solid #333;
+      color: $black-color;
+      border: 1px solid $black-color;
       text-decoration: none;
       &:hover{
         opacity: 50%;
@@ -163,8 +163,8 @@
 .commentBtn {
     font-size: 18px;
     line-height: 48px;
-    background: #3CCACE;
-    border: 1px solid #3CCACE;
+    background: $selection-color;
+    border: 1px solid $selection-color;
     color: #fff;
     width: 60%;
     font-size: 18px;
@@ -174,7 +174,7 @@
     float: left;
   & a {
     text-decoration: none;
-    color: #3CCACE;
+    color: $selection-color;
   }
 }
 .contentRight .links li:last-child {
@@ -186,7 +186,7 @@
   a {
     display: block;
     margin: 24px 0 8px;
-    color: #3CCACE;
+    color: $selection-color;
     text-decoration: none;
     font-weight: bold;
     font-size: 22px;
