@@ -37,31 +37,31 @@
 
         .field{class: 'form_name_kana'}
             .form_last_name_kana
-            .content_must
-                = f.label :名前かな（全角）
-                .must
-                    必須
-                %br/
-            .forms_kana
-                = f.text_field :last_name_kana,placeholder: "姓:例)ふりま"
-                %br/
-            .form_first_name_kana  
-                %br/
-                = f.text_field :first_name_kana,placeholder: "名:例)じろう"
+                .content_must
+                    = f.label :名前かな（全角）
+                    .must
+                        必須
+                    %br/
+                .forms_kana
+                    = f.text_field :last_name_kana,placeholder: "姓:例)ふりま"
+                    %br/
+                    .form_first_name_kana  
+                        %br/
+                        = f.text_field :first_name_kana,placeholder: "名:例)じろう"
 
         .field{class: 'form_name'}
             .form_last_name
-            .content_must
-                = f.label :名前（全角）
-                .must
-                    必須
-                %br/
-            .forms_name
-                = f.text_field :last_name,placeholder: "姓:例)浮利馬"
-                %br/
-            .form_first_name  
-                %br/
-                = f.text_field :first_name,placeholder: "名:例)二郎"
+                .content_must
+                    = f.label :名前（全角）
+                    .must
+                        必須
+                    %br/
+                .forms_name
+                    = f.text_field :last_name,placeholder: "姓:例)浮利馬"
+                    %br/
+                    .form_first_name  
+                        %br/
+                        = f.text_field :first_name,placeholder: "名:例)二郎"
 
         .field
             = f.label :生年月日
