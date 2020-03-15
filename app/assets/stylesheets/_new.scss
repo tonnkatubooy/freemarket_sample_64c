@@ -1,58 +1,28 @@
-@mixin must_mark{
-  background: #3CCACE;
-            color: white;
-            width: 50px;   
-            border-radius: 5px;
-            margin: 0 ;
-            margin-left: 10px;
-}
-
-@mixin submit{
-  color: white;
-      width: 250px;
-      height: 30px;
-      background-color: #3CCACE;
-      border-radius: 5px;
-      font-size: 15px;
-      &:hover{
-        opacity: 50%;
-      }
-}
-
-html{
-  
-  background-color: whitesmoke;
-
-  body{
-    text-align: center;
-    margin:100px 200px ;
-    background-color: white;
-    
-    img{
-     height: 80px;
-    }
-    
-    h2{
-      font-size: 20px;
-      padding-top: 40px;
-
-      
-    }
-    
-    form{
-      margin-top: 50px;
-      .field{
-        margin: 35px;
-        .content_must{
-          display: flex;
-          justify-content: center;
-         .must{
-            @include must_mark;
-         }
+.registration-new{
+  text-align: center;
+  margin:100px 200px ;
+  background-color: white;
+  img{
+    height: 80px;
+  }
+  h2{
+    font-size: 20px;
+    padding-top: 40px;
+  }
+  form{
+    margin-top: 50px;
+    .field{
+      margin: 35px;
+      .content_must{
+        display: flex;
+        justify-content: center;
+        .must{
+          @include must_mark;
         }
-        .forms_kana, .forms_name{
-          display: flex;
-        }
+       }
+       .forms_kana, .forms_name{
+         display: flex;
+       }
       }
       .form_name_kana, .form_name{
         display: flex;
@@ -65,11 +35,9 @@ html{
           margin-top: -15px;
           width: 140px;
           margin-left: 19px;
-        }
-
-        
       }
     }
+  }
 
     
     .signup{
@@ -99,13 +67,13 @@ html{
       margin-bottom: 30px;
     }
   }
-}
+
 
 
 .forget_password{
   margin: 30px;
 }
 
-.new_user{
+ .new_user{
   margin: 30px;
-}
+ }
