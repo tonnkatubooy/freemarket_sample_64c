@@ -1,48 +1,73 @@
 .content
   .mypage-user-icon
   .mypage-table-container-notification-todo
-    %li.mypage--tabs
-      お知らせ
-    %li.mypage--tabs
-      やることリスト
-    .tab-content
-      %li.mypage-item-list
+    .mypage--tabs
+      %input#tab-1{:checked => "checked", :name => "tab-radio", :type => "radio"}/
+      %label.tab-label{:for => "tab-1"} お知らせ
+
+      .mypage--tabs-content.tab-1-content
         アイテム1
-      %li.mypage-item-list
+      .mypage--tabs-content.tab-1-content
         アイテム2
-      %li.mypage-item-list
+      .mypage--tabs-content.tab-1-content
         アイテム3
-      %li.mypage-item-list
+      .mypage--tabs-content.tab-1-content
         アイテム4
-      %li.mypage-item-list
+      .mypage--tabs-content.tab-1-content
         アイテム5
-        .mypage-go-list
-          = link_to('一覧を見る', {})
-      .mypage-item-list
-        .mypage-item-not-found
-          現在やるべきことはありません
+
+    .mypage--tabs
+      %input#tab-2{:checked => "checked", :name => "tab-radio", :type => "radio"}/
+      %label.tab-label{:for => "tab-2"} やることリスト
+
+      .mypage--tabs-content.tab-2-content
+        アイテム1
+      .mypage--tabs-content.tab-2-content
+        アイテム2
+      .mypage--tabs-content.tab-2-content
+        アイテム3
+      .mypage--tabs-content.tab-2-content
+        アイテム4
+      .mypage--tabs-content.tab-2-content
+        アイテム5
+    .mypage-go-list
+      = link_to('一覧を見る', {})
+      -# .mypage-item-list
+      -#   .mypage-item-not-found
+      -#     現在やるべきことはありません
   
   .mypage-tab-container
     .mypage--tab-head
       購入した商品
-    %li.mypage--tabs
-      取引中
-    %li.mypage--tabs
-      過去の取引
-    .tab-content
-      %li.mypage-item-list
+    .mypage--tabs
+      %input#tab-3{:checked => "checked", :name => "tab-radio", :type => "radio"}/
+      %label.tab-label{:for => "tab-3"} 取引中
+      .mypage--tabs-content.tab-3-content
         アイテム1
-      %li.mypage-item-list
+      .mypage--tabs-content.tab-3-content
         アイテム2
-      %li.mypage-item-list
+      .mypage--tabs-content.tab-3-content
         アイテム3
-      %li.mypage-item-list
+      .mypage--tabs-content.tab-3-content
         アイテム4
-      %li.mypage-item-list
+      .mypage--tabs-content.tab-3-content
+        アイテム5
+    .mypage--tabs
+      %input#tab-4{:checked => "checked", :name => "tab-radio", :type => "radio"}/
+      %label.tab-label{:for => "tab-4"} 過去の取引
+      .mypage--tabs-content.tab-4-content
+        アイテム1
+      .mypage--tabs-content.tab-4-content
+        アイテム2
+      .mypage--tabs-content.tab-4-content
+        アイテム3
+      .mypage--tabs-content.tab-4-content
+        アイテム4
+      .mypage--tabs-content.tab-4-content
         アイテム5
       
-        .mypage-go-list
-          = link_to('一覧を見る', {})
-      .mypage-item-list
-        .mypage-item-not-found
-          現在やるべきことはありません
+    .mypage-go-list
+      = link_to('一覧を見る', {})
+      -# .mypage-item-list
+      -#   .mypage-item-not-found
+      -#     現在やるべきことはありません

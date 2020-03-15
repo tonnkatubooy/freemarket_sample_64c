@@ -81,18 +81,29 @@
         
       }
     }
+
+
+
+
+
+
+
+
     
     .content{
       float: right;
       width: 700px;
-      height: 1223px;
+      // height: 1223px;
       font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
       padding-right: 200px;
+
+
+
       .mypage-user-icon{
       //ユーザー写真
-        
-        background-color: pink;
         height: 200px;
+        background-image:url("kirakira.jpg");
+        background-repeat: no-repeat;
         &:before {
           content: '';
            display: inline-block; 
@@ -104,61 +115,76 @@
            background-repeat: no-repeat;
            //文字に合わせて中央ぞろえになる
            vertical-align: middle; 
-         
         }
-    
       }
+
+
+
       .mypage-table-container-notification-todo{
         //ユーザーのタスクに関する一覧
         list-style: none;
-        float: right;
-        width: 700px;
-        
-        .mypage{
-            &--tabs{
-              //・やることリスト
-              //・お知らせ
-              font-weight: bold;
-              background-color: #fff;
-              float: right;
-              width: 350px;
-              height: 74px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
+  
+        .mypage--tabs{
+          margin-top: 12px;
+          .tab-label {
+            display: inline-block;
+            border: 1px solid #999;
+            background-color: #f3f3f3;
+            margin-left: 1px;
+            margin-right: 1px;
+            padding: 3px 6px;
+            border-bottom: none;
+            font-size: 0.9em;
+            width: 350px;
+            &:hover {
+              opacity: 0.7;
             }
-            
-            &--tabs:hover{
-              //ホバーすると透明度が変化するように設定
-              opacity: 0.6;
+          }
+          input[name="tab-radio"] {
+            display: none;
+          }
+          .mypage--tabs-content {
+            display: none;
+            border: 1px solid #999;
+            padding: 10px;
+            min-height: 5px;
+            position: relative;
+            width: 700px;
+            &::after{
+              // list-item(各々のメニュー)へ矢印(::after)を作成する
+              position: absolute;
+              top: 50%;
+              right: 13px;
+              content: '';
+              width: 8px;
+              height: 8px;
+              border-top: 2px solid #ccc;
+              border-right: 2px solid #ccc;
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              transition: all .2s;
             }
-            
-            &--tabs:active{
-              //アクティブに変化すると背景色と上線が変化
+            &:hover::after {
+              // ホバーしたら矢印(::after)動く
+              // デフォルト位置より4px分右に動く
+              right: 9px;
+              // デフォルトの灰色から黒色へ変化させる
+              border-color: black;
+            }
+            &:hover {
+              //ホバーしたら背景色を変化させる
+              background: #f7f6fb;
+            }
+            &:active{
+              //アクティブに変化したら背景色を変化させる
               background-color: #eee;
-              border-top: solid 2px red;
             }
-
-           
-
-      
-        }
-        .tab-content{
-          .mypage-item-list{
-            .mypage-go-list{
-              //・一覧を見る
-              background-color: blue;
-              width: 700px;
-              height: 100px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-            .mypage-item-not-found{
-              //やることがない際に表示される
-              background-color: red;
-              text-align: center;
-            }
+          }
+          #tab-1:checked ~ .tab-1-content, #tab-2:checked ~ .tab-2-content{
+            display: block;
+          }
+          input[name="tab-radio"]:checked + .tab-label {
+            background-color: #fff;
           }
         }
         
@@ -167,70 +193,78 @@
 
       .mypage-tab-container{
         list-style: none;
-        float: right;
-        width: 700px;
         padding-top: 40px;
+        .mypage--tab-head{
+          //・購入した商品
+          font-weight: bold;
+          background-color: #fff;
+          }
         
-        .mypage{
-          
-          &--tab-head{
-            //・購入した商品
-            font-weight: bold;
+        .mypage--tabs{
+          margin-top: 12px;
+          .tab-label {
+            display: flex;
+            border: 1px solid #999;
+            background-color: #f3f3f3;
+            margin-left: 1px;
+            margin-right: 1px;
+            padding: 3px 6px;
+            border-bottom: none;
+            font-size: 0.9em;
+            width: 350px;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+          input[name="tab-radio"] {
+            display: none;
+          }
+          .mypage--tabs-content{
+            display: none;
+            border: 1px solid #999;
+            padding: 10px;
+            min-height: 5px;
+            position: relative;
+            width: 700px;
+            &::after{
+              // list-item(各々のメニュー)へ矢印(::after)を作成する
+              position: absolute;
+              top: 50%;
+              right: 13px;
+              content: '';
+              width: 8px;
+              height: 8px;
+              border-top: 2px solid #ccc;
+              border-right: 2px solid #ccc;
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              transition: all .2s;
+            }
+            &:hover::after {
+              // ホバーしたら矢印(::after)動く
+              // デフォルト位置より4px分右に動く
+              right: 9px;
+              // デフォルトの灰色から黒色へ変化させる
+              border-color: black;
+            }
+            &:hover {
+              //ホバーしたら背景色を変化させる
+              background: #f7f6fb;
+            }
+            &:active{
+              //アクティブに変化したら背景色を変化させる
+              background-color: #eee;
+            }
+          }
+          #tab-3:checked ~ .tab-3-content, #tab-4:checked ~ .tab-4-content{
+            display: block;
+          }
+          input[name="tab-radio"]:checked + .tab-label {
             background-color: #fff;
           }
-            &--tabs{
-              //・取引中
-              //・過去の取引
-              font-weight: bold;
-              background-color: #fff;
-              float: left;
-              width: 350px;
-              height: 74px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-
-            &--tabs:hover{
-              //ホバーすると透明度が変化するように設定
-              opacity: 0.6;
-            }
-
-            &--tabs:active{
-              //アクティブに変化すると背景色と上線が変化する
-              background-color: #eee;
-              border-top: solid 2px red;
-            }
-
-           
-
-      
-        }
-        .tab-content{
-          .mypage-item-list{
-            // & li{
-            //   width: 700px;
-            //   height: 50px;
-            //   border: solid 1px;
-            // }
-
-              .mypage-go-list{
-                //・一覧を見る
-                background-color: blue;
-                width: 700px;
-                height: 100px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .mypage-item-not-found{
-              //やすことがない際に表示される
-              background-color: red;
-              text-align: center;
-            }
-          }
         }
         
+      
       }
     }
   }
