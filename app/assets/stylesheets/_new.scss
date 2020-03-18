@@ -32,7 +32,7 @@
           margin-right: 19px;
         }
         #user_first_name_kana, #user_first_name{
-          margin-top: -15px;
+          margin-top: -1px;
           width: 140px;
           margin-left: 19px;
       }
@@ -51,6 +51,7 @@
     height: 30px;
     width: 330px;
     border-radius: 5px;
+    margin-top: 15px;
     }
 
     #user_birthday_1i, #user_birthday_2i, #user_birthday_3i{
@@ -64,7 +65,7 @@
     }
 
     .login{
-      margin-bottom: 30px;
+      margin-top: 30px;
     }
   }
 
