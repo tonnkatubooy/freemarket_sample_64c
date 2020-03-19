@@ -6,39 +6,43 @@
           ユーザー
 
   .mypage
-    .mypage-list
-      .mypage-list--info
+    .mypage--list
+      .mypage--list--info
         お知らせ
-      .mypage-list--todo
+      .mypage--list--todo
         やることリスト
-    .tab-list
-      %li.tab-list-info
+    .tab--list
+      %li.tab--list--info
         お知らせ1
-      %li.tab-list-info
+      %li.tab--list--info
         お知らせ2
-      %li.tab-list-info
+      %li.tab--list--info
         お知らせ3
-      %li.tab-list-info
+      %li.tab--list--info
         お知らせ4
-      %li.tab-list-info
+      %li.tab--list--info
         お知らせ5
+        .mypage-go-list
+          = link_to "一覧を見る", "#"
 
-      %li.tab-list-todo
+
+      %li.tab--list--todo
         やるべきこと1
-      %li.tab-list-todo
+      %li.tab--list--todo
         やるべきこと2
-      %li.tab-list-todo
+      %li.tab--list--todo
         やるべきこと3
-      %li.tab-list-todo
+      %li.tab--list--todo
         やるべきこと4
-      %li.tab-list-todo
+      %li.tab--list--todo
         やるべきこと5
+        .mypage-go-list
+          = link_to "一覧を見る", "#"
+
         
       -# .tab-item-not-found
       -#   現在やるべきことはありません
 
-    .mypage-go-list
-      = link_to('一覧を見る', {})
   
   .goods
     .goods-name
@@ -61,6 +65,12 @@
         取引4
       %li.tab-list--transaction
         取引5
+        .goods-go-list
+          = link_to "一覧を見る", "#"
+
+      -# .tab--list--not--found
+      -#   現在やるべきことはありません
+
       
       %li.tab-list--post
         過去購入物1
@@ -72,12 +82,6 @@
         過去購入物4
       %li.tab-list--post
         過去購入物5
+        .goods-go-list
+          = link_to "一覧を見る", "#"
 
-    -# .tab-content
-    -#   .mypage-item-list
-    -#     .mypage-item-not-found
-    -#       現在やるべきことはありません
-
-    .goods-go-list
-      = link_to('一覧を見る', {})
-      
