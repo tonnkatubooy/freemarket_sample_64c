@@ -2,11 +2,11 @@
 
 }
 
-//side：width=280px
-//content：width=700px
+//side：width = 280pxの枠を取っている
+//content：width = 700pxの枠を取っている
   
   .container{
-    //サイドメニューおよびメインコンテンツの設定
+    //サイドバーおよびメインコンテンツの設定
     height: 100vh;
     width: 100vw;
     background-color: #f5f5f5;
@@ -31,7 +31,7 @@
           border-top: solid 1px #eee;
         }
         &__list-item{
-          //メニューアイテム
+          //メニューリスト
           box-sizing: border-box;
           position: relative;
           display: block;
@@ -74,6 +74,7 @@
     }
 
     .content{
+      //メインメニューの設定
       float: right;
       width: 700px;
       height: 1223px;
@@ -84,12 +85,10 @@
           height: 200px;
           background-image:url("images/kirakira.jpg");
           background-repeat: no-repeat;
-
-
           .user-icon{
-            //文字に合わせて中央ぞろえになる
+            //ユーザーのアイコン写真
             padding-top: 50px;
-            &::before {
+            &::before{
               content: '';
               width: 60px; 
               height: 60px;
@@ -102,24 +101,25 @@
               margin: 0 auto;
             }
             .user-name{
+              //ユーザーの名前
               text-align: center;
               font-size: 14px;
               font-weight: bold;
               padding-top: 5px;
             }
-
             .user-mumber{
               display: flex;
               justify-content: center;
               padding-top: 5px;
-
               .user-evaluation{
+                //ユーザーの評価数
               text-align: center;
               font-size: 14px;
               font-weight: bold;
               padding-right: 10px;
               }
               .user-sell{
+              //ユーザーの出品数
               text-align: center;
               font-size: 14px;
               font-weight: bold;
@@ -138,7 +138,7 @@
         .mypage--list{
           display: flex;
           &--info{
-            //お知らせ
+            //お知らせタブ
             font-weight: bold;
             background-color: lightgray;
             width: 50%;
@@ -149,7 +149,7 @@
             position: relative;
           }
           &--todo{
-            //やることリスト
+            //やることリストタブ
             font-weight: bold;
             background-color: lightgray;
             width: 50%;
@@ -182,10 +182,12 @@
         .tab--list{
           background-color: #fff;
           .tab--list--info{
+            //お知らせリスト
             display: none;
             border-bottom: solid 1px #eee;
             position: relative;
             &::after{
+              // .tab--list--info(各々のメニュー)へ矢印(::after)を作成する
               position: absolute;
               top: 50%;
               right: 13px;
@@ -200,6 +202,7 @@
             }
           }
           .info-go-list{
+            //お知らせの一覧ボタン
             background-color: #fff;
             width: 700px;
             height: 70px;
@@ -220,11 +223,13 @@
             }
           }
           .tab--list--todo{
+            //やることリスト
             display: none;
             border-bottom: solid 1px #eee;
             position: relative;
 
             &::after{
+              // .tab--list--todo(各々のメニュー)へ矢印(::after)を作成する
               position: absolute;
               top: 50%;
               right: 13px;
@@ -240,6 +245,7 @@
 
           }
           .todo-go-list{
+            //やることリストの一覧ボタン
             background-color: #fff;
             width: 700px;
             height: 70px;
@@ -274,12 +280,11 @@
           background-color: #fff;
           font-weight: bold;
         }
-
         .goods-purchase{
           background-color: #fff;
           display: flex;
           &--transaction{
-            //お知らせ
+            //取引中たぶ
             font-weight: bold;
             background-color: lightgray;
             width: 50%;
@@ -289,7 +294,7 @@
             justify-content: center;
           }
           &--post{
-            //やることリスト
+            //過去の取引タブ
             font-weight: bold;
             background-color: lightgray;
             width: 50%;
@@ -321,11 +326,13 @@
         .tab-list{
           background-color: #fff;
           .tab-list--transaction{
+            //取引中のリスト
             display: none;
             border-bottom: solid 1px #eee;
             position: relative;
           }
           .transaction-go-list{
+            //取引中の一覧ボタン
             background-color: #fff;
             width: 700px;
             height: 70px;
@@ -334,7 +341,6 @@
             justify-content: center;  
             display: none;        
             & a{
-              //一覧を見る
               display:block;
               max-width:600px;
               margin:20px auto;
@@ -347,6 +353,7 @@
             }
           }
           &--transaction::after{
+            // .tab--list--transaction(各々のメニュー)へ矢印(::after)を作成する
             position: absolute;
             top: 50%;
             right: 13px;
@@ -360,10 +367,12 @@
             transition: all .2s;
           }
           .tab-list--post{
+            //過去の取引リスト
             display: none;
             border-bottom: solid 1px #eee;
             position: relative;
             &::after{
+              // .tab--list--post(各々のメニュー)へ矢印(::after)を作成する
               position: absolute;
               top: 50%;
               right: 13px;
@@ -378,6 +387,7 @@
             }
           }
           .post-go-list{
+            //過去の取引の一覧ボタン
             background-color: #fff;
             width: 700px;
             height: 70px;
@@ -386,7 +396,6 @@
             justify-content: center;
             display: none;
             & a{
-              //一覧を見る
               display:block;
               max-width:600px;
               margin:20px auto;
