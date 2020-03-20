@@ -15,26 +15,21 @@
     
 
     .side{
-    //サイドバーの設定
-    float: left;
-    width: 280px;
-    height: 1252px;
-    padding-left: 200px;
-    
+      //サイドバーの設定
+      float: left;
+      width: 280px;
+      height: 1252px;
+      padding-left: 200px;
       .mypage-nav{
         //サイドメニューの設定
-
         &__head{
           padding-top: 20px;
           font-weight: bold;
         }
-        
         &__list li{
           //メニューの枠組み
           border-top: solid 1px #eee;
-
         }
-     
         &__list-item{
           //メニューアイテム
           box-sizing: border-box;
@@ -74,191 +69,197 @@
         &__list-item:active{
           //アクティブに変化したら背景色を変化させる
           background-color: #eee;
-        }
-        
+        }       
       }
     }
 
-
-
-
-
-
-
-
-    
     .content{
       float: right;
       width: 700px;
       height: 1223px;
       padding-right: 200px;
-
       .user{
-      .user-image{
-         //ユーザー写真
-         height: 200px;
-         background-image:url("images/kirakira.jpg");
-         background-repeat: no-repeat;
-        // display: flex;
-        text-align: center;
+        .user-image{
+          //背景写真
+          height: 200px;
+          background-image:url("images/kirakira.jpg");
+          background-repeat: no-repeat;
 
-         .user-icon{
-          //文字に合わせて中央ぞろえになる
-          //  vertical-align: middle; 
-          //  justify-content: center;
-          // text-align: center;
-        &:before {
-          content: '';
-           display: flex; 
-           width: 50px; 
-           height: 50px;
-           background-image: url("images/user_image.JPG");
-           //width, heightと同じになる
-           background-size: contain; 
-           background-repeat: no-repeat;
-           border-radius: 50%;
-        }
-        .user-name{
-          // text-align: center;
-          font-size: 14px;
-          font-weight: bold;
-          // margin: 0 auto;
+
+          .user-icon{
+            //文字に合わせて中央ぞろえになる
+            padding-top: 50px;
+            &::before {
+              content: '';
+              width: 60px; 
+              height: 60px;
+              background-image: url("images/user_image.JPG");
+              //width, heightと同じになる
+              background-size: cover; 
+              background-repeat: no-repeat;
+              border-radius: 50%;
+              display: block;
+              margin: 0 auto;
+            }
+            .user-name{
+              text-align: center;
+              font-size: 14px;
+              font-weight: bold;
+              padding-top: 5px;
+            }
+
+            .user-mumber{
+              display: flex;
+              justify-content: center;
+              padding-top: 5px;
+
+              .user-evaluation{
+              text-align: center;
+              font-size: 14px;
+              font-weight: bold;
+              padding-right: 10px;
+              }
+              .user-sell{
+              text-align: center;
+              font-size: 14px;
+              font-weight: bold;
+              padding-left: 10px;
+              }
+            }  
+          } 
         }
       }
-    
-      }
-    }
+      
       .mypage{
         //ユーザーのタスクに関する一覧
         list-style: none;
         width: 100%;
+
         .mypage--list{
           display: flex;
-            &--info{
-              //お知らせ
-              font-weight: bold;
-              background-color: #fff;
-              width: 50%;
-              height: 74px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              
-            }
-
-            &--todo{
-              //やることリスト
-              font-weight: bold;
-              background-color: #fff;
-              width: 50%;
-              height: 74px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              
-            }
+          &--info{
+            //お知らせ
+            font-weight: bold;
+            background-color: lightgray;
+            width: 50%;
+            height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+          }
+          &--todo{
+            //やることリスト
+            font-weight: bold;
+            background-color: lightgray;
+            width: 50%;
+            height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
             
-            &--info:hover{
-              //ホバーすると透明度が変化するように設定
-              opacity: 0.6;
-              
-            }
-            
-            &--info:active{
-              //アクティブに変化すると背景色と上線が変化
-              background-color: #eee;
-              border-top: solid 2px red;
-            } 
-            
-            &--todo:hover{
-              //ホバーすると透明度が変化するように設定
-              opacity: 0.6;
-            }
-            
-            &--todo:active{
-              //アクティブに変化すると背景色と上線が変化
-              background-color: #eee;
-              border-top: solid 2px red;
-            }
+          &--info:hover{
+            //ホバーすると透明度が変化するように設定
+            opacity: 0.6;
+          } 
+          &--info:active{
+            //アクティブに変化すると背景色と上線が変化
+            background-color: #fff;
+            border-top: solid 2px red;
+          } 
+          &--todo:hover{
+            //ホバーすると透明度が変化するように設定
+            opacity: 0.6;
+          }
+          &--todo:active{
+            //アクティブに変化すると背景色と上線が変化
+            background-color: #fff;
+            border-top: solid 2px red;
+          }
         }
+
         .tab--list{
           background-color: #fff;
-          position: relative;
           .tab--list--info{
-            text-align: left;
             display: none;
             border-bottom: solid 1px #eee;
-            .mypage-go-list{
-              background-color: #fff;
-              width: 700px;
-              height: 100px;
-              display: flex;
-              align-items: center;
-              justify-content: center;          
-    
-              & a{
-                display:block;
-                max-width:600px;
-                margin:20px auto;
-                padding:10px 20px;
-                background:#eee;
-                color: black;
-                text-align:center;
-                text-decoration: none;
-                width: 600px;
-    
-              }
+            position: relative;
+            &::after{
+              position: absolute;
+              top: 50%;
+              right: 13px;
+              content: '';
+              width: 8px;
+              height: 8px;
+              border-top: 2px solid black;
+              border-right: 2px solid black;
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              transition: all .2s;
             }
-    
           }
-          & --list--info::after{
-            position: absolute;
-            top: 50%;
-            right: 13px;
-            content: '';
-            width: 8px;
-            height: 8px;
-            border-top: 2px solid #ccc;
-            border-right: 2px solid #ccc;
-            -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-            transition: all .2s;
+          .info-go-list{
+            background-color: #fff;
+            width: 700px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;         
+            display: none;
+            & a{
+              display:block;
+              max-width:600px;
+              margin:20px auto;
+              padding:10px 20px;
+              background:#eee;
+              color: black;
+              text-align:center;
+              text-decoration: none;
+              width: 600px;  
+            }
           }
-
-
           .tab--list--todo{
-            text-align: left;
             display: none;
             border-bottom: solid 1px #eee;
-            .mypage-go-list{
-              background-color: #fff;
-              width: 700px;
-              height: 100px;
-              display: flex;
-              align-items: center;
-              justify-content: center;          
-    
-              & a{
-                display:block;
-                max-width:600px;
-                margin:20px auto;
-                padding:10px 20px;
-                background:#eee;
-                color: black;
-                text-align:center;
-                text-decoration: none;
-                width: 600px;
-    
-              }
+            position: relative;
+
+            &::after{
+              position: absolute;
+              top: 50%;
+              right: 13px;
+              content: '';
+              width: 8px;
+              height: 8px;
+              border-top: 2px solid black;
+              border-right: 2px solid black;
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              transition: all .2s;
             }
-    
+
           }
-          .tab--item-not-found{
-            //やることがない際に表示される
-            text-align: center;
+          .todo-go-list{
+            background-color: #fff;
+            width: 700px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;       
+            display: none;
+            & a{
+              display:block;
+              max-width:600px;
+              margin:20px auto;
+              padding:10px 20px;
+              background:#eee;
+              color: black;
+              text-align:center;
+              text-decoration: none;
+              width: 600px;
+            }
           }
         }
-        
       }
 
 
@@ -267,73 +268,72 @@
         list-style: none;
         width: 100%;
         padding-top: 40px;
+
         .goods-name{
           //購入した商品
           background-color: #fff;
           font-weight: bold;
         }
+
         .goods-purchase{
           background-color: #fff;
           display: flex;
-            &--transaction{
-              //お知らせ
-              font-weight: bold;
-              background-color: #fff;
-              width: 50%;
-              height: 74px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              
-            }
-
-            &--post{
-              //やることリスト
-              font-weight: bold;
-              background-color: #fff;
-              width: 50%;
-              height: 74px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-            
-            &--transaction:hover{
-              //ホバーすると透明度が変化するように設定
-              opacity: 0.6;
-            }
-            
-            &--transaction:active{
-              //アクティブに変化すると背景色と上線が変化
-              background-color: #eee;
-              border-top: solid 2px red;
-            } 
-            
-            &--post:hover{
-              //ホバーすると透明度が変化するように設定
-              opacity: 0.6;
-            }
-            
-            &--post:active{
-              //アクティブに変化すると背景色と上線が変化
-              background-color: #eee;
-              border-top: solid 2px red;
-            }
+          &--transaction{
+            //お知らせ
+            font-weight: bold;
+            background-color: lightgray;
+            width: 50%;
+            height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          &--post{
+            //やることリスト
+            font-weight: bold;
+            background-color: lightgray;
+            width: 50%;
+            height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          &--transaction:hover{
+            //ホバーすると透明度が変化するように設定
+            opacity: 0.6;
+          }
+          &--transaction:active{
+            //アクティブに変化すると背景色と上線が変化
+            background-color: #fff;
+            border-top: solid 2px red;
+          } 
+          &--post:hover{
+            //ホバーすると透明度が変化するように設定
+            opacity: 0.6;
+          }
+          &--post:active{
+            //アクティブに変化すると背景色と上線が変化
+            background-color: #fff;
+            border-top: solid 2px red;
+          }
         }
+
         .tab-list{
           background-color: #fff;
           .tab-list--transaction{
-            text-align: left;
             display: none;
             border-bottom: solid 1px #eee;
-            .goods-go-list{
-              background-color: #fff;
-              width: 700px;
-              height: 100px;
-              display: flex;
-              align-items: center;
-              justify-content: center;          
-              & a{
+            position: relative;
+          }
+          .transaction-go-list{
+            background-color: #fff;
+            width: 700px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;  
+            display: none;        
+            & a{
               //一覧を見る
               display:block;
               max-width:600px;
@@ -344,26 +344,48 @@
               color:black;
               text-align:center;
               text-decoration: none;
-                & a:active{
-                  background-color: lightgray;
-                }
-              }
             }
-    
           }
-
+          &--transaction::after{
+            position: absolute;
+            top: 50%;
+            right: 13px;
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid black;
+            border-right: 2px solid black;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            transition: all .2s;
+          }
           .tab-list--post{
-            text-align: left;
             display: none;
             border-bottom: solid 1px #eee;
-            .goods-go-list{
-              background-color: #fff;
-              width: 700px;
-              height: 100px;
-              display: flex;
-              align-items: center;
-              justify-content: center;          
-              & a{
+            position: relative;
+            &::after{
+              position: absolute;
+              top: 50%;
+              right: 13px;
+              content: '';
+              width: 8px;
+              height: 8px;
+              border-top: 2px solid black;
+              border-right: 2px solid black;
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              transition: all .2s;
+            }
+          }
+          .post-go-list{
+            background-color: #fff;
+            width: 700px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+            & a{
               //一覧を見る
               display:block;
               max-width:600px;
@@ -374,19 +396,9 @@
               color:black;
               text-align:center;
               text-decoration: none;
-                & a:active{
-                  background-color: lightgray;
-                }
-              }
             }
-          }
-          .tab-item-not-found{
-            //やることがない際に表示される
-            text-align: center;
-            
           }
         }
-        
       }
     }
 
