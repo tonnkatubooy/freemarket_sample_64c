@@ -1,0 +1,152 @@
+@mixin select-fram(){
+  width: 50%;
+  position: relative;
+  .select-form{
+  font-size: 16px;
+  height: 45px;
+  width: 80%;
+  background-color: white;
+  border: solid 1px $furima-color;
+  padding-left: 10px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  }
+  .fa-chevron-down:before{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: $furima-color;
+  position: absolute;
+  right: 40px;
+  bottom: 13px;
+  pointer-events: none;
+  }
+}
+
+.card-box{
+  @include form-body();
+  &__header{
+    @include form-header();
+  }
+  &__list{
+    width: 60%;
+    margin: 60px auto 15px;
+  }
+  &__btn{
+    width: 60%;
+    margin: 0 auto 15px;
+    background-color: $furima-color;
+    text-align: center;
+    padding: 15px 0;
+    a{
+      color: white;
+      text-decoration: none;
+    }
+  }
+  &__underline{
+    width: 80%;
+    margin: 30px auto 15px;
+    border-bottom: solid 1px $furima-color;
+  }
+  &__payment{
+    font-size: 14px;
+    color: $furima-color;
+    width: 80%;
+    margin: 0 auto 15px;
+    text-align: right;
+  }
+}
+
+.card-form{
+  @include form-body();
+  &__header{
+    @include form-header();
+  }
+
+  &__number{
+    @include form-frame();
+      @include top();
+    &__bottom{
+    width: 80%;
+    padding-left: 0;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    }
+  }
+
+  &__expiration{
+    @include form-frame();
+      @include top();
+    &__center{
+      display: flex;
+      &--month{
+        @include select-fram();
+      }
+      &--year{
+        @include select-fram();
+      }
+    }
+  }
+
+  &__security{
+    @include form-frame();
+      @include top();
+    &__bottom{
+      color: $furima-color;
+      font-size: 14px;
+      text-align: right;
+      width: 100%;
+      padding-left: 23px;
+      cursor: pointer;
+    }
+    &__info{
+      height: 150px;
+      text-align: center;
+      position: relative;
+      background-color: lightblue;
+      margin: 16px 0 0 18px;
+      padding-top: 5px;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+    &__info::before{
+      position: absolute;
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      right: 15px;
+      top: -9px;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid lightblue;
+      border-left: 10px solid transparent;
+    }
+  }
+
+  &__btn{
+    @include form-frame();
+    margin: 35px auto;
+  }
+
+}
+
+li{
+  list-style: none;
+}
+
+.required{
+  @include required();
+}
+
+.input-field{
+  @include input();
+}
+
+.card-info-img{
+  height: 100px;
+  margin-top: 5px;
+}
+
+.submit-btn{
+  @include submit-btn();
+}
