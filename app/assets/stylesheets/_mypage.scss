@@ -166,7 +166,7 @@
           &--info:active{
             //アクティブに変化すると背景色と上線が変化
             background-color: #fff;
-            border-top: solid 2px red;
+            border-top: solid 2px #3ccace;
           } 
           &--todo:hover{
             //ホバーすると透明度が変化するように設定
@@ -175,7 +175,7 @@
           &--todo:active{
             //アクティブに変化すると背景色と上線が変化
             background-color: #fff;
-            border-top: solid 2px red;
+            border-top: solid 2px #3ccace;
           }
         }
 
@@ -310,7 +310,7 @@
           &--transaction:active{
             //アクティブに変化すると背景色と上線が変化
             background-color: #fff;
-            border-top: solid 2px red;
+            border-top: solid 2px #3ccace;
           } 
           &--post:hover{
             //ホバーすると透明度が変化するように設定
@@ -319,7 +319,7 @@
           &--post:active{
             //アクティブに変化すると背景色と上線が変化
             background-color: #fff;
-            border-top: solid 2px red;
+            border-top: solid 2px #3ccace;
           }
         }
 
