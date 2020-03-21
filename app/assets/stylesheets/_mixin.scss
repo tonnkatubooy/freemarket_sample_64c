@@ -1,0 +1,36 @@
+@mixin bottomline(){
+  &::after{
+    content: '';
+    width: 70px;
+    height: 5px;
+    margin-bottom: 0;
+    display: block;
+    margin: 0 auto;
+    background-color:$selection-color;
+   }
+  }
+
+  @mixin must_mark{
+    background: #3CCACE;
+              color: white;
+              width: 50px;   
+              border-radius: 5px;
+              margin: 0 ;
+              margin-left: 10px;
+  }
+  
+  @mixin submit{
+    color: white;
+        width: 250px;
+        height: 30px;
+        background-color: #3CCACE;
+        border-radius: 5px;
+        font-size: 15px;
+        &:hover{
+          opacity: 50%;
+        }
+  }
+
+
+
+

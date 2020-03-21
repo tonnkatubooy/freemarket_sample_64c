@@ -1,6 +1,15 @@
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import "variable_form";
-@import "mypage"; 
-@import "cards";
-// @import "addresses";
+
+@import 'reset';
+@import 'variables';
+@import 'mixin';
+@import 'items';
+@import 'header';
+@import 'main';
+@import 'footer';
+@import 'items-show';
+@import "error";
+@import "new";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+
