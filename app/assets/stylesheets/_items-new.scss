@@ -6,6 +6,28 @@
   background-color: white;
     .imageBox{
       padding: 40px;
+      .image_box-right{
+        height: 150px;
+        width: 630px;
+        .image_box-left{
+          align-content: center;
+          -webkit-box-align: center;
+          align-items: center;
+          background-color: rgb(245, 245, 245);
+          cursor: pointer;
+          display: flex;
+          height: 100%;
+          flex-wrap: wrap;
+          -webkit-box-pack: center;
+          justify-content: center;
+          position: relative;
+          border-width: 1px;
+          border-style: dashed;
+          border-color: rgb(204, 204, 204);
+          border-image: initial;
+          transition: all 0.5s ease-out 0s;
+        }
+      }
     }
   }
 .details-box{
@@ -14,12 +36,65 @@
   line-height: 1.4em;
   padding: 0 4px;
 }
+.title{
+  margin: 0;
+  padding-top: 16px;
   .title_box{
     font-size: 14px;
     padding: 0 4px;
     font-weight: 600;
   }
-    .style-tag{
-      @include must_mark;
-    }
-    
+}
+.style-tag{
+  @include must_mark;
+}
+.image{
+  margin-top: 16px;
+  &_box{
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px -4px 0px;
+  }
+}
+.likeIkon{
+  fill: rgb(34, 34, 34);
+  height: 24px;
+  margin-bottom: 8px;
+  width: 24px;
+}
+.text{
+  font-size: 12px;
+  line-height: 1.4em;
+  text-align: center;
+  width: 100%;
+}
+.formSpace{
+  margin-top: 16px;
+  .form{
+    display: inline-block;
+    position: relative;
+    width: inherit;
+    width: 630px;
+  }
+}
+.subtitle{
+  color: rgb(136, 136, 136);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4em;
+  margin-bottom: 24px;
+}
+.selectBox{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 16px;
+  height: 48px;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0 56px 0 16px;
+  width: 100%;
+}
