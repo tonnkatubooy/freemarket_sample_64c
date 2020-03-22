@@ -1,0 +1,25 @@
+.itemsMain{
+  padding: 0 100px 100px
+}
+  .exhibitHeader{
+  position: relative;
+  background-color: white;
+    .imageBox{
+      padding: 40px;
+    }
+  }
+.details-box{
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.4em;
+  padding: 0 4px;
+}
+  .title_box{
+    font-size: 14px;
+    padding: 0 4px;
+    font-weight: 600;
+  }
+    .style-tag{
+      @include must_mark;
+    }
+    
