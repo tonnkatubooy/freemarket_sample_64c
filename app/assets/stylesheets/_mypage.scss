@@ -1,10 +1,33 @@
 *{
-
+  
 }
 
 //side：width = 280pxの枠を取っている
 //content：width = 700pxの枠を取っている
   
+$max: 1440px; // 1068px <= 1440px
+$mid: 1067px; // 768px <= 1067px
+$min: 767px;  // 500px <= 767px
+
+
+//メディアクエリのmax-widthの設定
+@mixin max {
+  @media (max-width: ($max)) {
+    @content;
+  }
+}
+@mixin mid {
+  @media (max-width: ($mid)) {
+    @content;
+  }
+}
+@mixin min {
+  @media (max-width: ($min)) {
+    @content;
+  }
+}
+
+
   .container{
     //サイドバーおよびメインコンテンツの設定
     height: 100vh;
@@ -12,14 +35,45 @@
     background-color: #f5f5f5;
     overflow: scroll;
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-    
-
+    @include max {
+      background-color: red;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+    };
+    @include mid {
+      background-color: blue;
+      display: list-item;
+    };
+    @include min {
+      background-color: yellow;
+      display: list-item;
+    };
     .side{
       //サイドバーの設定
-      float: left;
-      width: 280px;
-      height: 1252px;
-      padding-left: 200px;
+      @include max {
+        background-color: red;
+        width: 280px;
+        height: auto;
+        margin-right: 60px;
+      };
+      @include mid {
+        background-color: blue;
+        width: 700px;
+        height: auto;
+        margin: 0 auto;
+
+      };
+      @include min {
+        background-color: yellow;
+        max-width: 100%;
+        height: auto;
+
+      };
+    
+      
+      // height: 1252px;
+
       .mypage-nav{
         //サイドメニューの設定
         &__head{
@@ -75,10 +129,24 @@
 
     .content{
       //メインメニューの設定
-      float: right;
-      width: 700px;
-      height: 1223px;
-      padding-right: 200px;
+      // float: right;
+      // margin-left: 60px;
+      @include max {
+        background-color: red;
+        width: 700px;
+      };
+      @include mid {
+        background-color: blue;
+        width: 700px;
+        margin: 0 auto;
+
+      };
+      @include min  {
+        background-color: yellow;
+        max-width: 100%;
+      };
+
+    
       .user{
         .user-image{
           //背景写真
@@ -186,6 +254,23 @@
             display: none;
             border-bottom: solid 1px #eee;
             position: relative;
+     
+            @include max {
+              background-color: red;
+              height: 80px;
+              line-height: 5rem;
+            };
+            @include mid {
+              background-color: blue;
+              height: 80px;
+              margin: 0 auto;
+              line-height: 5rem;
+            };
+            @include min  {
+              background-color: yellow;
+              height: 50px;
+              line-height: 3rem;
+            };
             &::after{
               // .tab--list--info(各々のメニュー)へ矢印(::after)を作成する
               position: absolute;
@@ -204,8 +289,7 @@
           .info-go-list{
             //お知らせの一覧ボタン
             background-color: #fff;
-            width: 700px;
-            height: 70px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;         
@@ -214,12 +298,11 @@
               display:block;
               max-width:600px;
               margin:20px auto;
-              padding:10px 20px;
+              padding:20px 20px;
               background:#eee;
               color: black;
               text-align:center;
               text-decoration: none;
-              width: 600px;  
             }
           }
           .tab--list--todo{
@@ -227,7 +310,22 @@
             display: none;
             border-bottom: solid 1px #eee;
             position: relative;
-
+            @include max {
+              background-color: red;
+              height: 80px;
+              line-height: 5rem;
+            };
+            @include mid {
+              background-color: blue;
+              height: 80px;
+              margin: 0 auto;
+              line-height: 5rem;
+            };
+            @include min  {
+              background-color: yellow;
+              height: 50px;
+              line-height: 3rem;
+            };
             &::after{
               // .tab--list--todo(各々のメニュー)へ矢印(::after)を作成する
               position: absolute;
@@ -247,8 +345,7 @@
           .todo-go-list{
             //やることリストの一覧ボタン
             background-color: #fff;
-            width: 700px;
-            height: 70px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;       
@@ -257,12 +354,11 @@
               display:block;
               max-width:600px;
               margin:20px auto;
-              padding:10px 20px;
+              padding:20px 20px;
               background:#eee;
               color: black;
               text-align:center;
               text-decoration: none;
-              width: 600px;
             }
           }
         }
@@ -330,12 +426,27 @@
             display: none;
             border-bottom: solid 1px #eee;
             position: relative;
+            @include max {
+              background-color: red;
+              height: 80px;
+              line-height: 5rem;
+            };
+            @include mid {
+              background-color: blue;
+              height: 80px;
+              margin: 0 auto;
+              line-height: 5rem;
+            };
+            @include min  {
+              background-color: yellow;
+              height: 50px;
+              line-height: 3rem;
+            };
           }
           .transaction-go-list{
             //取引中の一覧ボタン
             background-color: #fff;
-            width: 700px;
-            height: 70px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;  
@@ -344,10 +455,9 @@
               display:block;
               max-width:600px;
               margin:20px auto;
-              padding:10px 20px;
-              width: 600px;
+              padding:20px 20px;
               background:#eee;
-              color:black;
+              color: black;
               text-align:center;
               text-decoration: none;
             }
@@ -371,6 +481,22 @@
             display: none;
             border-bottom: solid 1px #eee;
             position: relative;
+            @include max {
+              background-color: red;
+              height: 80px;
+              line-height: 5rem;
+            };
+            @include mid {
+              background-color: blue;
+              height: 80px;
+              margin: 0 auto;
+              line-height: 5rem;
+            };
+            @include min  {
+              background-color: yellow;
+              height: 50px;
+              line-height: 3rem;
+            };
             &::after{
               // .tab--list--post(各々のメニュー)へ矢印(::after)を作成する
               position: absolute;
@@ -384,13 +510,13 @@
               -webkit-transform: rotate(45deg);
               transform: rotate(45deg);
               transition: all .2s;
+              
             }
           }
           .post-go-list{
             //過去の取引の一覧ボタン
             background-color: #fff;
-            width: 700px;
-            height: 70px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -399,12 +525,12 @@
               display:block;
               max-width:600px;
               margin:20px auto;
-              padding:10px 20px;
-              width: 600px;
+              padding:20px 20px;
               background:#eee;
-              color:black;
+              color: black;
               text-align:center;
               text-decoration: none;
+              
             }
           }
         }
