@@ -63,12 +63,12 @@
             .optionalArea
               %ul
                 %li#likeBtn.optionalBtn.likeBtn
-                  = icon('fas', 'star')
+                  %i.fa.fa-star
                   お気に入り 0
               %ul.optional
                 %li.optionalBtn
                   = link_to '' do
-                    = icon('fas', 'flag')
+                    %i.fa.fa-flag
                     不適切な商品の通報
           .commentBox
             %ul.commentContents
@@ -82,18 +82,18 @@
                 不快な言葉遣いなどは利用制限や退会処分となることがあります。
               %br/
               %button.commentBtn{name: "button", type: "submit"}
-                = icon('fas', 'comment')
+                %i.fa.fa-comment
                 コメントする
         %ul.links
           %li
             = link_to '' do
-              = icon('fas', 'angle-left')
+              %i.fa.fa-angle-left
               %span
               前の商品
           %li
             = link_to '' do
               %span 後ろの商品
-              = icon('fas', 'angle-right')
+              %i.fa.fa-angle-right
         .relatedItems
           = link_to 'ベビー・キッズをもっと見る'
           .productLists
