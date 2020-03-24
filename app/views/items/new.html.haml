@@ -174,7 +174,7 @@
               %label{for: ""} 販売価格
               %span.style-tag 必須
         .priceBox
-          %span.mark ¥
+          %span.mark 
           .content
             %input{autocomplete: "off", name: "price", placeholder: "0", type: "number", value: ""}
       .title
@@ -187,6 +187,8 @@
           %button.style_button{tabindex: "0", type: "submit"} 出品する
           %button.save_button{tabindex: "0", type: "button"} 下書きに保存
           = link_to 'もどる', class: "backbutton"
+
+= render 'footer'
 
 
 

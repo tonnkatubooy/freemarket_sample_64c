@@ -103,16 +103,11 @@
   padding: 0 56px 0 16px;
   width: 100%;
 }
-.mark{
-  font-size: 14px;
-  margin-right: 8px;
-  float: right;
-  text-align: right;
-}
 .price{
   align-items: center;
   box-sizing: content-box;
-  height: 46px;
+  height: 36px;
+  width: 150px;
   .price_content{
     font-size: 14px;
     padding: 0 4px;
