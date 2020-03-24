@@ -43,6 +43,9 @@
     font-size: 14px;
     padding: 0 4px;
     font-weight: 600;
+      .seleTitle{
+
+      }
   }
 }
 .style-tag{
@@ -75,6 +78,8 @@
     position: relative;
     width: inherit;
     width: 630px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
   }
 }
 .subtitle{
@@ -97,4 +102,81 @@
   outline: none;
   padding: 0 56px 0 16px;
   width: 100%;
+}
+.mark{
+  font-size: 14px;
+  margin-right: 8px;
+  float: right;
+  text-align: right;
+}
+.price{
+  align-items: center;
+  box-sizing: content-box;
+  height: 46px;
+  .price_content{
+    font-size: 14px;
+    padding: 0 4px;
+    font-weight: 600;
+  }
+}
+.priceBox{
+  align-items: center;
+  width: 100%;
+  text-align: right;
+  .content{
+    display: inline-block;
+    position: relative;
+    width: inherit;
+  }
+}
+.footerBox{
+  background-color: white;
+  margin-top: 0px;
+  position: relative;  
+  padding: 40px 40px 64px;
+  .button_box{
+    margin-bottom: 32px;
+    width: 360px;
+    margin: 0px auto 24px;
+    .button_content{
+      display: block;
+      height: 100px;
+      margin: 0px auto 24px
+    }
+  }
+}
+.style_button{
+  background-color: $selection-color;
+  color: #fff;
+  display: block;
+  margin-bottom: 20px;
+  line-height: 48px;
+  background: $selection-color;
+  border: 1px solid $selection-color;
+  color: #fff;
+  width: 60%;
+  font-size: 18px;
+  border-radius: 100px;
+}
+.save_button{
+  background-color: #ccc;
+  border-color: transparent;
+  color: #222;
+  display: block;
+  margin-bottom: 20px;
+  width: 60%;
+  font-size: 18px;
+  border-radius: 100px;
+  line-height: 48px;
+}
+.rightBox{
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: content-box;
+  display: flex;
+  height: 46px;
+  &_title{
+    align-items: center;
+    display: flex;
+  }
 }

@@ -58,16 +58,16 @@
               %option{"aria-selected" => "false", value: "1318"} 自動車・オートバイ
               %option{"aria-selected" => "false", value: "10"} その他
       .space
-      .brand-content
-        .title
+      .title
+        .title_box
           %label{for: ""} ブランド
           %span.style-tagG 任意
         .formSpace
           .form
-            %input{autocomplete: "off", name: "name", placeholder: "例)シャネル", type: "text", value: ""}
+            %input.form{autocomplete: "off", name: "name", placeholder: "例)シャネル", type: "text", value: ""}
       .space
-      .status-content
-        .title
+      .title
+        .title_box
           %label{for: ""} 商品の状態
           %span.style-tag 必須
         .formSpace
@@ -80,12 +80,12 @@
               %option{"aria-selected" => "false", value: "4"} やや傷や汚れあり
               %option{"aria-selected" => "false", value: "5"} 傷や汚れあり
               %option{"aria-selected" => "false", value: "6"} 全体的に状態が悪い
-      %hr.style_divider__1tLu3
-      .deliveryBox
-        %p.subtitle 配送について
+    %hr.style_divider__1tLu3
+    .imageBox
+      %p.subtitle 配送について
       .space
-      .status-content
-        .title
+      .title
+        .title_box
           %label{for: ""} 配送料の負担
           %span.style-tag 必須
         .formSpace
@@ -95,8 +95,8 @@
               %option{"aria-selected" => "false", value: "2"} 送料込み(出品者負担)
               %option{"aria-selected" => "false", value: "1"} 着払い(購入者負担)
       .space
-      .status-content
-        .title
+      .title
+        .title_box
           %label{for: ""} 発送元の地域
           %span.style-tag 必須
         .formSpace
@@ -151,8 +151,8 @@
               %option{ value: "46"} 鹿児島県
               %option{ value: "47"} 沖縄県
       .space
-      .status-content
-        .title
+      .title
+        .title_box
           %label{for: ""} 発送までの日数
           %span.style-tag 必須
         .formSpace
@@ -162,27 +162,31 @@
               %option{value: "1"} 1~2日で発送
               %option{value: "2"} 2~3日で発送
               %option{value: "3"} 4~7日で発送
-      %hr.style_divider__1tLu3
-      .priceBox
-        %p.subtitle 価格 (¥300〜9,999,999)
+    %hr.style_divider__1tLu3
+  .footerBox
+    .imageBox
+      %p.subtitle 価格 (¥300〜9,999,999)
       .status-content
-      .space
-        .title
-          %label{for: ""} 販売価格
-          %span.style-tag 必須
-        %span.mark   ¥
+      .rightBox
+        .rightBox_title
+          .price
+            .price_content
+              %label{for: ""} 販売価格
+              %span.style-tag 必須
         .priceBox
+          %span.mark ¥
           .content
             %input{autocomplete: "off", name: "price", placeholder: "0", type: "number", value: ""}
-      .space
+      .title
         .seleTitle 販売手数料(10%)
-      %hr.style_divider__1tLu3
-      .space
+    %hr.style_divider__1tLu3
+      .title
         .seleTitle 販売利益
-      .buttonBox
-        %button.style_button{tabindex: "0", type: "submit"} 出品する
-        %button.style_button{tabindex: "0", type: "button"} 下書きに保存
-        = link_to 'もどる'
+      .button_box
+        .button_content
+          %button.style_button{tabindex: "0", type: "submit"} 出品する
+          %button.save_button{tabindex: "0", type: "button"} 下書きに保存
+          = link_to 'もどる', class: "backbutton"
 
 
 
