@@ -1,10 +1,10 @@
 .itemsMain{
   padding: 0 100px 100px
 }
-  .exhibitHeader{
+  .sellHeader{
   position: relative;
   background-color: white;
-    .imageBox{
+    .sellBox{
       padding: 40px;
       .image_box-right{
         height: 150px;
@@ -43,15 +43,16 @@
     font-size: 14px;
     padding: 0 4px;
     font-weight: 600;
-      .seleTitle{
-
-      }
   }
 }
 .style-tag{
   @include must_mark;
+  &_sub{
+    background-color: #bfbfbf;
+    color: #fff;
+  }
 }
-.image{
+.sell{
   margin-top: 16px;
   &_box{
     display: flex;
@@ -71,9 +72,9 @@
   text-align: center;
   width: 100%;
 }
-.formSpace{
+.form{
   margin-top: 16px;
-  .form{
+  &_space{
     display: inline-block;
     position: relative;
     width: inherit;
@@ -118,7 +119,7 @@
   align-items: center;
   width: 100%;
   text-align: right;
-  .content{
+  &_form{
     display: inline-block;
     position: relative;
     width: inherit;
@@ -164,13 +165,13 @@
   border-radius: 100px;
   line-height: 48px;
 }
-.rightBox{
+.footerBox_content{
   -webkit-box-align: center;
   align-items: center;
   box-sizing: content-box;
   display: flex;
   height: 46px;
-  &_title{
+  .footerBox_title{
     align-items: center;
     display: flex;
   }
