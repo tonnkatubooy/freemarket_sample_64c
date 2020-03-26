@@ -1,11 +1,3 @@
-# lady = Category.create(:name=>"レディース")
-
-# lady_tops = lady.children.create(:name=>"トップス")
-# lady_jacket = lady.children.create(:name=>"ジャケット/アウター")
-
-# lady_tops.children.create([{:name=>"Tシャツ/カットソー(半袖/袖なし)"}, {:name=>"Tシャツ/カットソー(七分/長袖)"},{:name=>"その他"}])
-# lady_jacket.children.create([{:name=>"テーラードジャケット"}, {:name=>"ノーカラージャケット"}, {:name=>"Gジャン/デニムジャケット"},{:name=>"その他"}])
-
 
 # レディース
 ladies_child_array = ['トップス','ジャケット/アウター','パンツ','スカート','ワンピース','靴','ルームウェア/パジャマ','レッグウェア','帽子','バッグ','アクセサリー','ヘアアクセサリー','小物','時計','ウィッグ/エクステ','浴衣/水着','スーツ/フォーマル/ドレス','マタニティ','その他']
@@ -60,7 +52,7 @@ mens_grandchild_array = [
                             ['その他']
                           ]
 mens_parent = Category.create(name: 'メンズ')
-ladies_child_array.each_with_index do |child, i|
+mens_child_array.each_with_index do |child, i|
   child = mens_parent.children.create(name: child)
   mens_grandchild_array[i].each do |grandchild|
     child.children.create(name: grandchild)
@@ -89,7 +81,7 @@ baby_grandchild_array = [
                           ]
 baby_parent = Category.create(name: 'ベビー、キッズ')
 baby_child_array.each_with_index do |child, i|
-  child = mens_parent.children.create(name: child)
+  child = baby_parent.children.create(name: child)
   baby_grandchild_array[i].each do |grandchild|
     child.children.create(name: grandchild)
   end
@@ -187,6 +179,7 @@ cosmetics_child_array.each_with_index do |child, i|
   cosmetics_grandchild_array[i].each do |grandchild|
     child.children.create(name: grandchild)
   end
+end
 
 
 
@@ -205,7 +198,7 @@ homeappliances_grandchild_array = [
                           ]
 homeappliances_parent = Category.create(name: '家電・スマホ・カメラ')
 homeappliances_child_array.each_with_index do |child, i|
-  child = book_parent.children.create(name: child)
+  child = homeappliances_parent.children.create(name: child)
   homeappliances_grandchild_array[i].each do |grandchild|
     child.children.create(name: grandchild)
   end
@@ -218,7 +211,7 @@ sports_child_array = ['ゴルフ','フィッシング','自転車','トレーニ
 sports_grandchild_array = [
                             ['クラブウエア(男性用)','ウエア(女性用)','バッグシューズ(男性用)','シューズ(女性用)','アクセサリー','その他'],
                             ['ロッド','リール','ルアー用品','ウエア','釣り糸/ライン','その他'],
-                            ['自転車本体','ウエア','パーツ','アクセサリー','バッグ工具/メンテナンス','その他']
+                            ['自転車本体','ウエア','パーツ','アクセサリー','バッグ工具/メンテナンス','その他'],
                             ['ランニング','ウォーキング','ヨガ','トレーニング用品','その他'],
                             ['ウェア','シューズ','グローブ','バット','アクセサリー','防具','練習機器','記念グッズ','応援グッズ','その他'], 
                             ['ウェア','シューズ','ボール','アクセサリー','記念グッズ','応援グッズ','その他'], 
