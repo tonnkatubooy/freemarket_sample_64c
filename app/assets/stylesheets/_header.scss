@@ -52,8 +52,24 @@
      a{
       text-decoration: none;
       color: #333;
-      a:hover.categoryIndex--item{
-        display: inline;
+       img{
+        width: 20px;
+        height: 15px;
+        margin-right: 5px;
+        float: left;
+       }
+      }  
+     }
+    .category{
+      display: none;
+      position: absolute;
+      z-index: 1;
+      .categoryIndex{
+        background-color: white;
+        width: 200px;
+        /*マウスホバー用に当てたcss あとで使用予定 */
+        &--item{
+          display: inline;
         border: 1px solid #CCCCCC;
         color: #000000;
         display: block;
@@ -62,18 +78,8 @@
         padding: 0.5em;
         top: 50px;
         width: 12em;
-       }
-       img{
-        width: 20px;
-        height: 15px;
-        margin-right: 5px;
-        float: left;
-       }
-     }  
-     }
-    .category{
-      display: none;
-      position: absolute;
+        }
+      }
     }
     .brand_box{
       img{
