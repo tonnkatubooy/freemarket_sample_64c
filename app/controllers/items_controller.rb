@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @item.pictures.new
   end
 
   def create
@@ -11,7 +12,7 @@ class ItemsController < ApplicationController
       if @item.save
         redirect_to root_path
       else
-        redirect_to new
+        render :new
       end
   end
 
@@ -25,5 +26,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:item_name,:price,:description,:user,:category,:brand,:status,:delevery_charge,:area,:shipping_date,:shipping_method)
   end
+  #pictures_attributes: [:image],を追加する
   
 end

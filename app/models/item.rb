@@ -1,5 +1,4 @@
 class Item < ApplicationRecord
-  mount_uploader :image, ImageUploader
 
   #Association
   belongs_to :user
@@ -9,5 +8,7 @@ class Item < ApplicationRecord
   has_many :pictures
 
   #validation
-  validates :item_name,:price,:description,:category,:status,:delevery_charge,:area,:shipping_date,:shipping_method
+  validates :item_name,:price,:description,:category,:status,:delevery_charge,:area,:shipping_date,:shipping_method, presence: true
+
+  accepts_nested_attributes_for :pictures, allow_destroy: true
 end
