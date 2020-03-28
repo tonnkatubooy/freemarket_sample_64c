@@ -6,4 +6,10 @@ Rails.application.routes.draw do
     resources :addresses, only: [:new, :create, :edit, :update]
   end
   resources :cards, only: [:index, :new]
+  resources :items, only: [:index, :show] do
+    member do
+      get 'purchase'
+     end
+  end 
+  resources :users, only: [:show]
 end
