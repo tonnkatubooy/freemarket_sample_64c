@@ -7,9 +7,8 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-    @user = current_user.id
     if @address.save
-      redirect_to user_path(@user), notice: '変更出来ました'
+      redirect_to user_path(current_user), notice: '変更出来ました'
     else
       render :new, alert: '変更出来ませんでした'
     end
@@ -22,9 +21,8 @@ class AddressesController < ApplicationController
 
   def update
     @address = Address.find_by(user_id: current_user.id)
-    @user = current_user.id
     if @address.update(address_params)
-      redirect_to user_path(@user), notice: '変更出来ました'
+      redirect_to user_path(current_user), notice: '変更出来ました'
     else
       render :new, alert: '変更出来ませんでした'
     end
