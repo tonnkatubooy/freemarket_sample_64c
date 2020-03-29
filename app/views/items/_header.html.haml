@@ -48,6 +48,8 @@
         = link_to "ブランド", "/jp/"
     .header__bottom-right
       .user_box
+        -# もしユーザーがログインしているかつログインユーザーであればログアウト、マイページ表示
+        -# でなければログイン、新規会員登録表示
         - if user_signed_in? && current_user
           = link_to "ログアウト", destroy_user_session_path, method: :delete
           = link_to "マイページ", user_path(current_user)
