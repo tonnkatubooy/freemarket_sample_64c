@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, :first_name, :last_name, :first_name_kana, :last_name_kana, :birthday, presence: true
+
+  has_many :cards 
 end

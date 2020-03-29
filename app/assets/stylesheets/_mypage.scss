@@ -151,7 +151,7 @@ $min: 767px;  // 500px <= 767px
         .user-image{
           //背景写真
           height: 200px;
-          background-image:url("images/kirakira.jpg");
+          background-image: image-url("images/kirakira.jpg");
           background-repeat: no-repeat;
           .user-icon{
             //ユーザーのアイコン写真
