@@ -48,6 +48,9 @@
         = link_to "ブランド", "/jp/"
     .header__bottom-right
       .user_box
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-        = link_to "ログイン", new_user_session_path, class: 'new_user_buton',type: 'submit'
-        = link_to "新規会員登録",new_user_registration_path, class: 'login_button',type: 'submit'
+        - if user_signed_in? && current_user
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+          = link_to "マイページ", user_path(current_user)
+        - else
+          = link_to "ログイン", new_user_session_path, class: 'new_user_buton',type: 'submit'
+          = link_to "新規会員登録",new_user_registration_path, class: 'login_button',type: 'submit'
