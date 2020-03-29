@@ -76,11 +76,11 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|main      |string|  |
-|main_genre|string|  |
-|genre_list|string|  |
+|name      |string| null: false, index: true |
+|ancestry|string| index: true |
 ### Association
 - has_many :items
+- has_ancestry
 
 ## brandsテーブル
 |Column|Type|Options|
