@@ -17,6 +17,7 @@ $min: 767px;  // 500px <= 767px
     .mypage_main{
       display: flex;
       justify-content: center;
+      padding: 20px 0;
       @include max {
       background-color: red;
       };
