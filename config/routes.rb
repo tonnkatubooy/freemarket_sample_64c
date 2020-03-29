@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end 
   resources :users, only: [:show] do
     resources :addresses, only: [:new, :create, :edit, :update]
+    resources :cards, only: [:index, :new]
   end
   resources :cards, only: [:index, :new]
 end
