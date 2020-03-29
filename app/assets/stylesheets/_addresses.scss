@@ -42,7 +42,7 @@
         width: 100%;
         height: 50px;
         border-radius: 4px;
-        border: solid 1px $furima-color;
+        border: solid 1px $selection-color;
         font-size: 17px;
         padding-left: 20px;
         background-color: white;
@@ -51,7 +51,7 @@
       .fa-chevron-down:before{
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
-        color: $furima-color;
+        color: $selection-color;
         position: absolute;
         right: 10px;
         bottom: 30px;

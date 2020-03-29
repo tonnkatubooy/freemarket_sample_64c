@@ -10,22 +10,7 @@ $mid: 1067px; // 768px <= 1067px
 $min: 767px;  // 500px <= 767px
 
 
-//メディアクエリのmax-widthの設定
-@mixin max {
-  @media (max-width: ($max)) {
-    @content;
-  }
-}
-@mixin mid {
-  @media (max-width: ($mid)) {
-    @content;
-  }
-}
-@mixin min {
-  @media (max-width: ($min)) {
-    @content;
-  }
-}
+
 
 
   .container{
