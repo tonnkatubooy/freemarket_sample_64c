@@ -58,6 +58,11 @@
 |area           |interger  |null: false|
 |shipping_date  |interger  |null: false|
 |shipping_method|interger  |null: false|
+|seller_id      |interger  |null: false|
+|buyer_id       |interger  |null: false|
+|item_status    |interger  |null: false|
+
+
 ### Association
 - belongs_to :user
 - belongs_to :brand
