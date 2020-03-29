@@ -1,0 +1,52 @@
+= form_with model: [@user, @address], class: "address-form", local: true do |f|
+  .address-form__header
+    発送元・お届け先住所
+  .address-form__name
+    .address-form__name--top 
+      お名前
+      %span.required 必須
+    .address-form__name--last
+      = f.text_field :destination_last_name, placeholder: "例）山田", class: "input-field"
+    .address-form__name--first
+      = f.text_field :destination_first_name, placeholder: "例）太郎", class: "input-field"
+    .address-form__kana--top 
+      お名前カナ
+      %span.required 必須
+    .address-form__kana--last
+      = f.text_field :destination_last_name_kana, placeholder: "例）ヤマダ", class: "input-field"
+    .address-form__kana--first
+      = f.text_field :destination_first_name_kana, placeholder: "例）タロウ", class: "input-field"
+  .address-form__post-number
+    .address-form__post-number--top
+      郵便番号
+      %span.required 必須
+    = f.text_field :post_number, placeholder: "例）123-4567", class: "input-field"
+  .address-form__prefecture
+    .address-form__prefecture--top
+      都道府県
+      %span.required 必須
+    .address-form__prefecture--field
+      = f.select :prefecture, Address.prefectures.keys, prompt: "都道府県を選択してください"
+      = icon("fab", "chevron-down")
+  .address-form__city
+    .address-form__city--top
+      市区町村
+      %span.required 必須
+    = f.text_field :city, placeholder: "例）大阪市中央区", class: "input-field"
+  .address-form__house-number
+    .address-form__house-number--top
+      番地
+      %span.required 必須
+    = f.text_field :house_number, placeholder: "例）難波5丁目1-60", class: "input-field"
+  .address-form__building
+    .address-form__building--top
+      建物名
+      %span.any 任意
+    = f.text_field :building, placeholder: "例）なんばスカイオ15F", class: "input-field"
+  .address-form__tel
+    .address-form__tel--top
+      電話
+      %span.any 任意
+    = f.text_field :destination_phone_number, placeholder: "例）09012345678", class: "input-field"
+  .address-form__btn
+    = f.submit "変更する", class: "submit-btn"
