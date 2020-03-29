@@ -1,5 +1,6 @@
 .address-form{
   @include form-body();
+  order: 2;
 
   &__header{
     @include form-header();
