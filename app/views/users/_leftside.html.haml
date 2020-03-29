@@ -49,8 +49,10 @@
     
     .mypage-nav__list
       %li.mypage-nav__list-item
-        発送元・お届け先住所変更
-      
+        - if @user.address.present?
+          = link_to "発送元・お届け先住所変更", edit_user_address_path(@user)
+        - else
+          = link_to "発送元・お届け先住所変更", new_user_address_path(@user)
     .mypage-nav__list
       %li.mypage-nav__list-item
         = link_to "支払い方法",   "#"
