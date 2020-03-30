@@ -13,36 +13,39 @@
     .header__bottom-left
       .categoryBox
         = link_to "カテゴリー", "/jp/"
-        %ul.categoryIndex
-          %li.categoryIndex--item
-            = link_to "レディース", "/"
-          %li.categoryIndex--item
-            = link_to "メンズ", "/"
-          %li.categoryIndex--item
-            = link_to "ベビー・キッズ", "/"
-          %li.categoryIndex--item
-            = link_to "インテリア・住まい・小物", "/"
-          %li.categoryIndex--item
-            = link_to "本・音楽・ゲーム", "/"
-          %li.categoryIndex--item
-            = link_to "おもちゃ・ホビー・グッズ", "/"
-          %li.categoryIndex--item
-            = link_to "コスメ・香水・美容", "/"
-          %li.categoryIndex--item
-            = link_to "家電・スマホ・カメラ", "/"
-          %li.categoryIndex--item
-            = link_to "スポーツ・レジャー", "/"
-          %li.categoryIndex--item
-            = link_to "ハンドメイド", "/"
-          %li.categoryIndex--item
-            = link_to "チケット", "/"
-          %li.categoryIndex--item
-            = link_to "自動車・オートバイ", "/"
-          %li.categoryIndex--item
-            = link_to "その他", "/"
+        -# %ul.categoryIndex
+        -#   %li.categoryIndex--item
+        -#     = link_to "レディース", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "メンズ", f"/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "ベビー・キッズ", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "インテリア・住まい・小物", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "本・音楽・ゲーム", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "おもちゃ・ホビー・グッズ", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "コスメ・香水・美容", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "家電・スマホ・カメラ", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "スポーツ・レジャー", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "ハンドメイド", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "チケット", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "自動車・オートバイ", "/"
+        -#   %li.categoryIndex--item
+        -#     = link_to "その他", "/"
       .brand_box
         = link_to "ブランド", "/jp/"
     .header__bottom-right
       .user_box
         = link_to "ログイン", new_user_session_path, class: 'new_user_buton',type: 'submit'
         = link_to "新規会員登録",new_user_registration_path, class: 'login_button',type: 'submit'
+.category_parents
+  - @parents.each do |parent|
+    = parent.name
