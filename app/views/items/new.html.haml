@@ -12,6 +12,8 @@
         .image_box
           .image_box-right
             .image_box-left
+              = form_for @picture do |f|
+                = f.fields_for :images
               %i.fa.fa-camera.likeIcon
               %p.text
                 ドラッグアンドドロップ
@@ -25,13 +27,15 @@
           %span.style-tag 必須
         .form
           .form_space
-            %input.form_space{autocomplete: "off", name: "name", placeholder: "40文字まで", type: "text", value: ""}
+            = form_for @items do |f|
+             = f.text_field :name, class: 'form_space', placeholder: '40文字以内'
       .title
         .title_box
           %label 商品の説明
           %span.style-tag 必須
         .form
-          %textarea.form_space{name: "description", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", rows: "7"}
+          = form_for @items do |f|
+            = f.text_area :name, class: 'form_space', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n "
     %hr.style_divider
     .sellBox
       %p.subtitle 商品の詳細
@@ -41,28 +45,16 @@
           %span.style-tag 必須
         .form
           .form_space
-            %select.selectBox{name: "categoryId"}
-              %option{selected: "selected", value: ""} 選択してください
-              %option{ value: "1"} レディース
-              %option{ value: "2"} メンズ
-              %option{ value: "3"} ベビー・キッズ
-              %option{ value: "4"} インテリア・住まい・小物
-              %option{ value: "5"} 本・音楽・ゲーム
-              %option{ value: "1328"} おもちゃ・ホビー・グッズ
-              %option{ value: "6"} コスメ・香水・美容
-              %option{ value: "7"} 家電・スマホ・カメラ
-              %option{ value: "8"} スポーツ・レジャー
-              %option{ value: "9"} ハンドメイド
-              %option{ value: "1027"} チケット
-              %option{ value: "1318"} 自動車・オートバイ
-              %option{ value: "10"} その他
+            = form_for @items do |f|
+              = f.select :category_id,[["選択してください"],["レディース",1],["メンズ"2],["ベビー・キッズ"3],["インテリア・住まい・小物"4],["本・音楽・ゲーム"5],["おもちゃ・ホビー・グッズ"6],["香水・コスメ・美容"7],["家電・スマホ・カメラ"8],["スポーツ・レジャー"9]]
       .title
         .title_box
           %label ブランド
           %span.style-tag_sub 任意
         .form
           .form_space
-            %input.form_space{autocomplete: "off", name: "name", placeholder: "例)シャネル", type: "text", value: ""}
+            = form_for @items do |f|
+             = f.text_field :name, class: 'form_space', placeholder: '例)シャネル'
       .title
         .title_box
           %label 商品の状態
@@ -86,10 +78,8 @@
           %span.style-tag 必須
         .form
           .form_space
-            %select.selectBox{name: "shippingPayer"}
-              %option{ selected: "selected", value: ""} 選択してください
-              %option{ value: "2"} 送料込み(出品者負担)
-              %option{ value: "1"} 着払い(購入者負担)
+            = form_for @items do |f|
+              = f.select :delivery_charge,[["選択してください"],["着払い(購入者負担)"1],["送料込み(出品者負担)"2]]
       .title
         .title_box
           %label 発送元の地域
@@ -151,11 +141,8 @@
           %span.style-tag 必須
         .form
           .form_space
-            %select.selectBox{name: "praceholder"}
-              %option{ selected: "selected", value: ""} 選択してください
-              %option{value: "1"} 1~2日で発送
-              %option{value: "2"} 2~3日で発送
-              %option{value: "3"} 4~7日で発送
+            = form_for @items do |f|
+              = f.select :area,[["選択してください"],["1~2日で発送"1],["2~3日で発送"2],["4~7日で発送"3]]
     %hr.style_divider
   .footerBox
     .sellBox
