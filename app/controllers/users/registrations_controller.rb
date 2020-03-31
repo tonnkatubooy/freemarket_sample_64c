@@ -59,4 +59,95 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  # GET /resource/sign_up
+  #1ページ目
+  def new
+    @user = User.new
+  end
+
+  # POST /resource
+  #1ページ目post
+  def create
+    session[:nickname] = params[:user][:nickname]
+    session[:first_name] = params[:user][:first_name]
+    session[:last_name] = params[:user][:last_name]
+    session[:first_name_kana] = params[:user][:first_name_kana]
+    session[:last_name_kana] = params[:user][:last_name_kana]
+    session[:birthday] = birthday_join
+    session[:email] = params[:user][:email]
+    session[:password] = params[:user][:password]
+    @user = User.new(
+      nickname: session[:nickname],
+      first_name: session[:first_name],
+      last_name: session[:last_name],
+      first_name_kana: session[:first_name_kana],
+      last_name_kana: session[:last_name_kana],
+      birthday: session[:birthday],
+      email: session[:email],
+    )
+    #SNSで登録する場合
+    if session[:provider].present? && session[:uid].present?
+      # パスワードは自動生成する
+      password = Devise.friendly_token.first(7)
+      @user.password = password
+      session[:password] = password
+    #メールアドレスで登録する場合
+    else
+      @user.password = session[:password]
+    end
+    @phone = @user.build_phone
+    # バリデーションチェック
+    unless @user.valid?
+      flash.now[:alert] = @user.errors.full_messages
+      render :new and return
+    end
+    render :new_phone
+  end
+
+  #2ページ目post
+  def create_phone
+    @user = User.create(
+      nickname: session[:nickname],
+      first_name: session[:first_name],
+      last_name: session[:last_name],
+      first_name_kana: session[:first_name_kana],
+      last_name_kana: session[:last_name_kana],
+      birthday: session[:birthday],
+      email: session[:email],
+      password: session[:password]
+    )
+    @phone = Phone.new(phone_params)
+    unless @phone.valid?
+      flash.now[:alert] = @phone.errors.full_messages
+      render :new_phone and return
+    end
+    @phone.save
+    if session[:provider].present? && session[:uid].present?
+      @sns = SnsCredential.create(
+        user_id: @user.id,
+        uid: session[:uid],
+        provider: session[:provider]
+      )
+    end
+    sign_in(:user, @user)
+  end
+
+  protected
+
+  def phone_params
+    params.require(:phone).permit(:phonenumber).merge(user_id: @user.id)
+  end
+
+  #birthdayのパラメータをData型として生成する。
+  def birthday_join
+    params[:user][:last_name_kana] = Date.new(
+      params[:user]["birthday(1i)"].to_i,
+      params[:user]["birthday(2i)"].to_i,
+      params[:user]["birthday(3i)"].to_i
+    )
+  end
+
+
+
 end
