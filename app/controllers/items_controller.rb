@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:item_name,:price,:description,:user,:category,:brand,:status,:delevery_charge,:area,:shipping_date,:shipping_method)
+    params.require(:item).permit(:item_name,:price,:description,:user,:category,:brand,:status,:delivery_charge,:area,:shipping_date,:shipping_method)
   end
   #pictures_attributes: [:image],を追加する
   
