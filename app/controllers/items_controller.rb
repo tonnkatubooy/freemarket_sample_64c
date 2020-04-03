@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.includes(:pictures).order('created_at DESC')
   end
 
   def new
     @item = Item.new
-    @item.pictures.new
+    @picture=@item.pictures.new
+
   end
 
   def create
@@ -24,7 +26,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:item_name,:price,:description,:user,:category,:brand,:status,:delivery_charge,:area,:shipping_date,:shipping_method)
+    params.require(:item).permit(:item_name,:price,:description,:user,:category,:brand,:status_id,:delivery_charge_id,:area,:shipping_date_id,:shipping_method_id)
   end
   #pictures_attributes: [:image],を追加する
   

@@ -53,11 +53,11 @@
 |category       |refarences|null: false, foreign_key: true|
 |brand          |refarences|foreign_key: true|
 |size           |interger  |null: false|
-|status         |references|null: false| 
-|delivery_charge|references|null: false|
-|area           |interger  |null: false|
-|shipping_date  |references|null: false|
-|shipping_method|references|null: false|
+|status         |interger|null: false| 
+|delivery_charge_id|interger|null: false|
+|area_id        |interger  |null: false|
+|shipping_date_id  |interger|null: false|
+|shipping_method_id|interger|null: false|
 |seller_id      |interger  |null: false|
 |buyer_id       |interger  |null: false|
 |item_status    |interger  |null: false|

@@ -44,11 +44,11 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
     t.text "discription", null: false
     t.bigint "user_id", null: false
     t.integer "size", null: false
-    t.integer "status", null: false
-    t.integer "delivery_charge", null: false
-    t.integer "area", null: false
-    t.integer "shipping_date", null: false
-    t.integer "shipping_method", null: false
+    t.integer "status_id", null: false
+    t.integer "delivery_charge_id", null: false
+    t.integer "area_id", null: false
+    t.integer "shipping_date_id", null: false
+    t.integer "shipping_method_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "buyer_id", null: false
