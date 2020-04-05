@@ -29,6 +29,12 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "brand_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "card_id"
     t.bigint "user_id", null: false
@@ -43,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
     t.integer "price", null: false
     t.text "discription", null: false
     t.bigint "user_id", null: false
+    t.bigint "brand_id"
     t.integer "size", null: false
     t.integer "status_id", null: false
     t.integer "delivery_charge_id", null: false
@@ -54,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
     t.integer "buyer_id", null: false
     t.integer "seller_id", null: false
     t.integer "item_status", null: false
+    t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -87,6 +95,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
+  add_foreign_key "items", "brands"
   add_foreign_key "items", "users"
   add_foreign_key "pictures", "items"
 end

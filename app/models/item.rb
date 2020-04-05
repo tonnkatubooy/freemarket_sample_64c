@@ -16,7 +16,7 @@ class Item < ApplicationRecord
   has_many :pictures
 
   #validation
-  validates :price,:size,:category,:status,:delivery_charge,:area,:shipping_date,:shipping_method, presence: true
+  validates :price,:size,:category,:status,:delivery_charge_id,:area_id,:shipping_date_id,:shipping_method_id, presence: true
   validates :item_name, presence: true, length: {maximum: 40}
   validates :discription, presence: true, length: {maximum: 1000}
 

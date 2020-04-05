@@ -1,6 +1,7 @@
 .wrapper
 = render 'users/registrations/header'
 .itemsMain
+= form_for @item do |f|
   .sellHeader
     .sellBox
       .title
@@ -12,13 +13,13 @@
         .image_box
           .image_box-right
             .image_box-left
-              = form_for @item do |f|
-                = f.fields_for :pictures do |p|
-                  %i.fa.fa-camera.likeIcon
-                  %p.text
-                  ドラッグアンドドロップ
-                  %br>
-                  またはクリックしてファイルをアップロード
+              = f.fields_for :pictures do |p|
+                =p.file_field :image
+                %i.fa.fa-camera.likeIcon
+                %p.text
+                ドラッグアンドドロップ
+                %br>
+                またはクリックしてファイルをアップロード
     %hr.style_divider
     .sellBox
       .title
@@ -27,15 +28,13 @@
           %span.style-tag 必須
         .form
           .form_space
-            = form_for @item do |f|
-              = f.text_field :item_name, class: 'form_space', placeholder: '40文字以内'
+            = f.text_field :item_name, class: 'form_space', placeholder: '40文字以内'
       .title
         .title_box
           %label 商品の説明
           %span.style-tag 必須
         .form
-          = form_for @item do |f|
-            = f.text_area :discription, class: 'form_space', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n "
+          = f.text_area :discription, class: 'form_space', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n "
     %hr.style_divider
     .sellBox
       %p.subtitle 商品の詳細
@@ -45,25 +44,21 @@
           %span.style-tag 必須
         .form
           .form_space
-            = form_for @item do |f|
-              /= f.select :category_id,
+            /= f.select :category_id,
       .title
         .title_box
           %label ブランド
           %span.style-tag_sub 任意
         .form
           .form_space
-            = form_for @item do |f|
-              = f.text_field :brand, class: 'form_space', placeholder: '例)シャネル'
+            = f.text_field :brand_id, class: 'form_space', placeholder: '例)シャネル'
       .title
         .title_box
           %label 商品の状態
           %span.style-tag 必須
         .form
           .form_space
-            = form_for @item do |f|
-              = f.collection_select :status, Status.all, :id, :name
-      .title
+            = f.collection_select :status_id, Status.all, :id, :name
         
     %hr.style_divider
     .sellBox
@@ -74,24 +69,21 @@
           %span.style-tag 必須
         .form
           .form_space
-            = form_for @item do |f|
-              = f.collection_select :delivery_charge, DeliveryCharge.all, :id, :name
+            = f.collection_select :delivery_charge_id, DeliveryCharge.all, :id, :name
       .title
         .title_box
           %label 発送元の地域
           %span.style-tag 必須
         .form
           .form_space
-            = form_for @item do |f|
-              = f.collection_select :area, Area.all, :id, :name
+            = f.collection_select :area_id, Area.all, :id, :name
       .title
         .title_box
           %label 発送までの日数
           %span.style-tag 必須
         .form
           .form_space
-            = form_for @item do |f|
-              = f.collection_select :shipping_date, ShippingDate.all, :id, :name
+            = f.collection_select :shipping_date_id, ShippingDate.all, :id, :name
     %hr.style_divider
   .footerBox
     .sellBox
@@ -113,7 +105,7 @@
         .saleTitle 販売利益
       .button_box
         .button_content
-          %button.style_button{tabindex: "0", type: "submit"} 出品する
+          = f.submit "出品する", {class:"style_button"}
           %button.save_button{tabindex: "0", type: "button"} 下書きに保存
-          = link_to 'もどる', class: "backbutton"
+          = link_to 'もどる',root_path, class: "backbutton"
 = render 'footer'

@@ -5,8 +5,11 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @picture=@item.pictures.new
-
+    @item.pictures.new
+    #respond_to do |format|
+      #format.html
+      #format.json
+    #end
   end
 
   def create
@@ -25,9 +28,9 @@ class ItemsController < ApplicationController
   end
 
   private
+  
   def item_params
-    params.require(:item).permit(:item_name,:price,:description,:user,:category,:brand,:status_id,:delivery_charge_id,:area,:shipping_date_id,:shipping_method_id)
+    params.require(:item).permit(:item_name, :price,:discription,:category,:brand_id,:status_id,:delivery_charge_id,:area_id,:shipping_date_id,:shipping_method_id,pictures_attributes:{images: []}).merge(user_id: current_user.id)
   end
-  #pictures_attributes: [:image],を追加する
   
 end
