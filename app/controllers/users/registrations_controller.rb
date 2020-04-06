@@ -77,6 +77,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:birthday] = birthday_join
     session[:email] = params[:user][:email]
     session[:password] = params[:user][:password]
+    # session[:phone_number] = params[:user][:phone_number]
     @user = User.new(
       nickname: session[:nickname],
       first_name: session[:first_name],
@@ -85,6 +86,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       last_name_kana: session[:last_name_kana],
       birthday: session[:birthday],
       email: session[:email],
+      # phone_number: session[:phone_number]
     )
     #SNSで登録する場合
     if session[:provider].present? && session[:uid].present?
@@ -96,7 +98,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       @user.password = session[:password]
     end
-    @phone = @user.build_phone
+    @phone = @user.phone_number
     # バリデーションチェック
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
@@ -136,7 +138,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def phone_params
-    params.require(:phone).permit(:phonenumber).merge(user_id: @user.id)
+    params.require(:user).permit(:phone_number).merge(user_id: @user.id)
   end
 
   #birthdayのパラメータをData型として生成する。

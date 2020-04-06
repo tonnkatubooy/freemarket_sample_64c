@@ -29,31 +29,30 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # end
 
   def facebook
-    authorization
+    callback_for(:facebook)
   end
 
   def google_oauth2
-    authorization
-  end
-
-  def failure
-    redirect_to root_path
+    callback_for(:google)
   end
 
   private
 
-  def authorization
+  def callback_for(provider)
     @omniauth = request.env['omniauth.auth']
     info = User.find_oauth(@omniauth)
     @user = info[:user]
-    if @user.persisted? # SNSで登録済みの場合ログイン処理
+    if @user.persisted? 
       sign_in_and_redirect @user, event: :authentication
+      set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else 
       @sns = info[:sns]
-      session[:provider] = @sns[:provider]
-      session[:uid] = @sns[:uid]
-
       render template: "devise/registrations/new" 
     end
   end
+
+  def failure
+    redirect_to root_path and return
+  end
+
 end

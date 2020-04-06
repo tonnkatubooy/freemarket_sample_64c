@@ -1,0 +1,15 @@
+.signup--header
+  = render "users/registrations/header"
+
+.signup--main
+  
+  .signup--text
+    新規登録画面
+  .facebookBtn
+    = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path 
+  .googleBtn
+    = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path 
+
+
+.signup--footer
+  = render "items/footer"
