@@ -6,14 +6,15 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.pictures.new
-    #respond_to do |format|
-      #format.html
-      #format.json
-    #end
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
     @item = Item.new(item_params)
+    binding.pry
       if @item.save
         redirect_to root_path
       else
@@ -28,9 +29,9 @@ class ItemsController < ApplicationController
   end
 
   private
-  
   def item_params
-    params.require(:item).permit(:item_name, :price,:discription,:category,:brand_id,:status_id,:delivery_charge_id,:area_id,:shipping_date_id,:shipping_method_id,pictures_attributes:{images: []}).merge(user_id: current_user.id)
+    params.require(:item).permit(:item_name,:price,:discription,:status_id,:delivery_charge_id,:area_id,:shipping_date_id,:shipping_method_id,pictures_attributes:{image: []}).merge(user_id: current_user.id)
+    #実装完了まで外してます :category,:brand_id,
   end
   
 end

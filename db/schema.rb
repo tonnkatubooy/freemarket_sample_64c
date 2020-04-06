@@ -38,10 +38,19 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "card_id"
     t.bigint "user_id", null: false
-    t.string "customer_id", null: false
+    t.string "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["name"], name: "index_categories_on_name"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -49,19 +58,21 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
     t.integer "price", null: false
     t.text "discription", null: false
     t.bigint "user_id", null: false
+    t.bigint "category_id"
     t.bigint "brand_id"
-    t.integer "size", null: false
+    t.integer "size"
     t.integer "status_id", null: false
     t.integer "delivery_charge_id", null: false
     t.integer "area_id", null: false
     t.integer "shipping_date_id", null: false
-    t.integer "shipping_method_id", null: false
+    t.integer "shipping_method_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "buyer_id", null: false
-    t.integer "seller_id", null: false
-    t.integer "item_status", null: false
+    t.integer "buyer_id"
+    t.integer "seller_id"
+    t.integer "item_status"
     t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -96,6 +107,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
   add_foreign_key "pictures", "items"
 end
