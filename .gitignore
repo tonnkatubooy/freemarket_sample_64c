@@ -27,3 +27,6 @@
 /config/master.key
 images/
 
+# local strage image
+/public/uploads/
+

@@ -6,7 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.text       :discription,        null: false
       t.references :user,               null: false, foreign_key: true
       t.references :category,           foreign_key: true
-      t.references :brand,              foreign_key: true
+      t.string     :brand              
       t.integer    :size             
       t.integer    :status_id,          null: false
       t.integer    :delivery_charge_id, null: false
@@ -16,6 +16,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.timestamps
 
       # :category,:shipping_method_id  null: false 一時的にはずす
+      # :brand referencesからstringへ変更
     end
   end
 end

@@ -45,7 +45,7 @@
             %span.style-tag_sub 任意
           .form
             .form_space
-              = f.text_field :brand_id, class: 'form_space', placeholder: '例)シャネル'
+              = f.text_field :brand, class: 'form_space', placeholder: '例)シャネル'
         .title
           .title_box
             %label 商品の状態
@@ -91,7 +91,7 @@
           .priceBox
             %span.mark 
             .priceBox_form
-              = f.text_field :price,autocomplete: "off", name: "price", placeholder: "0", type: "number", value: ""
+              = f.number_field :price,autocomplete: "off",placeholder: "0", value: ""
             .title
               .saleTitle 販売手数料(10%)
         %hr.style_divider

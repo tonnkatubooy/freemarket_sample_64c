@@ -10,7 +10,7 @@ class Item < ApplicationRecord
 
   #Association
   belongs_to :user
-  belongs_to :brand
+  # belongs_to :brand
   # belongs_to :category
   has_many :comments
   has_many :pictures, dependent: :destroy
