@@ -39,11 +39,3 @@ $(function(){
     if ($('.hidden').length == 0) $('#image-box__container').append(buildFileField(fileIndex[0]));
   });
 });
-
-
-
-
-
-
-
-  //画像の複数投稿機能

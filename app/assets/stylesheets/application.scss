@@ -1,18 +1,17 @@
-@import 'reset';
-@import 'variables';
-@import 'mixin';
-@import 'items';
-@import 'header';
-@import 'main';
-@import 'footer';
-@import 'items-show';
-@import 'item-new';
-@import 'items-new';
-@import "error";
-@import 'mypage';
-@import "new";
-@import "cards";
-@import "addresses";
-@import 'purchase';
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
+@import 'reset';                    //リセットCSS
+@import 'variables';                //変数設定
+@import 'mixin';                    //関数設定
+@import 'item/items';               //商品関連のページ全般設定
+@import 'TopPage/header';           //トップページのヘッダー部分
+@import 'TopPage/main';             //トップページのメイン部分
+@import 'TopPage/footer';           //トップページのフッター部分
+@import 'item/items-show';          //商品詳細画面 
+@import 'item/item-new';            //商品投稿画面
+@import "error";                    //エラーメッセージ用
+@import 'mypage/mypage';            //マイページ画面
+@import "user-new";                 //ユーザ新規登録画面    
+@import "mypage/cards";             //クレジットカード登録画面
+@import "mypage/addresses";         //マイページの住所登録画面
+@import 'item/purchase';            //商品購入確認画面
+@import 'font-awesome-sprockets';   //font-awesomeを使用するため
+@import 'font-awesome';             //font-awesomeを使用するため
