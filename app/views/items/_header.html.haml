@@ -1,7 +1,8 @@
 .header
   .header__top
     .header__title
-      = image_tag "logo.png",size: "150x40"
+      = link_to root_path do
+        = image_tag "logo.png",size: "150x40"
     .header__searchBox
       %form{action: "/jp/search",class:"form"}
         %input{type:"serch",name:"keyword",placeholder:"キーワードから探す",class:"search-box"}
