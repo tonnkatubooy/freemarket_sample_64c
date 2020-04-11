@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:item_name,:brand,:price,:discription,:status_id,:delivery_charge_id,:area_id,:shipping_date_id,:shipping_method_id,pictures_attributes:{image: []}).merge(user_id: current_user.id,seller_id:current_user.id)
-    #実装完了まで外してます :category,
   end
 
 end
