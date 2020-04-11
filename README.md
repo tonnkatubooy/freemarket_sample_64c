@@ -23,14 +23,16 @@
 ## addrresテーブル
 |Column|Type|Options|
 |------|----|-------|
-|destination_first_name|string    |null: false|
-|destination_last_name |string    |null: false|
-|post_number           |string    |null: false|
-|prefecture            |integer   |null: false|
-|city                  |string    |null: false|
-|house_number          |string    |null: false|
-|building              |string    |  |
-|user                  |refarences|foreign_key: true|
+|destination_first_name     |string    |null: false|
+|destination_last_name      |string    |null: false|
+|destination_first_name_kana|string    |null: false|
+|destination_first_name_kana|string    |null: false|
+|post_number                |string    |null: false|
+|prefecture                 |integer   |null: false|
+|city                       |string    |null: false|
+|house_number               |string    |null: false|
+|building                   |string    |  |
+|user                       |refarences|foreign_key: true|
 ### Association
 - belongs_to :user
 
