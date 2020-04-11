@@ -6,7 +6,7 @@
   height: 45px;
   width: 80%;
   background-color: white;
-  border: solid 1px $furima-color;
+  border: solid 1px $selection-color;
   padding-left: 10px;
   -webkit-appearance: none;
   cursor: pointer;
@@ -14,7 +14,7 @@
   .fa-chevron-down:before{
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: $furima-color;
+  color: $selection-color;
   position: absolute;
   right: 40px;
   bottom: 13px;
@@ -34,7 +34,7 @@
   &__btn{
     width: 60%;
     margin: 0 auto 15px;
-    background-color: $furima-color;
+    background-color: $selection-color;
     text-align: center;
     padding: 15px 0;
     a{
@@ -45,11 +45,11 @@
   &__underline{
     width: 80%;
     margin: 30px auto 15px;
-    border-bottom: solid 1px $furima-color;
+    border-bottom: solid 1px $selection-color;
   }
   &__payment{
     font-size: 14px;
-    color: $furima-color;
+    color: $selection-color;
     width: 80%;
     margin: 0 auto 15px;
     text-align: right;
@@ -92,7 +92,7 @@
     @include form-frame();
       @include top();
     &__bottom{
-      color: $furima-color;
+      color: $selection-color;
       font-size: 14px;
       text-align: right;
       width: 100%;

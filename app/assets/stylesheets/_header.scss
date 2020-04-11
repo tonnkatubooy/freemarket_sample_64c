@@ -5,13 +5,13 @@
      max-width: 1100px;
      height: 50px;
      margin: 0 auto;
-     margin-top: 20px;
      display: flex;
      text-align: center;
      position: relative;
+     margin-top: 10px;
     }
     &__title{
-      margin-right: 30px;
+      margin: auto 25px 0;
     }
     &__searchBox{
       width: 100%;
@@ -37,29 +37,65 @@
      }
     }
    }
+   .form{
+    margin-top: 5px;
+   }
    
    &__bottom{
-     display: flex; 
+     display: flex;
+     justify-content: space-between;
+     margin: 20px 0;
     &-left{
      display: flex;
+     margin-left: 35px;
      }                  
     .categoryBox{
      display: flex;
-     flex-direction: column;
+     margin-right: 20px;
      a{
       text-decoration: none;
       color: #333;
+       img{
+        width: 20px;
+        height: 15px;
+        margin-right: 5px;
+        float: left;
+       }
+      }  
      }
+    .category{
+      display: none;
+      position: absolute;
+      z-index: 1;
+      .categoryIndex{
+        background-color: white;
+        width: 200px;
+        /*マウスホバー用に当てたcss あとで使用予定 */
+        &--item{
+          display: inline;
+        border: 1px solid #CCCCCC;
+        color: #000000;
+        display: block;
+        line-height: 1.2em;
+        margin: 0.5em;
+        padding: 0.5em;
+        top: 50px;
+        width: 12em;
+        }
+      }
     }
     .brand_box{
+      img{
+        width: 20px;
+        height: 15px;
+        margin-right: 5px;
+       }
       a{
        text-decoration: none;
        color: $black-color;
       }
     }
     &-right{
-      display: flex;
-      margin-left: auto;
       .user_box a{
        text-decoration: none;
        color: $black-color;
