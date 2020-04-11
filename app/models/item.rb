@@ -8,12 +8,14 @@ class Item < ApplicationRecord
   #belongs_to_active_hash :shipping_method
   belongs_to_active_hash :area
 
+
   #Association
   belongs_to :user
   # belongs_to :brand
   # belongs_to :category
   has_many :comments
-  has_many :pictures, dependent: :destroy
+  has_many :pictures
+  accepts_nested_attributes_for :pictures, allow_destroy: true
 
   #validation
   validates :price,:status,:delivery_charge_id,:area_id,:shipping_date_id, presence: true

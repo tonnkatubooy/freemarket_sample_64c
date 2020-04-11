@@ -9,19 +9,20 @@
             %label 出品画像
             %span.style-tag 必須
         %p.details-box 最大10枚までアップロードできます
-        .image_box
-          .image_box-right
+        .image_box#image_box
+          .image_box-right#image_bot-right
             .image_box-left#image-box__container
               = f.fields_for :pictures do |p|
                 .js-file_group{"data-index" => p.index}
-                = p.label :image, class: 'image_box-icon' do
-                  %i.fa.fa-camera.likeIcon
-                  = p.file_field :image, multiple: true, class: 'hidden'
-                %p.text
-                ドラッグアンドドロップ
-                %br>
-                またはクリックしてファイルをアップロード
-                %br>
+                  = p.label :image, class: 'image_box-icon' do
+                    %i.fa.fa-camera.likeIcon
+                    = p.file_field :image, multiple: true, class: 'hidden'
+                  %p.text
+                  ドラッグアンドドロップ
+                  %br>
+                  またはクリックしてファイルをアップロード
+                  %br>
+                  %span.js-remove 削除
       %hr.style_divider
       .sellBox
         .title
@@ -53,7 +54,7 @@
           .form
             .form_space
               = f.collection_select :status_id, Status.all, :id, :name
-        
+
       %hr.style_divider
       .sellBox
         %p.subtitle 配送について
@@ -89,7 +90,7 @@
                 %label 販売価格
                 %span.style-tag 必須
           .priceBox
-            %span.mark 
+            %span.mark
             .priceBox_form
               = f.number_field :price,autocomplete: "off",placeholder: "0", value: ""
             .title
