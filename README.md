@@ -55,17 +55,25 @@
 |category       |refarences|null: false, foreign_key: true|
 |brand          |refarences|foreign_key: true|
 |size           |interger  |null: false|
-|status         |interger  |null: false|
-|delivery_charge|interger  |null: false|
-|area           |interger  |null: false|
-|shipping_date  |interger  |null: false|
-|shipping_method|interger  |null: false|
+|status         |interger|null: false| 
+|delivery_charge_id|interger|null: false|
+|area_id        |interger  |null: false|
+|shipping_date_id  |interger|null: false|
+|shipping_method_id|interger|null: false|
+|seller_id      |interger  |null: false|
+|buyer_id       |interger  |null: false|
+|item_status    |interger  |null: false|
+
 ### Association
 - belongs_to :user
 - belongs_to :brand
 - belongs_to :category
 - has_many :comments
 - has_many :pictures
+- belongs_to_active_hash :status
+- belongs_to_active_hash :
+- belongs_to_active_hash :shipping_date  
+- belongs_to_active_hash :shipping_method
 
 ## picturesテーブル
 |Column|Type|Options|
@@ -100,3 +108,31 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
+
+## statusテーブル
+|Column|Type|Options|
+|------|----|-------|
+|value|string|null: false|
+### Association
+- has_many :items
+
+## delivery_chargeテーブル
+|Column|Type|Options|
+|------|----|-------|
+|value|string|null: false|
+### Association
+- has_many :items
+
+## shipping_dateテーブル
+|Column|Type|Options|
+|------|----|-------|
+|value|string|null: false|
+### Association
+- has_many :items
+
+## shipping_methodテーブル
+|Column|Type|Options|
+|------|----|-------|
+|value|string|null: false|
+### Association
+- has_many :items

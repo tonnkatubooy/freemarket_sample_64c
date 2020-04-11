@@ -1,0 +1,188 @@
+.itemsMain{
+  padding: 0 200px 200px;
+  width: 1200px;
+  margin: 0 auto;
+
+}
+  .sellHeader{
+  position: relative;
+  background-color: white;
+    .sellBox{
+      padding: 40px;
+      .image_box-right{
+        height: 150px;
+        width: 630px;
+        img{
+          height: 50px;
+          width: 50px;
+        }
+        .image_box-left{
+          align-content: center;
+          -webkit-box-align: center;
+          align-items: center;
+          background-color: rgb(245, 245, 245);
+          cursor: pointer;
+          display: flex;
+          height: 100%;
+          flex-wrap: wrap;
+          -webkit-box-pack: center;
+          justify-content: center;
+          position: relative;
+          border-width: 1px;
+          border-style: dashed;
+          border-color: rgb(204, 204, 204);
+          border-image: initial;
+          transition: all 0.5s ease-out 0s;
+          .hidden{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+.details-box{
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.4em;
+  padding: 0 4px;
+}
+.title{
+  margin: 0;
+  padding-top: 16px;
+  &_box{
+    font-size: 14px;
+    padding: 0 4px;
+    font-weight: 600;
+  }
+}
+.style-tag{
+  @include must_mark;
+  &_sub{
+    background-color: #bfbfbf;
+    color: #fff;
+  }
+}
+.sell{
+  margin-top: 16px;
+  &_box{
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px -4px 0px;
+  }
+}
+.likeIkon{
+  fill: rgb(34, 34, 34);
+  height: 24px;
+  margin-bottom: 8px;
+  width: 24px;
+}
+.text{
+  font-size: 12px;
+  line-height: 1.4em;
+  text-align: center;
+  width: 100%;
+}
+.form{
+  margin-top: 16px;
+  &_space{
+    display: inline-block;
+    position: relative;
+    width: inherit;
+    width: 630px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+}
+.subtitle{
+  color: rgb(136, 136, 136);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4em;
+  margin-bottom: 24px;
+}
+.selectBox{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 16px;
+  height: 48px;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0 56px 0 16px;
+  width: 100%;
+}
+.price{
+  align-items: center;
+  box-sizing: content-box;
+  height: 36px;
+  width: 150px;
+  .price_content{
+    font-size: 14px;
+    padding: 0 4px;
+    font-weight: 600;
+  }
+}
+.priceBox{
+  align-items: center;
+  width: 100%;
+  text-align: right;
+  &_form{
+    display: inline-block;
+    position: relative;
+    width: inherit;
+  }
+}
+.footerBox{
+  background-color: white;
+  margin-top: 0px;
+  position: relative;
+  padding: 40px 40px 64px;
+  .button_box{
+    margin-bottom: 32px;
+    width: 360px;
+    margin: 0px auto 24px;
+    .button_content{
+      display: block;
+      height: 100px;
+      margin: 0px auto 24px
+    }
+  }
+}
+.style_button{
+  background-color: $selection-color;
+  color: #fff;
+  display: block;
+  margin-bottom: 20px;
+  line-height: 48px;
+  background: $selection-color;
+  border: 1px solid $selection-color;
+  color: #fff;
+  width: 60%;
+  font-size: 18px;
+  border-radius: 100px;
+}
+.save_button{
+  background-color: #ccc;
+  border-color: transparent;
+  color: #222;
+  display: block;
+  margin-bottom: 20px;
+  width: 60%;
+  font-size: 18px;
+  border-radius: 100px;
+  line-height: 48px;
+}
+.footerBox_content{
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: content-box;
+  display: flex;
+  height: 46px;
+  .footerBox_title{
+    align-items: center;
+    display: flex;
+  }
+}
