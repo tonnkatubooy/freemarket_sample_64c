@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_03_28_085002) do
-
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "destination_first_name", null: false
@@ -40,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "card_id"
     t.bigint "user_id", null: false
-    t.string "customer_id"
+    t.string "customer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
@@ -60,20 +58,17 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
     t.integer "price", null: false
     t.text "discription", null: false
     t.bigint "user_id", null: false
-    t.bigint "category_id"
-    t.string "brand"
-    t.integer "size"
-    t.integer "status_id", null: false
-    t.integer "delivery_charge_id", null: false
-    t.integer "area_id", null: false
-    t.integer "shipping_date_id", null: false
-    t.integer "shipping_method_id"
+    t.integer "size", null: false
+    t.integer "status", null: false
+    t.integer "delivery_charge", null: false
+    t.integer "area", null: false
+    t.integer "shipping_date", null: false
+    t.integer "shipping_method", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "buyer_id"
     t.integer "seller_id"
     t.integer "item_status"
-    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -94,18 +89,19 @@ ActiveRecord::Schema.define(version: 2020_03_28_085002) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "first_name_kana"
-    t.string "last_name_kana"
-    t.date "birthday"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.date "birthday", null: false
     t.string "phone_number"
     t.text "introduction"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
-  add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
   add_foreign_key "pictures", "items"
 end
