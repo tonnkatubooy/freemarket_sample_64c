@@ -88,18 +88,22 @@
       .productLists
         .productList
           = link_to "/products/3" do
-            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
+            - @
           .productList--img
           %h3.name 
             - @item.each do |item|
-              = 
+              = item.item_name
           .details
             %ul
-              %li 30000円
+              %li 
+                - @item.each do |item|
+                  = item.price
               %li
               %i.fa.fa-star.likeIcon
               0
-              %p (税込)
+              %p 
+                - @item.each do |item|
+                  = item.delivery_charge_id
 
         .productList
           = link_to "" do
