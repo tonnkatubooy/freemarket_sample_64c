@@ -18,7 +18,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item =Item.all
+    @item = Item.all
+    @user = User.all
   end
 
   def purchase
