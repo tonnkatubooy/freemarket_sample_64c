@@ -33,6 +33,11 @@
     %p © FURIMA 
     =link_to ""
   .Exhibition-Btn
-    %a.Exhibition-Btn__text 出品する
-    =link_to new_item_path do
-      = image_tag "icon_camera.png", class: "Exhibition-Btn__icon"
+    - if user_signed_in? && current_user
+      =link_to new_item_path do
+        %span.Exhibition-Btn__text 出品する
+        = image_tag "icon_camera.png", class: "Exhibition-Btn__icon"
+    - else 
+      =link_to user_session_path do
+        %span.Exhibition-Btn__text 出品する
+        = image_tag "icon_camera.png", class: "Exhibition-Btn__icon"
