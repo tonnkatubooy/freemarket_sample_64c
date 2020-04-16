@@ -7,8 +7,6 @@
         .topContent
           .itemBox
             .itemBox__name
-              - @item.each do |item| 
-                = item.item_name
             .itemBox__body
               %ul
                 %li
@@ -22,8 +20,6 @@
                       = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png", size: "80x80"
             .itemBox__price
               %span
-                - @item.each do |item|
-                  = item.price
               .itemBox__price-detail
                 %span
                   (税込)
@@ -35,9 +31,7 @@
                 %tbody
                   %tr
                     %th 出品者
-                    %td 
-                      - @user.each do |user|
-                        = user.nickname
+                    %td hoge
                   %tr
                     %th カテゴリー
                     %td

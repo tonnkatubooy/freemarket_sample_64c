@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   def index
     @item = Item.all
     @items = Item.includes(:pictures).order('created_at DESC')
+    @picture = Picture.all
   end
 
   def new
@@ -19,9 +20,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.all
-    @user = User.all
-    @picture = Picture.all
+
   end
 
   def purchase

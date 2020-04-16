@@ -87,8 +87,9 @@
         %h3.title 新規投稿商品
       .productLists
         .productList
-          = link_to "/products/3" do
-            - @
+          = link_to item_path(1) do
+            - @picture.each do |picture|
+              = picture.image
           .productList--img
           %h3.name 
             - @item.each do |item|
