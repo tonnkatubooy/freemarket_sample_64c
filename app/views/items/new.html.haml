@@ -1,7 +1,8 @@
-.wrapper
-= render 'users/registrations/header'
 .itemsMain
+  .itemsMain__header
+    = image_tag 'logo.png'
   = form_for @item do |f|
+    =render 'error_messages'
     .sellHeader
       .sellBox
         .title
@@ -16,7 +17,7 @@
                 .js-file_group{"data-index" => p.index}
                   = p.label :image, class: 'image_box-icon' do
                     %i.fa.fa-camera.likeIcon
-                    = p.file_field :image, multiple: true, class: 'hidden'
+                    = p.file_field :image, class: 'hidden'
                   %p.text
                   ドラッグアンドドロップ
                   %br>
@@ -93,14 +94,16 @@
             %span.mark
             .priceBox_form
               = f.number_field :price,autocomplete: "off",placeholder: "0", value: ""
-            .title
-              .saleTitle 販売手数料(10%)
+        .footerBox_fee
+          %label 販売手数料(10%)         
         %hr.style_divider
           .title
             .saleTitle 販売利益
           .button_box
             .button_content
-            = f.submit "出品する", {class:"style_button"}
-            %button.save_button{tabindex: "0", type: "button"} 下書きに保存
-            = link_to 'もどる',root_path, class: "backbutton"
+              = f.submit "出品する", {class:"style_button"}
+            .button_save
+              %button.save_button{tabindex: "0", type: "button"} 下書きに保存
+            .footerBox_back
+              = link_to 'もどる',root_path, class: "backbutton"
 = render 'footer'
