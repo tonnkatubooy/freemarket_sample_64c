@@ -19,6 +19,7 @@ class Item < ApplicationRecord
   validates :item_name, presence: true, length: {maximum: 40}
   validates :discription, presence: true, length: {maximum: 1000}
 
-  accepts_nested_attributes_for :pictures, allow_destroy: true
+  validates_associated :pictures
+  validates :pictures, presence: true
 
 end

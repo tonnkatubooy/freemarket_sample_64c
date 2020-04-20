@@ -16,7 +16,7 @@ $(function(){
 //画像の複数枚投稿
   const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="js-file_group">
-                  <label class="image_box-icon" for="item_pictures_attributes_0_image">
+                  <label class="image_box-icon" for="item_pictures_attributes_${index}_image">
                    <i class='fa fa-camera likeIcon'></i>
                     <input class="hidden" type="file"
                     name="item[pictures_attributes][${index}][image]"
