@@ -1,5 +1,5 @@
 class Picture < ApplicationRecord
-  mount_uploaders :image, ImageUploader
+  mount_uploader :image, ImageUploader
 
   #Association
   belongs_to :item

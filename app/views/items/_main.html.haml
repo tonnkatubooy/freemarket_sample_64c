@@ -86,18 +86,22 @@
         = link_to ""
         %h3.title 新規投稿商品
       .productLists
+        - @item.each do |item|
         .productList
-          = link_to "/products/3" do
-            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
+        -# - binding.pry
+        = image_tag item.pictures[0].image.url
           .productList--img
-          %h3.name product3
+          %h3.name 
+            = item.item_name
           .details
             %ul
-              %li 30000円
+              %li.price
+                = item.price
               %li
               %i.fa.fa-star.likeIcon
               0
-              %p (税込)
+              %p
+                = item.delivery_charge_id
 
         .productList
           = link_to "" do
