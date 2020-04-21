@@ -88,7 +88,7 @@
       .productLists
         - @item.each do |item|
           .productList
-          = image_tag item.pictures[0].image.url
+          = image_tag item.pictures[0].image.url,size:"185x189"
           .productList--img
           %h3.name 
             = item.item_name
