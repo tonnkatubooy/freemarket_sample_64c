@@ -88,19 +88,20 @@
       .productLists
         - @item.each do |item|
           .productList
-          = image_tag item.pictures[0].image.url,size:"185x189"
-          .productList--img
-          %h3.name 
-            = item.item_name
-          .details
-            %ul
-              %li.price
-                = item.price
-              %li
-              %i.fa.fa-star.likeIcon
-              0
-              %p
-                = item.delivery_charge_id
+            .productList--img
+              = image_tag item.pictures[0].image.url,size:"185x189"
+            %h3.name 
+              = item.item_name
+            .details
+              %ul
+                %li.price
+                  = item.price 
+                  円
+                %li
+                %i.fa.fa-star.likeIcon
+                0
+                %p
+                  = item.delivery_charge_id
 
         .productList
           = link_to "" do
