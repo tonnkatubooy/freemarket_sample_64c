@@ -87,9 +87,8 @@
         %h3.title 新規投稿商品
       .productLists
         - @item.each do |item|
-        .productList
-        -# - binding.pry
-        = image_tag item.pictures[0].image.url
+          .productList
+          = image_tag item.pictures[0].image.url
           .productList--img
           %h3.name 
             = item.item_name
