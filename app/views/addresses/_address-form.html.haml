@@ -26,7 +26,7 @@
       都道府県
       %span.required 必須
     .address-form__prefecture--field
-      = f.select :prefecture, Address.prefectures.keys, prompt: "都道府県を選択してください"
+      = f.collection_select :area_id, Area.all, :id, :name, prompt: "都道府県を選択してください"
       = icon("fab", "chevron-down")
   .address-form__city
     .address-form__city--top

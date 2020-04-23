@@ -8,6 +8,7 @@
           .itemBox
             %h2.itemBox__name
               = @item.item_name
+
             .itemBox__body
               %ul
                 %li
@@ -23,6 +24,7 @@
             .itemBox__price
               %span
                 = "¥#{@item.price}"
+
               .itemBox__price-detail
                 %span
                   (税込)
