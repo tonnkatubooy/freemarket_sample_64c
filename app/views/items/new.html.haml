@@ -16,7 +16,7 @@
                 .js-file_group{"data-index" => p.index}
                   = p.label :image, class: 'image_box-icon' do
                     %i.fa.fa-camera.likeIcon
-                    = p.file_field :image, multiple: true, class: 'hidden'
+                    = p.file_field :image, class: 'hidden' #multiple: tureを消去しました
                   %p.text
                   ドラッグアンドドロップ
                   %br>
