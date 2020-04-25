@@ -10,7 +10,7 @@ $min: 767px;  // 500px <= 767px
     height: 100vh;
     width: 100vw;
     background-color: #f5f5f5;
-    padding: 30px 0;
+    padding-top: 30px;
     overflow: scroll;
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     
@@ -19,34 +19,34 @@ $min: 767px;  // 500px <= 767px
       justify-content: center;
       padding: 20px 0;
       @include max {
-      background-color: red;
+      background-color: $back-color;
       };
       @include mid {
-        background-color: blue;
+        background-color: $back-color;
         display: list-item;
       };
       @include min {
-        background-color: yellow;
+        background-color: $back-color;
         display: list-item;
       };
       .side{
         //サイドバーの設定
         @include max {
-          background-color: red;
+          background-color: $back-color;
           width: 280px;
           height: auto;
           margin-right: 60px;
           order: 1;
         };
         @include mid {
-          background-color: blue;
+          background-color: $back-color;
           width: 700px;
           height: auto;
           margin: 0 auto;
 
         };
         @include min {
-          background-color: yellow;
+          background-color: $back-color;
           max-width: 100%;
           height: auto;
 
@@ -113,18 +113,18 @@ $min: 767px;  // 500px <= 767px
         // float: right;
         // margin-left: 60px;
         @include max {
-          background-color: red;
+          background-color: $back-color;
           width: 700px;
           order: 2;
         };
         @include mid {
-          background-color: blue;
+          background-color: $back-color;
           width: 700px;
           margin: 0 auto;
 
         };
         @include min  {
-          background-color: yellow;
+          background-color: $back-color;
           max-width: 100%;
         };
 
@@ -142,7 +142,7 @@ $min: 767px;  // 500px <= 767px
                 content: '';
                 width: 60px; 
                 height: 60px;
-                background-image: url("images/user_image.JPG");
+                background-image: url("member_photo_noimage_thumb.png");
                 //width, heightと同じになる
                 background-size: cover; 
                 background-repeat: no-repeat;
@@ -238,18 +238,18 @@ $min: 767px;  // 500px <= 767px
               position: relative;
       
               @include max {
-                background-color: red;
+                background-color: $back-color;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: blue;
+                background-color: $back-color;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: yellow;
+                background-color: $back-color;
                 height: 50px;
                 line-height: 3rem;
               };
@@ -293,18 +293,18 @@ $min: 767px;  // 500px <= 767px
               border-bottom: solid 1px #eee;
               position: relative;
               @include max {
-                background-color: red;
+                background-color: $back-color;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: blue;
+                background-color: $back-color;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: yellow;
+                background-color: $back-color;
                 height: 50px;
                 line-height: 3rem;
               };
@@ -409,18 +409,18 @@ $min: 767px;  // 500px <= 767px
               border-bottom: solid 1px #eee;
               position: relative;
               @include max {
-                background-color: red;
+                background-color: $back-color;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: blue;
+                background-color: $back-color;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: yellow;
+                background-color: $back-color;
                 height: 50px;
                 line-height: 3rem;
               };
@@ -464,18 +464,18 @@ $min: 767px;  // 500px <= 767px
               border-bottom: solid 1px #eee;
               position: relative;
               @include max {
-                background-color: red;
+                background-color: $back-color;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: blue;
+                background-color: $back-color;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: yellow;
+                background-color: $back-color;
                 height: 50px;
                 line-height: 3rem;
               };
