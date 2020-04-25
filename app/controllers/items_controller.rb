@@ -42,6 +42,7 @@ class ItemsController < ApplicationController
         redirect_to root_path,notice: '商品の編集が完了しました'
       else
         render :edit
+      end
   end
 
   private
