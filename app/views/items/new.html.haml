@@ -44,6 +44,21 @@
       .sellBox
         .title
           .title_box
+            %label カテゴリー
+            %span.style-tag_sub 必須
+          .listing-form-box
+            .listing-product-detail__category
+              = form_with url: new_item_path do |form|
+                = form.label 'カテゴリー', class: 'listing-default__label'
+                %span.listing-default--require 必須
+                .listing-select-wrapper
+                  .listing-select-wrapper__box
+                    = form_with url: new_item_path do |form|
+                      = form.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                      %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+
+        .title
+          .title_box
             %label ブランド
             %span.style-tag_sub 任意
           .form
