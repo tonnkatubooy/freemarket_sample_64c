@@ -90,7 +90,9 @@
               %br/
               %button.commentBtn{name: "button", type: "submit"}
                 %i.fa.fa-comment
-                コメントする
+                コメントする 
+            - if user_signed_in? && current_user.id == @item.user_id
+              = link_to "この商品を削除する",item_path(@item.id), method: :delete, class: "destroyBtn"
         %ul.links
           %li
             = link_to '' do
