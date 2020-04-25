@@ -33,9 +33,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
+    @item = Item.update(item_params)
+      if @item.save
+        redirect_to root_path,notice: '商品の編集が完了しました'
+      else
+        render :edit
   end
 
   private
