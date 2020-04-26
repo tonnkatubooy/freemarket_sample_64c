@@ -38,11 +38,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.update(item_params)
-      if @item.save
-        redirect_to root_path,notice: '商品の編集が完了しました'
-      else
-        render :edit
-      end
+      redirect_to root_path,notice: '商品の編集が完了しました'
   end
 
   private
