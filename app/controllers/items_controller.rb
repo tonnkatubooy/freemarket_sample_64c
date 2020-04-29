@@ -34,16 +34,20 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @item.pictures.new
   end
 
+
   def update
-    @item = Item.update(item_params)
-      redirect_to root_path,notice: '商品の編集が完了しました'
+    item = Item.find(params[:id])
+    if item.update!(item_params)
+      redirect_to root_path, notice: "商品の編集が完了しました"
+    end
   end
 
   private
   def item_params
-    params.require(:item).permit(:item_name,:brand,:price,:discription,:status_id,:delivery_charge_id,:area_id,:shipping_date_id,:shipping_method_id,pictures_attributes:[:image]).merge(user_id: current_user.id,seller_id:current_user.id)
+    params.require(:item).permit(:image_cache,:item_name,:brand,:price,:discription,:status_id,:delivery_charge_id,:area_id,:shipping_date_id,:shipping_method_id,pictures_attributes:[:image, :id, :_destroy]).merge(user_id: current_user.id,seller_id:current_user.id)
   end
 
 end
