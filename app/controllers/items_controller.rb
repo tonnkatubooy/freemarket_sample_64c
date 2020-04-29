@@ -24,6 +24,8 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+    @item = Item.find(params[:id])
+    @item.pictures.new
   end
 
   def destroy

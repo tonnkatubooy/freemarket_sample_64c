@@ -12,14 +12,14 @@
         .purchase__image
           = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
         .purchase__description
-          %p カレー(テスト)
+          %p= @item.item_name
 
       %hr.price-before
     .form
       .purchase__price
         .purchase__price-box
           %h3 支払い金額
-          %h3 ¥1640
+          %h3=@item.price
 
         .purchase__point-box
           = check_box_tag :check1
@@ -54,7 +54,7 @@
 
       %hr.purchase__underline
       .purchase__btn
-        =link_to '購入する','#',class:"btn btn-default" 
+        =link_to '購入する',buy_cards_path,class:"btn btn-default" 
       .purchase__app-btn
         アプリをお持ちでない方は以下よりインストール
         してご利用いただけます。
