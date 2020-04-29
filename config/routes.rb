@@ -10,11 +10,12 @@ Rails.application.routes.draw do
     resources :addresses, only: [:new, :create, :edit, :update]
   end
 
-  resources :card, only: [:index,:new, :show] do
+  resources :cards, only: [:index,:new,:create,:show] do
     collection do
-      post 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
+      post 'new', to: 'cards#new'
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
     end
   end
 end

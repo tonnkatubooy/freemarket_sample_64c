@@ -19,34 +19,34 @@ $min: 767px;  // 500px <= 767px
       justify-content: center;
       padding: 20px 0;
       @include max {
-      background-color: red;
+      background-color: whitesmoke;
       };
       @include mid {
-        background-color: blue;
+        background-color: whitesmoke;
         display: list-item;
       };
       @include min {
-        background-color: yellow;
+        background-color: whitesmoke;
         display: list-item;
       };
       .side{
         //サイドバーの設定
         @include max {
-          background-color: red;
+          background-color: whitesmoke;
           width: 280px;
           height: auto;
           margin-right: 60px;
           order: 1;
         };
         @include mid {
-          background-color: blue;
+          background-color: whitesmoke;
           width: 700px;
           height: auto;
           margin: 0 auto;
 
         };
         @include min {
-          background-color: yellow;
+          background-color: whitesmoke;
           max-width: 100%;
           height: auto;
 
