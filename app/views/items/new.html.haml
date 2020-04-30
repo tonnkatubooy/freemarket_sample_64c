@@ -1,4 +1,3 @@
-- console
 .itemsMain
   .itemsMain__header
     = image_tag 'logo.png'
@@ -19,14 +18,13 @@
                   = p.label :image, class: 'image_box-icon' do
                     %i.fa.fa-camera.likeIcon
                     = p.file_field :image, class: 'hidden'
-
+                    
                   %p.text
                   ドラッグアンドドロップ
                   %br>
                   またはクリックしてファイルをアップロード
                   %br>
                   %span.js-remove 削除
-
       %hr.style_divider
       .sellBox
         .title
