@@ -19,15 +19,14 @@
                   = p.label :image, class: 'image_box-icon' do
                     %i.fa.fa-camera.likeIcon
                     = p.file_field :image, class: 'hidden'
-                  .prev-content
-                    .preview-box
-                      .upper-box
-                      .lower-box
-                        .delete-box
-                          .delete-btn
-                            %span 削除
-                    .label-content
-                      %label{ for:"item_images_attributes_0_image", class: "label-box", id: "label-box--0" }
+
+                  %p.text
+                  ドラッグアンドドロップ
+                  %br>
+                  またはクリックしてファイルをアップロード
+                  %br>
+                  %span.js-remove 削除
+
       %hr.style_divider
       .sellBox
         .title
