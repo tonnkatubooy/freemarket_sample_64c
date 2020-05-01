@@ -20,13 +20,16 @@
                   = p.label :image, class: 'image_box-icon' do
                     %i.fa.fa-camera.likeIcon
                     = p.file_field :image, class: 'hidden'
+                    %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+                    %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
                   .prev-content
                     .preview-box#preview-box
                       .upper-box
                       .lower-box
                         .delete-box
-                          .delete-btn 
-                            = f.label '削除'
+                          .delete-btn 削除
                     .label-content
                       %label{ for:"item_images_attributes_0_image", class: "label-box", id: "label-box--0" }
       %hr.style_divider

@@ -21,7 +21,7 @@ $(function(){
                     <input class="hidden" type="file"
                     name="item[pictures_attributes][${index}][image]"
                     id="item_pictures_attributes_${index}_image"><br>
-                    <div class="js-remove">削除</div>
+                    <div class="delete-box">削除</div>
                   </div>`;
     return html;
   }
@@ -34,7 +34,7 @@ $(function(){
     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
   });
 
-  $('#image-box__container').on('click', '.js-remove', function() {
+  $('#image-box__container').on('click', '.derete-box', function() {
     $(this).parent().remove();
     if ($('.hidden').length == 0) $('#image-box__container').append(buildFileField(fileIndex[0]));
   });
