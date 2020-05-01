@@ -2,7 +2,7 @@
   .itemsMain__header
     = image_tag 'logo.png'
   = form_for @item do |f|
-    =render 'error_messages'
+    = render 'error_messages',  model: @item
     .sellHeader
       .sellBox
         .title

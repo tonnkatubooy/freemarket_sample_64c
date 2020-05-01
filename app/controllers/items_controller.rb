@@ -31,7 +31,8 @@ class ItemsController < ApplicationController
       if @item.save
         redirect_to root_path,notice: '商品の出品が完了しました'
       else
-        render :new
+        @item.pictures.new
+        render "new"
       end
   end
 
