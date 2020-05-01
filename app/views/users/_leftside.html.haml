@@ -57,7 +57,10 @@
           = link_to "発送元・お届け先住所変更", new_user_address_path(@user)
     .mypage-nav__list
       %li.mypage-nav__list-item
-        = link_to "支払い方法", new_card_path
+        - if @user.cards.present?
+          = link_to "支払い方法", cards_pash(@user.card.id)
+        - else
+          = link_to "支払い方法", new_card_path
 
     .mypage-nav__list
       %li.mypage-nav__list-item

@@ -113,18 +113,18 @@ $min: 767px;  // 500px <= 767px
         // float: right;
         // margin-left: 60px;
         @include max {
-          background-color: red;
+          background-color: whitesmoke;
           width: 700px;
           order: 2;
         };
         @include mid {
-          background-color: blue;
+          background-color: whitesmoke;
           width: 700px;
           margin: 0 auto;
 
         };
         @include min  {
-          background-color: yellow;
+          background-color: whitesmoke;
           max-width: 100%;
         };
 
@@ -238,18 +238,18 @@ $min: 767px;  // 500px <= 767px
               position: relative;
       
               @include max {
-                background-color: red;
+                background-color: whitesmoke;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: blue;
+                background-color: whitesmoke;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: yellow;
+                background-color: whitesmoke;
                 height: 50px;
                 line-height: 3rem;
               };
@@ -293,18 +293,18 @@ $min: 767px;  // 500px <= 767px
               border-bottom: solid 1px #eee;
               position: relative;
               @include max {
-                background-color: red;
+                background-color: whitesmoke;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: blue;
+                background-color: whitesmoke;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: yellow;
+                background-color: whitesmoke;
                 height: 50px;
                 line-height: 3rem;
               };
@@ -409,18 +409,18 @@ $min: 767px;  // 500px <= 767px
               border-bottom: solid 1px #eee;
               position: relative;
               @include max {
-                background-color: red;
+                background-color: whitesmoke;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: blue;
+                background-color: whitesmoke;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: yellow;
+                background-color: whitesmoke;
                 height: 50px;
                 line-height: 3rem;
               };
@@ -464,18 +464,18 @@ $min: 767px;  // 500px <= 767px
               border-bottom: solid 1px #eee;
               position: relative;
               @include max {
-                background-color: red;
+                background-color: whitesmoke;
                 height: 80px;
                 line-height: 5rem;
               };
               @include mid {
-                background-color: blue;
+                background-color: whitesmoke;
                 height: 80px;
                 margin: 0 auto;
                 line-height: 5rem;
               };
               @include min  {
-                background-color: yellow;
+                background-color: whitesmoke;
                 height: 50px;
                 line-height: 3rem;
               };

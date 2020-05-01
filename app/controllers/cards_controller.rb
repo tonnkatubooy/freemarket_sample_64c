@@ -10,7 +10,7 @@ class CardsController < ApplicationController
     redirect_to action: "show" if card.exists?
   end
 
-  def pay 
+  def pay
     Payjp.api_key = "sk_test_1547c1078a795141e2ee8623"
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -43,7 +43,7 @@ class CardsController < ApplicationController
   def show 
     card = Card.where(user_id: current_user.id).first
     if card.blank?
-      redirect_to action: "new" 
+      redirect_to action: "new"
     else
       Payjp.api_key = "sk_test_1547c1078a795141e2ee8623"
       customer = Payjp::Customer.retrieve(card.customer_id)

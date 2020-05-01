@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :addresses, only: [:new, :create, :edit, :update]
   end
 
-  resources :cards, only: [:index,:new,:create,:show] do
+  resources :cards, only: [:index,:new,:show] do
     collection do
       post 'new', to: 'cards#new'
       post 'show', to: 'cards#show'

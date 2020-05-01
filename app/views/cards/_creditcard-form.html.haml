@@ -1,4 +1,4 @@
-= form_with model: @card,url: {controller: 'cards', action: 'pay' }, method: 'POST', class: "card-form",html: { name: 'inputForm' } do |f|
+= form_with model: @card,url: pay_cards_path, method: :post,id: 'charge-form',class: "card-form",html: { name: 'inputForm' } do |f|
   .card-form__header クレジットカード登録
   .card-form__number
     .card-form__number--top
@@ -6,10 +6,10 @@
       %span.required 必須
       %br
     .card-form__number__center
-      = f.text_field :name, placeholder: "半角数字のみ", class: "input-field",id: "card-number"
+      = f.text_field :name, placeholder: "半角数字のみ", class: "input-field",id: "card-number", maxlength: "16"
     %ul.card-form__number__bottom
       %li 
-        = image_tag "visa.png", height: "20", width: "49"
+        = image_tag "visa.png", height: "20", width: "34"
       %li 
         = image_tag "master.png", height: "20", width: "34"
       %li 
@@ -29,12 +29,12 @@
       %br
     .card-form__expiration__center
       .card-form__expiration__center--month
-        = f.select :name, [["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9],["10", 10],["11", 11],["12", 12]], {}, {class: "select-form",id:"exp_month"}
+        = f.select :exp_month, [["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9],["10", 10],["11", 11],["12", 12]], {}, {class: "select-form",id:"exp_month"}
         %ladel
           = icon("fab", "chevron-down")
           %span 月
       .card-form__expiration__center--year
-        = f.select :name, [["2020", 20],["2021", 21],["2022", 22],["2023", 23],["2024", 24],["2025", 25],["2026", 26],["2027", 27],["2028", 28],["2029", 29],["2030", 30]], {}, {class: "select-form",id:"exp_year"}
+        = f.select :exp_year, [["20", 2020],["21", 2021],["22", 2022],["23", 2023],["24", 2024],["25", 2025],["26", 2026],["27", 2027],["28", 2028],["29", 29],["30", 2030]], {}, {class: "select-form",id:"exp_year"}
         %ladel
           = icon("fab", "chevron-down")
           %span 年
@@ -44,12 +44,12 @@
       %span.required 必須
       %br
     .card-form__security__center
-      = f.text_field :name, placeholder: "カード背面４桁もしくは３桁の番号", class: "input-field",id:"cvc"
+      = f.text_field :cvc, placeholder: "カード背面４桁もしくは３桁の番号", class: "input-field",id:"cvc"
     .card-form__security__bottom 
       = icon("fas", "question-circle") 
       カード裏面の番号とは？
     .card-form__security__info
       カードの裏面をご参照ください
       -# = image_tag ("seq-card.png"), class: "card-info-img"
-  .card-form__btn#card-token
+  .card-form__btn#card_token
     = f.submit "追加する", class: "submit-btn", id: "token_submit"
