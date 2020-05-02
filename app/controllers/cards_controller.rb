@@ -2,8 +2,6 @@ class CardsController < ApplicationController
 
   require "payjp"
 
-  def index
-  end
 
   def new
     card = Card.where(user_id: current_user.id)

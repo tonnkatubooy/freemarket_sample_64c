@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :items, only: [:index,:new,:create,:show,:destroy] do
     member do
       get 'purchase'
+      post 'done', to: 'items#done'
+      get 'done', to: 'items#done'
      end
   end 
   resources :users, only: [:show] do
@@ -21,4 +23,5 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
+
 end
