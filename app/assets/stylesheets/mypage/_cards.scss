@@ -23,6 +23,7 @@
 }
 
 .card-box{
+  order: 2;
   @include form-body();
   &__header{
     @include form-header();

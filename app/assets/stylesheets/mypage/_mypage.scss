@@ -75,6 +75,9 @@ $min: 767px;  // 500px <= 767px
             background: #fff;
             font-size: 14px;
             color: #333;
+            a{
+              text-decoration: none;
+            }
           }
           &__list-item::after{
             // list-item(各々のメニュー)へ矢印(::after)を作成する
