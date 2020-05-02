@@ -39,37 +39,14 @@ class CardsController < ApplicationController
   end
 
   def show 
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    @card = Card.where(user_id: current_user.id).first
+    if @card.blank?
       redirect_to action: "new"
     else
       Payjp.api_key = "sk_test_1547c1078a795141e2ee8623"
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
-  def buy 
-    if card.blank?
-      redirect_to action: "new"
-      flash[:alert] = '購入にはクレジットカード登録が必要です'
-    else
-      @item = Item.find(params[:item_id])
-      card = current_user.credit_card
-      Payjp.api_key = "sk_test_1547c1078a795141e2ee8623"
-      Payjp::Charge.create(
-      amount: @item.price, 
-      customer: card.customer_id, 
-      currency: 'jpy', 
-      )
-     
-      if @item.update(item_status: 1, buyer_id: current_user.id)
-        flash[:notice] = '購入しました。'
-        redirect_to controller: "items", action: 'show'
-      else
-        flash[:alert] = '購入に失敗しました。'
-        redirect_to controller: "items", action: 'show'
-      end
-    end
-  end
 end
