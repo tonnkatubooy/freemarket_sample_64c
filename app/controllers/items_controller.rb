@@ -42,6 +42,8 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     if item.update!(item_params)
       redirect_to root_path, notice: "商品の編集が完了しました"
+    else
+      render :edit
     end
   end
 
@@ -49,5 +51,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:image_cache,:item_name,:brand,:price,:discription,:status_id,:delivery_charge_id,:area_id,:shipping_date_id,:shipping_method_id,pictures_attributes:[:image, :id, :_destroy]).merge(user_id: current_user.id,seller_id:current_user.id)
   end
+
 
 end
