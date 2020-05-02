@@ -52,6 +52,7 @@ class ItemsController < ApplicationController
       customer: card.customer_id, 
       currency: 'jpy',
     )
+    @item = Item.update(buyer_id: 1)
   end
 
   def destroy
