@@ -42,7 +42,11 @@
                   %tr
                     %th カテゴリー
                     %td
-                      = @item.category_id
+                      = @item.category.parent.parent.name
+                      %br
+                      = @item.category.parent.name
+                      %br
+                      = @item.category.name
                   %tr
                     %th ブランド
                     %td

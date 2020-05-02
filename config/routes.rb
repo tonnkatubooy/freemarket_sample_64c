@@ -9,6 +9,11 @@ Rails.application.routes.draw do
       post 'done', to: 'items#done'
       get 'done', to: 'items#done'
      end
+  #Ajaxで動くアクションのルート
+  collection do
+    get 'get_category_children', defaults: { format: 'json' }
+    get 'get_category_grandchildren', defaults: { format: 'json' }
+  end
   end 
   resources :users, only: [:show] do
     resources :addresses, only: [:new, :create, :edit, :update]
@@ -23,5 +28,4 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
-
 end
