@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
   
-  require "payjp"
-  
   def index
     @item = Item.all
     @items = Item.includes(:pictures).order('created_at DESC')
@@ -33,7 +31,7 @@ class ItemsController < ApplicationController
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
-      redirect_to controller: "card", action: "new"
+      redirect_to new_card_path(@user)
     else
       Payjp.api_key = "sk_test_1547c1078a795141e2ee8623"
       #保管した顧客IDでpayjpから情報取得
