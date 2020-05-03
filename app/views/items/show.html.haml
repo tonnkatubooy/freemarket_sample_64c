@@ -14,7 +14,7 @@
                 %li
                   - @item.pictures.each do |picture|
                     = image_tag "#{picture.image}"
-                  
+                    
             .itemBox__price
               %span
                 = "¥#{@item.price}"
