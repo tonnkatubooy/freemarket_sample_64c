@@ -14,17 +14,14 @@ $(function(){
   });
 
 //画像の複数枚投稿
-  const buildFileField = (index)=> {
-    const html = `<div data-index="${index}" class="js-file_group">
-    <label class="image_box-icon" for="item_pictures_attributes_${index}_image">
-     <i class='fa fa-camera likeIcon'></i>
-      <input class="hidden" type="file"
-      name="item[pictures_attributes][${index}][image]"
-      id="item_pictures_attributes_${index}_image"><br>
-      <div class="delete-btn">削除</div>
-    </div>`;
-    return html;
-  }
+const buildFileField = (index)=> {
+  const html = `<div data-index="${index}" class="js-file_group">
+                  <input class="hidden" type="file"
+                  name="item[pictures_attributes][${index}][image]"
+                  id="item_pictures_attributes_${index}_image">
+                </div>`;
+  return html;
+}
 
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
