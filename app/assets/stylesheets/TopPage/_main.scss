@@ -151,6 +151,9 @@
       margin: 0 auto;
       .productList{
         width: 200px;
+        &--img{
+          margin-right: 20px;
+        }
       }
      }
     }
