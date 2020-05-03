@@ -97,6 +97,8 @@
                 コメントする 
             - if user_signed_in? && current_user.id == @item.user_id
               = link_to "この商品を削除する",item_path(@item.id), method: :delete, class: "destroyBtn"
+            - else
+              = link_to "購入画面に進む",purchase_item_path(@item.id),class:"purchaseBtn"
         %ul.links
           %li
             = link_to '' do

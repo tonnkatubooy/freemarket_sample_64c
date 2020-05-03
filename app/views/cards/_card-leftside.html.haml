@@ -51,19 +51,14 @@
       %li.mypage-nav__list-item
         -# もしユーザーがすでに発送元・お届け先住所(address)を登録済であれば編集画面へ
         -# でなければ新規登録画面へ
-        - if @user.address.present?
-          = link_to "発送元・お届け先住所変更", edit_user_address_path(@user)
-        - else
-          = link_to "発送元・お届け先住所変更", new_user_address_path(@user)
+        -# - if @user.address.present?
+        -#  = link_to "発送元・お届け先住所変更", edit_user_address_path(@user)
+        -# - else
+        = link_to "発送元・お届け先住所変更", "#"
     .mypage-nav__list
       %li.mypage-nav__list-item
-        -# もしユーザーがすでにクレジットカードを登録済であれば一覧・編集画面へ
-        -# でなければ新規登録画面へ
-        - if @user.cards.present?
-          = link_to "支払い方法", card_path(@card)
-        - else
-          = link_to "支払い方法", new_card_path
-
+        = link_to "支払い方法",   "#"
+      
     .mypage-nav__list
       %li.mypage-nav__list-item
         メール/パスワード

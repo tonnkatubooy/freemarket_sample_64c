@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items, only: [:index,:new,:create,:show,:destroy] do
     member do
-      get 'purchase'
+      get 'purchase',to: 'items#purchase'
+      post 'done',to: 'items#done'
      end
   #Ajaxで動くアクションのルート
   collection do
@@ -14,6 +15,12 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :addresses, only: [:new, :create, :edit, :update]
   end
-  resources :cards, only: [:index, :new]
-  
+
+  resources :cards, only: [:index,:new,:show] do
+    collection do
+      post 'pay', to: 'cards#pay'
+      post 'buy', to: 'cards#buy'
+      post 'delete', to: 'cards#delete'
+    end
+  end
 end

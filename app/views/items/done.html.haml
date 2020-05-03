@@ -1,0 +1,10 @@
+.container
+  = render 'items/header'
+  .purchase__main
+    .purchase__main-message
+      %span 発送をお待ちください
+      %p 出品者からの発送通知をお待ちください
+      %h2 購入が完了しました
+      .footerBox_back
+        = link_to 'トップページに戻る',root_path, class: "backbutton"
+  = render 'items/footer'
