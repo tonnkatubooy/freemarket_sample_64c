@@ -89,7 +89,7 @@
         - @item.each do |item|
           .productList
             .productList--img
-              = image_tag item.pictures[0].image.url,size:"185x189"
+              = link_to (image_tag item.pictures[0].image.url,size:"185x189"), item_path(item.id)
               -if item.buyer_id == 1
                 .productList--img__sold
                   SOLD OUT
