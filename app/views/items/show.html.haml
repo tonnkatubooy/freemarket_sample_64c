@@ -99,6 +99,7 @@
               = link_to "この商品を削除する",item_path(@item.id), method: :delete, class: "destroyBtn"
             - else
               = link_to "購入画面に進む",purchase_item_path(@item.id),class:"purchaseBtn"
+              = link_to "商品の編集",edit_item_path(@item),class:"editBtn"
         %ul.links
           %li
             = link_to '' do
