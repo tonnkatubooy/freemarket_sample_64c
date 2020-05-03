@@ -4,7 +4,7 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to card_path(@user) if card.exists?
+    redirect_to card_path(card) if card.exists?
   end
 
   def pay
@@ -26,17 +26,18 @@ class CardsController < ApplicationController
   end
 
   def delete 
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     if card.present?
       Payjp.api_key = "sk_test_1547c1078a795141e2ee8623"
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
       redirect_to new_card_path
+    end
   end
 
   def show 
-    @card = Card.where(user_id: current_user.id).first
+    @card = Card.find_by(user_id: current_user.id)
     if @card.blank?
       redirect_to new_card_path(@user)
     else

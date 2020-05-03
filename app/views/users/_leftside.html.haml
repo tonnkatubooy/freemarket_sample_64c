@@ -60,7 +60,7 @@
         -# もしユーザーがすでにクレジットカードを登録済であれば一覧・編集画面へ
         -# でなければ新規登録画面へ
         - if @user.cards.present?
-          = link_to "支払い方法", card_path(@user)
+          = link_to "支払い方法", card_path(@card)
         - else
           = link_to "支払い方法", new_card_path
 
