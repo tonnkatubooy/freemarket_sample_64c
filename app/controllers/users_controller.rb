@@ -7,5 +7,5 @@ class UsersController < ApplicationController
     @address = Address.select(:user_id)
     @card =Card.find_by(user_id: current_user.id)
   end
-    
+
 end
