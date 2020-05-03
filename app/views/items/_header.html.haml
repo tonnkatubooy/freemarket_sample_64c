@@ -16,6 +16,11 @@
         = link_to "/jp/" do
           = "カテゴリー"
           = image_tag 'icon_category.png'
+          %ul
+            .parents
+              - @category_parent.each do |parent|
+                %li
+                  = parent.name
         .category
           %ul.categoryIndex
             %li.categoryIndex--item
