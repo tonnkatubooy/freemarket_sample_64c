@@ -89,7 +89,7 @@
         - @item.each do |item|
           .productList
             .productList--img
-              = image_tag item.pictures[0].image.url,size:"185x189"
+              = link_to (image_tag item.pictures[0].image.url,size:"185x189"), item_path(item.id)
             %h3.name 
               = item.item_name
             .details

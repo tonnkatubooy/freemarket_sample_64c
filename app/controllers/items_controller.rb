@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @item = Item.all
+    @item = Item.all.order("created_at DESC").limit(3)
     @items = Item.includes(:pictures).order('created_at DESC')
     @picture = Picture.all
   end
@@ -27,7 +27,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    binding.pry
       if @item.save
         redirect_to root_path,notice: '商品の出品が完了しました'
       else
