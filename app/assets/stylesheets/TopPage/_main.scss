@@ -153,6 +153,31 @@
         width: 200px;
         &--img{
           margin-right: 20px;
+          position: relative;
+          &__sold{
+            &::before{
+              content: "";
+              top: 0;
+              left:0;
+              border-bottom: 5em solid transparent;
+              border-left: 5em solid $selection-color;
+              position: absolute;
+              z-index: 100;
+            }
+            &::after{
+              content: "SOLD OUT";
+              display: block;
+              top: 22px;
+              transform: rotate(-45deg);
+              color: #fff;
+              left: 0;
+              position: absolute;
+              z-index: 101;
+              font-size: 10px;
+              
+            
+            }
+          }
         }
       }
      }
@@ -186,27 +211,6 @@
           width: 200px;
           &--img{
             position: relative;
-              &__sold
-              &:before{
-               content: "";
-               top: 0;
-               left:0;
-               border-bottom: 4em solid transparent;
-               border-left: 4em solid $selection-color;
-               position: absolute;
-               z-index: 100;
-              }
-              &:after{
-                content: "SOLD OUT";
-                display: block;
-                top: 5px;
-                transform: rotate(-45deg);
-                color: #fff;
-                left: 0;
-                position: absolute;
-                z-index: 101;
-              
-            }
           }
         }
       }
