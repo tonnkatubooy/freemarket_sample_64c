@@ -1,3 +1,41 @@
-.account-page__inner{
-  
-}
+// .account-page__inner{
+//   .account-page__inner--icon{
+//     &__input {
+//       content: '';
+//       width: 60px; 
+//       height: 60px;
+//       background-image: image-url("/member_photo_noimage_thumb.png");
+//       //width, heightと同じになる
+//       background-size: cover; 
+//       background-repeat: no-repeat;
+//       border-radius: 50%;
+//       display: block;
+//       margin: 0 auto;
+//       overflow: hidden;
+//       position: relative;
+//       &__image {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//       }
+//       &__image2 {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//       }
+//       &__btn {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         // 解決方法(追加)
+//         width: 180px;
+//         height: 180px;
+//         border-radius: 100px;
+//         font-size: 0px;
+//         // 解決方法(ここまで)
+//         opacity: 0;
+//         cursor: pointer;
+//       }
+//     }
+//   }
+// }
