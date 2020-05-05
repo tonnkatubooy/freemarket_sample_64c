@@ -16,8 +16,17 @@
               = f.fields_for :pictures do |p|
                 .js-file_group{"data-index" => p.index}
                   = p.label :image, class: 'image_box-icon' do
+                    %label{ for:"item_images_attributes_0_image", class: "label-box", id: "label-box--0" }
+                  .hidden-content
                     %i.fa.fa-camera.likeIcon
-                    = p.file_field :image, class: 'hidden', multiple: true
+                      = p.fields_for :pictures do |i|
+                        = p.file_field :image, class: 'hidden'
+                        %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+                        %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+                        %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+                        %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+                  .product-name
+                    .product-name__sell-content
                     
                   %p.text
                   ドラッグアンドドロップ

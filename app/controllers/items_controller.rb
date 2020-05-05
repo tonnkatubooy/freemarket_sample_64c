@@ -34,13 +34,14 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    @item.pictures.new
+    # @item.pictures.new
   end
 
 
   def update
-    item = Item.find(params[:id])
-    if item.update!(item_params)
+    @item = Item.find(params[:id])
+    binding.pry
+    if @item.update(item_params)
       redirect_to root_path, notice: "商品の編集が完了しました"
     else
       render :edit
