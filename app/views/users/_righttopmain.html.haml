@@ -1,24 +1,18 @@
 .user
   .user-image
     .user-icon
-      = form_for(current_user) do |f|
-        //アイコン追加部分
-        .account-page__inner--icon
-          .account-page__inner--icon__label
-          .account-page__inner--icon__input
-            - if @image.present?
-              = image_tag @image.url, class: 'account-page__inner--icon__input__image', width: '100%'
-            .account-page__inner--icon__input__image2
-            = f.file_field :image, class: 'account-page__inner--icon__input__btn', id: 'upload-icon'
+      -if @image.present?
+        = link_to image_tag(@image.url), edit_user_path
+    .user-name
+      ユーザー
+    .user-mumber
+      .user-evaluation
+        評価 10
+      .user-sell
+        出品数 10
 
-        .account-page__inner--user-form
-      .user-name
-        ユーザー
-      .user-mumber
-        .user-evaluation
-          評価 10
-        .user-sell
-          出品数 10
+    .user-profile
+      = simple_format(@profile)
     
 
   
