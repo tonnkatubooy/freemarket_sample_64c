@@ -14,13 +14,7 @@
                 %li
                   - @item.pictures.each do |picture|
                     = image_tag "#{picture.image}"
-                  %ul
-                    %li
-                      = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", size: "80x80"
-                    %li
-                      = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png", size: "80x80"
-                    %li
-                      = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png", size: "80x80"
+                    
             .itemBox__price
               %span
                 = "¥#{@item.price}"
@@ -97,6 +91,9 @@
                 コメントする 
             - if user_signed_in? && current_user.id == @item.user_id
               = link_to "この商品を削除する",item_path(@item.id), method: :delete, class: "destroyBtn"
+              = link_to "商品の編集",edit_item_path(@item),class:"editBtn"
+            - else
+              = link_to "購入画面に進む",purchase_item_path(@item.id),class:"purchaseBtn"
         %ul.links
           %li
             = link_to '' do

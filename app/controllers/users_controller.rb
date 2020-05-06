@@ -14,11 +14,15 @@ class UsersController < ApplicationController
     end
   end
 
+  require "payjp"
+
+
   def show
     @user = User.find(params[:id])
     @image = @user.image
     @profile = @user.profile
     @address = Address.select(:user_id)
+    @card =Card.find_by(user_id: current_user.id)
   end
 
   def create
