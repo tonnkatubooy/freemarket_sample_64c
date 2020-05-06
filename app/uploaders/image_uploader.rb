@@ -8,7 +8,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     storage :file
   elsif Rails.env.production?
     storage :fog
-  end
+  end 
   
   process resize_to_fit: [100, 100]
 

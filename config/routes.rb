@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'get_category_grandchildren', defaults: { format: 'json' }
   end
   end 
-  resources :users, only: [:show] do
+  resources :users, only: [:edit, :update, :show] do
     resources :addresses, only: [:new, :create, :edit, :update]
   end
 
