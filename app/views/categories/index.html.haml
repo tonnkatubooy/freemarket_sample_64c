@@ -1,0 +1,44 @@
+.wrapper
+  = render 'items/header'
+
+
+.categoryIndex
+  %h1 カテゴリー一覧
+  %ul.category1
+    - @category_parent.each do |parent|
+      %li.parent_list
+        = parent.name
+        -# %ul.category2
+        -#   - parent.children.each do |child|
+        -#     %li.child_list
+        -#       =child.name
+        -#       %ul.category3
+        -#         - child.children.each do |grandchild|
+        -#           %li.grandchild_list
+        -#             =grandchild.name
+
+
+:css
+  .categoryIndex{
+    padding-top: 30px;
+    width : 60%;
+    margin: 0 auto;
+  }
+
+  h1{
+    font-size: 25px;
+  }
+
+  li.parent_list{
+    display: inline;
+    font-size: 20px;
+    border-style: solid;
+    margin: 10px;
+    padding: 10px;
+    white-space: nowrap; 
+    background-color: white;
+    line-height: 50px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+  }
+  

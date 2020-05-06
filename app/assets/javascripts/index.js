@@ -1,14 +1,13 @@
 $(function() {
-
-  //マウスを乗せたら発動
-  $('.categoryBox').hover(function() {
-
-    $('.parents').css('display', 'block');
-
-  //ここにはマウスを離したときの動作を記述
-  }, function() {
-
-    $('.parents').css('display', 'none');
-
+  $(".categoryBox").hover(function() {
+  $("ul.category1").toggle();
   });
+  $(".categoryBox li ul").hide();
+  $(".categoryBox li").hover(function() {
+      $(">ul:not(:animated)", this).stop(true, true).slideDown("fast");
+      $(">a", this).addClass("active");
+  }, function() {
+      $(">ul:not(:animated)", this).stop(true, true).slideUp("fast");
+      $(">a", this).removeClass("active");
+});
 });
