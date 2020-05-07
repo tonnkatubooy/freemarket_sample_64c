@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
-  
+
+  before_action :set_item, only: [:edit, :show]  
+
   def index
     @item = Item.all.order("created_at DESC").limit(3)
     @items = Item.includes(:pictures).order('created_at DESC')
@@ -37,7 +39,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
@@ -90,9 +91,27 @@ class ItemsController < ApplicationController
     redirect_to root_path,notice:'商品を削除しました'
   end
 
+  def edit
+  end
+
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to root_path, notice: "商品の編集が完了しました"
+    else
+      render :edit
+    end
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+
   private
   def item_params
-    params.require(:item).permit(:category_id,:item_name,:brand,:price,:discription,:status_id,:delivery_charge_id,:area_id,:shipping_date_id,:shipping_method_id,pictures_attributes:[:image]).merge(user_id: current_user.id,seller_id:current_user.id)
+    params.require(:item).permit(:image_cache,:item_name,:brand,:price,:discription,:status_id,:delivery_charge_id,:area_id,:shipping_date_id,:shipping_method_id,pictures_attributes:[:image, :id, :_destroy]).merge(user_id: current_user.id,seller_id:current_user.id)
   end
 
 end
