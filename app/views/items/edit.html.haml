@@ -10,8 +10,7 @@
             %label 出品画像
             %span.style-tag 必須
         %p.details-box 最大10枚までアップロードできます
-        .image_box#image-box#preview
-          //プレビュー
+        .image_box#image-box
           - if @item.persisted?
             - @item.pictures.each do |picture,i|
               = image_tag @item.pictures[0].image.url,data: { index: i }, width: "50", height: '50'

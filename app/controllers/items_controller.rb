@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+
+  before_action :set_item, only: [:edit, :show]
+
   def index
     @item = Item.all
     @items = Item.includes(:pictures).order('created_at DESC')
@@ -20,7 +23,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def purchase
@@ -33,8 +35,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
-    # @item.pictures.new
   end
 
 
@@ -46,6 +46,11 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 
   private
   def item_params
