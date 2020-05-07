@@ -40,7 +40,6 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    binding.pry
     if @item.update(item_params)
       redirect_to root_path, notice: "商品の編集が完了しました"
     else

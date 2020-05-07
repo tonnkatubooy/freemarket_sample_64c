@@ -72,7 +72,7 @@ $(document).on('turbolinks:load', ()=> {
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
-      $('#previews').append(buildImg(targetIndex, blobUrl));
+      $('#image_box-right').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
@@ -83,6 +83,7 @@ $(document).on('turbolinks:load', ()=> {
 
   $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
+    console.log("foo");
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
