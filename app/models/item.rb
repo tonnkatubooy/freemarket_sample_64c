@@ -13,12 +13,12 @@ class Item < ApplicationRecord
   has_many :comments
   has_many :pictures, dependent: :destroy
   accepts_nested_attributes_for :pictures, allow_destroy: true
+  belongs_to :category
 
   #validation
   validates :price,:status,:delivery_charge_id,:area_id,:shipping_date_id, presence: true
   validates :item_name, presence: true, length: {maximum: 40}
   validates :discription, presence: true, length: {maximum: 1000}
-
 
   validates_associated :pictures
   validates :pictures, presence: true

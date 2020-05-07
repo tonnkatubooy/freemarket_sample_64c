@@ -4,11 +4,10 @@ require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
   if Rails.env.development? || Rails.env.test?
-    config.storage = :file
+    config.storage = :fog
   elsif Rails.env.production?
     config.storage = :fog
-  end
-  config.fog_provider = 'fog/aws'
+    config.fog_provider = 'fog/aws'
   config.fog_credentials = {
     provider: 'AWS',
     aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
@@ -18,4 +17,5 @@ CarrierWave.configure do |config|
 
   config.fog_directory  = 'freemarketsample64c'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarketsample64c'
+  end
 end
