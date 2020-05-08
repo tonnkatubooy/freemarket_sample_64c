@@ -24,6 +24,11 @@
                   (税込)
                 %span
                   送料込み
+
+            - if @item.buyer_id == 1
+              .sold_out
+                売り切れました
+            %br
             .itemDetail
               = @item.discription
             .table
@@ -92,7 +97,7 @@
             - if user_signed_in? && current_user.id == @item.user_id
               = link_to "商品の編集",edit_item_path(@item),class:"editBtn"
               = link_to "この商品を削除する",item_path(@item.id), method: :delete, class: "destroyBtn"
-            - else
+            - if user_signed_in? && current_user.id != @item.user_id && @item.buyer_id != 1
               = link_to "購入画面に進む",purchase_item_path(@item.id),class:"purchaseBtn"
         %ul.links
           %li
