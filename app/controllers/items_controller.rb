@@ -43,7 +43,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     @item.pictures.new
   end
 
