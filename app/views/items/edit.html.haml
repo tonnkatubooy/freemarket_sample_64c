@@ -13,7 +13,7 @@
         .image_box#image_box
           - if @item.persisted?
             - @item.pictures.each do |picture,i|
-              = image_tag @item.pictures[0].image.url,data: { index: i }, width: "50", height: '50'
+              = image_tag picture.image.url,data: { index: i }, width: "50", height: '50'
           .image_box-right#image_box-right
             .image_box-left#image-box__container
               = f.fields_for :pictures do |image|

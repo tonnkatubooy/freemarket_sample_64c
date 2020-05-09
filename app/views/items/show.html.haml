@@ -13,7 +13,7 @@
               %ul
                 %li
                   - @item.pictures.each do |picture|
-                    = image_tag "#{picture.image}"
+                    = image_tag image.image.url
                     
             .itemBox__price
               %span
