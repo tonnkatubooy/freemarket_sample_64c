@@ -1,17 +1,4 @@
 $(function(){
-  //画像のプレビュー表示
-  var file_field = document.querySelector('input[type=file]')
-  $('.hidden').change(function(){
-   var file = $('input[type="file"]').prop('files')[0];
-   var fileReader = new FileReader();
-
-   fileReader.onloadend = function() {
-     var src = fileReader.result
-     var html= `<img src="${src}">`
-     $('#image-box__container').before(html);
-   }
-   fileReader.readAsDataURL(file);
-  });
 
 //画像の複数枚投稿
   const buildFileField = (index)=> {
