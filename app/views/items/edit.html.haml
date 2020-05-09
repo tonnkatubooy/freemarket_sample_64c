@@ -19,16 +19,16 @@
         = f.fields_for :pictures do |image|
           .js-file_group{"data-index" => "#{image.index}"}
             = image.label :image, class: 'image_box-icon' do
-              %i.fa.fa-camera.likeIcon
-                = image.file_field :image, class: 'hidden'
+              = image.file_field :image, class: 'hidden'
             %br/
-            %span.js-remove 削除
+            %span.js-remove#js-remove 
           - if @item.persisted?
             = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+            削除
         - if @item.persisted?
         .js-file_group{"data-index" => "#{@item.pictures.count}"}
           = file_field_tag :image, name: "item[pictures_attributes][#{@item.pictures.count}][image]", class: 'js-file'
-            .js-remove 削除
+            .js-remove#js-remove 
       %hr.style_divider
       .sellBox
         .title

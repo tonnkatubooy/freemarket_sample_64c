@@ -11,22 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_05_04_130143) do
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "destination_first_name", null: false
-    t.string "destination_last_name", null: false
-    t.string "destination_first_name_kana", null: false
-    t.string "destination_last_name_kana", null: false
-    t.string "post_number", null: false
-    t.integer "prefecture", null: false
-    t.string "city", null: false
-    t.string "house_number", null: false
-    t.string "building"
-    t.string "destination_phone_number"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
+
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "brand_name"
     t.datetime "created_at", null: false
