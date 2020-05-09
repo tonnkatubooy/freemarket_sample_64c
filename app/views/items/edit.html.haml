@@ -55,7 +55,7 @@
             .listing-product-detail__category
               .listing-select-wrapper__box
                 -# = f.collection_select Category.roots, :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.collection_select :category_id, Category.all, :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                 -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
       .sellBox
         .title
