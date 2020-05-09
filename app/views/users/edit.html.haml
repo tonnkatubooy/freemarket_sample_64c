@@ -8,6 +8,8 @@
         .account-page__inner--icon__input
           - if @image.present?
             = image_tag @image.url, class: 'account-page__inner--icon__input__image', width: '100%'
+          - else
+            = image_tag("default.png") 
           .account-page__inner--icon__input__image2
           = f.file_field :image, class: 'account-page__inner--icon__input__btn', id: 'upload-icon'
 
