@@ -147,9 +147,10 @@ $min: 767px;  // 500px <= 767px
                 height: 100px;
                 text-align: center;
                 padding-top: 20px;
-                
+                object-fit: contain;
                 img{
-                  border-radius: 100px;
+                  // object-fit: cover;
+                  border-radius: 50%;
                 }
                 
               }
