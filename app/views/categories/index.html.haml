@@ -4,24 +4,42 @@
 
 .categoryIndex
   %h1 カテゴリー一覧
+  %br
   %ul.category1
     - @category_parent.each do |parent|
-      %li.parent_list
-        = parent.name
+      %li.parent_list_top
+        = link_to parent.name,"#"
         -# %ul.category2
         -#   - parent.children.each do |child|
-        -#     %li.child_list
+        -#     %li.child_list_top
         -#       =child.name
         -#       %ul.category3
         -#         - child.children.each do |grandchild|
-        -#           %li.grandchild_list
+        -#           %li.grandchild_list_top
         -#             =grandchild.name
+  
+  %ul.category1
+    - @category_parent.each do |parent|
+      %li.parent_list
+        .parent_name
+          = parent.name
+        %ul.category2
+          - parent.children.each do |child|
+            %li.child_list{style:"text-indent:1em"}
+              .child_name
+                = child.name
+              %ul.category3
+                - child.children.each do |grandchild|
+                  %li.grandchild_list{style:"text-indent:2.5em"}
+                    .grandchild_name
+                      =link_to grandchild.name,"#"
+
 
 
 :css
   .categoryIndex{
     padding-top: 30px;
-    width : 60%;
+    width : 50%;
     margin: 0 auto;
   }
 
@@ -29,7 +47,7 @@
     font-size: 25px;
   }
 
-  li.parent_list{
+  .parent_list_top{
     display: inline;
     font-size: 20px;
     border-style: solid;
@@ -42,3 +60,28 @@
     border-radius: 5px;
   }
   
+  li.parent_list{
+    border-style: solid;
+    background-color: white;
+    margin-top:50px;
+  }
+
+  .parent_name{
+    background-color: #3CCACE;
+    font-size: 30px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .child_name{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .grandchild_name{
+    font-size: 20px;
+    padding: 10px;
+  }
+
