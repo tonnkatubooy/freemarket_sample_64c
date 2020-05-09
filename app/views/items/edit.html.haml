@@ -10,11 +10,11 @@
             %label 出品画像
             %span.style-tag 必須
         %p.details-box 最大10枚までアップロードできます
-        .image_box#image-box
+        .image_box#image_box
           - if @item.persisted?
             - @item.pictures.each do |picture,i|
               = image_tag @item.pictures[0].image.url,data: { index: i }, width: "50", height: '50'
-          .image_box-right#image_bot-right
+          .image_box-right#image_box-right
             .image_box-left#image-box__container
         = f.fields_for :pictures do |image|
           .js-file_group{"data-index" => "#{image.index}"}
