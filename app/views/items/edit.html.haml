@@ -54,9 +54,13 @@
           .listing-form-box
             .listing-product-detail__category
               .listing-select-wrapper__box
-                = f.collection_select :category_id,  Category.where(ancestry: nil), :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                = f.collection_select :category_id,  Category.where(ancestry: @child_category.ancestry), :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                = f.select :category_id,  options_from_collection_for_select(Category.where(id: @grandchild_category.id), :id, :name), {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.select :category_id, options_from_collection_for_select(Category.where(ancestry: @grandchild_category.parent.parent.ancestry), :id, :name,{selected: @item.category.parent.parent.id}),{},{class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+            .category-wrapper-select#children_wrapper
+              .category-wrapper-select__box
+                = f.select :category_id, options_for_select(Category.where(ancestry: @grandchild_category.parent.ancestry).map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+            .category-wrapper-select#grandchildren_wrapper
+              .category-wrapper-select__box 
+                = f.select :category_id,  options_for_select(Category.where(ancestry: @grandchild_category.ancestry).map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}), {},{class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
                 -# = f.collection_select :category_id, Category.all , :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
 
       .sellBox
