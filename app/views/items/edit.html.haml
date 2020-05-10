@@ -54,12 +54,11 @@
           .listing-form-box
             .listing-product-detail__category
               .listing-select-wrapper__box
-              - if @item.category_id = nil?
-                -# = f.collection_select Category.roots, :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                = f.collection_select :category_id, Category.all, :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
-              - else 
-                = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.collection_select :category_id,  Category.where(ancestry: nil), :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.collection_select :category_id,  Category.where(ancestry: @child_category.ancestry), :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.select :category_id,  options_from_collection_for_select(Category.where(id: @grandchild_category.id), :id, :name), {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                -# = f.collection_select :category_id, Category.all , :id, :name,{prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+
       .sellBox
         .title
           .title_box
