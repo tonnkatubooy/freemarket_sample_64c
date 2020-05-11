@@ -22,10 +22,10 @@
                   %i.fa.fa-camera.likeIcon
                   = image.file_field :image, class: 'hidden'
                   %br/
-                  %span.js-remove#js-remove 
+                  %span.js-remove#js-remove  削除
                 - if @item.persisted?
                   = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                  削除
+                  -# 削除
               -# - if @item.persisted?
               -# .js-file_group{"data-index" => "#{@item.pictures.count}"}
               -#   = file_field_tag :image, name: "item[pictures_attributes][#{@item.pictures.count}][image]", class: 'js-file'
