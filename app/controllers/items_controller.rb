@@ -92,6 +92,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @grandchild_category = @item.category
+    @child_category = @grandchild_category.parent
   end
 
 
