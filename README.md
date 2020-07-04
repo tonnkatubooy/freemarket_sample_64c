@@ -8,6 +8,9 @@
 - Ruby on Rails
 - MY SQL
 - Github
+- JavaScript
+- jQuery
+- AWS
 
 ## 制作経緯
 <br>
